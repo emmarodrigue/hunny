@@ -32,15 +32,15 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 
 
 ## Technologies Used
-- Tech 1 - version 1.0
+- Django
 - Tech 2 - version 2.0
 - Tech 3 - version 3.0
 
 
 ## Features
 List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
+- Profile: allows user to introduce themselves before the search begins.
+- Survey: word bank of questions that'll be used to connect them with those of similar interest.
 - Awesome feature 3
 
 <!-- below isnt required for our current assigment -->
