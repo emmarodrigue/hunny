@@ -39,9 +39,9 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 
 ## Features
 List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
+- Messaging platform so that users can talk to each other and get to know each other.
+- Like and dislike buttons so that users can curate their matches.
+- Preferences and settings for the individual user to customize their experience.
 
 <!-- below isnt required for our current assigment -->
 
