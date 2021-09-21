@@ -33,6 +33,7 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 
 ## Technologies Used
 - Django
+
 - Tech 2 - version 2.0
 - Tech 3 - version 3.0
 
