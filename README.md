@@ -36,7 +36,6 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 - HTML
 - CSS
 
-
 ## Features
 List the ready features here:
 - Messaging platform so that users can talk to each other and get to know each other.
@@ -45,13 +44,8 @@ List the ready features here:
 - Profile: allows user to introduce themselves before the search begins.
 - Survey: word bank of questions that'll be used to connect them with those of similar interest.
 
-<!-- below isnt required for our current assigment -->
-
-
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
-
+![hunny logo](https://imgur.com/iMSI1nZ)
 
 ## Setup
 <!What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
