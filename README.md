@@ -4,7 +4,7 @@ Saron Abebe, Kody Gentry, Isaac Jaramillo, Thahn Pham, and Emma Rodrigue.
 -	What you’re creating?
 Hunny is a blind dating web application that allows users to find their match based on personality before looks.
 -	Who you’re doing it for, your audience (may be same as the previous question)?
-Hunny is for those who are looking to meet new people.
+Hunny is for those who are looking to meet new people. 
 -	Why you’re doing this, the impact or change you hope to make?
 	
 > Live demo [_here_](https://www.example.com).
