@@ -1,6 +1,6 @@
 # Hunny
 - 	Who you’re working with (you and your team members)?
-Saron Abebe, Kody Gentry, Isaac Jaramillo, Thahn Pham, and Emma Rodrigue.
+Saron Abebe, Kody Gentry, Isaac Jaramillo, Thanh Pham, and Emma Rodrigue.
 -	What you’re creating?
 Hunny is a blind dating web application that allows users to find their match based on personality before looks.
 -	Who you’re doing it for, your audience (may be same as the previous question)?
