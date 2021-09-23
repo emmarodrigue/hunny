@@ -45,7 +45,7 @@ List the ready features here:
 - Survey: word bank of questions that'll be used to connect them with those of similar interest.
 
 ## Screenshots
-![hunny logo](https://imgur.com/iMSI1nZ)
+[hunny logo](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/master/static/hunny-logo.PNG)
 
 ## Setup
 <!What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
