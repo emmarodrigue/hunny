@@ -1,0 +1,15 @@
+{% extends "messaging/base.html" %}
+{% block content %}
+    {% for messages in messages %}
+    <article class="media content-section">
+        <div class="media-body">
+          <div class="article-metadata">
+            <a class="mr-2" href="#">{{ messages.recipient }}</a>
+            <small class="text-muted">{{ messages.date_recieved }}</small>
+          </div>
+          <h2><a class="article-title" href="#">{{ post.recipient }}</a></h2>
+          <p class="article-content">{{ messages.message_contents }}</p>
+        </div>
+      </article>
+    {% endfor %}
+{% endblock content %}
