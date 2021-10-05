@@ -1,10 +1,38 @@
+<html>
+  <head>
+  <style>
+    div.search {
+      float: right;
+    } 
+    </style>
+  </head>
+<body>
+
+<main role="main" class="container">
+  <div class="col-md-8">
+      <div class="search">
+        <div class="content-section">      
+            <h3>Search</h3>
+            <p class='text-muted'>[search bar]
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-light">.........</li>
+                <li class="list-group-item list-group-item-light">.........</li>
+                <li class="list-group-item list-group-item-light">.........</li>
+                <li class="list-group-item list-group-item-light">.........</li>
+            </ul>
+            </p>
+            </div>
+        </div>
+        </div>
+  </main>
+
 {% extends "messaging/base.html" %}
 {% block content %}
     {% for messages in messages %}
     <article class="media content-section">
         <div class="media-body">
           <div class="article-metadata">
-            <a class="mr-2" href="#">{{ messages.recipient }}</a>
+            <a class="mr-2" href="{{ messages.recipient }}">{{ messages.recipient }}</a>
             <small class="text-muted">{{ messages.date_recieved }}</small>
           </div>
           <h2><a class="article-title" href="#">{{ post.recipient }}</a></h2>
