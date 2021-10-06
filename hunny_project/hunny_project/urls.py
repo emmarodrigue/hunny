@@ -18,6 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('messages/', include('messaging.urls')),
-    path('edit-profile/', include('account.urls')),
+    path('', include('hunny_app.urls')),
 ]
