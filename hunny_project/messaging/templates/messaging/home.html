@@ -1,43 +1,47 @@
 <html>
   <head>
-  <style>
-    div.search {
-      float: right;
-    } 
+    <style>
+      div.search {
+        float: top;
+        margin-left: auto;
+        margin-right: auto;
+        width: 15em
+      } 
+      .navbar-form .form-control {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+      }
     </style>
   </head>
-<body>
-
-<main role="main" class="container">
-  <div class="col-md-8">
+  <body>
+    <main role="main" class="container">
       <div class="search">
         <div class="content-section">      
-            <h3>Search</h3>
-            <p class='text-muted'>[search bar]
-            <ul class="list-group">
-                <li class="list-group-item list-group-item-light">.........</li>
-                <li class="list-group-item list-group-item-light">.........</li>
-                <li class="list-group-item list-group-item-light">.........</li>
-                <li class="list-group-item list-group-item-light">.........</li>
-            </ul>
-            </p>
+            <div class="topnav">
+              <input type="text" placeholder="Search...">
+            </div>
+              <ul class="list-group">
+                  <li class="list-group-item list-group-item-light">         </li>
+              </ul>
             </div>
         </div>
-        </div>
-  </main>
-
+      </div>
+    </main>
+  </body>
 {% extends "messaging/base.html" %}
 {% block content %}
-    {% for messages in messages %}
-    <article class="media content-section">
-        <div class="media-body">
-          <div class="article-metadata">
-            <a class="mr-2" href="{{ messages.recipient }}">{{ messages.recipient }}</a>
-            <small class="text-muted">{{ messages.date_recieved }}</small>
-          </div>
-          <h2><a class="article-title" href="#">{{ post.recipient }}</a></h2>
-          <p class="article-content">{{ messages.message_contents }}</p>
-        </div>
-      </article>
-    {% endfor %}
+      {% for messages in messages %}
+        <article class="media content-section">
+            <div class="media-body">
+              <div class="article-metadata">
+                <a class="mr-2" href="{{ messages.recipient }}">{{ messages.recipient }}</a>
+                <small class="text-muted">{{ messages.date_recieved }}</small>
+              </div>
+              <h2><a class="article-title" href="#">{{ post.recipient }}</a></h2>
+              <p class="article-content">{{ messages.message_contents }}</p>
+            </div>
+        </article>
+      {% endfor %}
+</html>
 {% endblock content %}
