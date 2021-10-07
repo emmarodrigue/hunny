@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'account/style.css' %}">
+    </head>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-md fixed top">
+            <div class="navbar" id="navbar-container">
+                <button class="home-btn" onclick="location.href='/'">
+                    <i style='font-size:24px' class='far'>&#xf004;</i>
+                </button>
+                <button class="chat-btn" onclick="location.href='/messages'">
+                    <i style='font-size:24px' class='far'>&#xf086;</i>
+                </button>
+                <button class="profile-btn" onclick="location.href='/profile'">
+                    <i style='font-size:24px' class='far'>&#xf2bd;</i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main role="main" class="page-content-containter">
+        <div class="padding">
+            <div class="row containter d-flex justify-content-center">
+                <div class="col-xl-6 col-md-12">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ messages.tags }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </main>
+</html>

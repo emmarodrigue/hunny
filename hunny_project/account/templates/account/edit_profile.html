@@ -1,0 +1,20 @@
+{%  extends 'account/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<title>Edit Your Profile</title>
+    <div class="content-section">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Profile Info</legend>
+                {{ p_form|crispy }}
+            </fieldset>
+            <div class="mt-5 text-right">
+                <div class="form-group">
+                    <button class="btn btn-primary back-button">Go Back<a class="ml-2" onclick="location.href='/profile'"></a></button>
+                    <button class="btn btn-primary profile-button" type="submit">Update</button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock content%}
