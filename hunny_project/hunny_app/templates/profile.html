@@ -1,9 +1,144 @@
+<!--
+Single-Responsibility Principle: This HTML file utilizes the single-responsibility principle because almost every
+    divider is used to define a new class that handles one functionality.
+Open-Close Principle:
+Interface Segregation Principle:
+-->
 <!DOCTYPE html>
-<html>
-    <head>
-        <!-- head definitions go here -->
-    </head>
-    <body>
-        <!-- the content goes here -->
-    </body>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Your Profile</title>
+</head>
+<body>
+    <div id="page-container">
+        <!-- navigation bar for site -->
+        <div class="navbar" id="navbar-container">
+            <img class="logo" src="../static/hunny-logo.PNG">  <!-- need to figure out how to get logo to show up :( -->
+            <a href="#">Home</a>   <!-- these will need to be updated as we create routes -->
+            <a href="/messages">Chat</a>
+            <a href="/edit-profile">Account</a>
+            <a href="">Help</a>
+        </div>
+    </div>
+    <!-- edit profile details form -->
+    <div class="profile-card-container">
+        <div class="card-form card">
+            <div class="card-form-container">
+                <h3>Profile Details</h3>
+                <hr>
+                <p class="card-form-subtitle">Edit your public profile</p>
+                <p class="card-from-description">This is where you can let your personality shine!</p>
+                <form class="edit-profile-form standard-form" method="POST">
+                    <label for="id_bio" align="center ">Bio: </label>
+                    <textarea name="bio" cols="20" rows="5" class="bio-field" maxlength="200" id="id_bio"></textarea>
+                    <br>
+                    <label for="id_gender">Gender: </label>
+                    <select name="gender" id="id_gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <br>
+                    <label for="id_interested_in">Interested in: </label>
+                    <select name="interested_in" id="id_interested_in">
+                        <option value="men">Men</option>
+                        <option value="women">Women</option>
+                        <option value="both">Both</option>
+                    </select>
+                    <br>
+                    <label for="id_children">Children: </label>
+                    <select name="children" id="id_children">
+                        <option value="yes">Yes, I have children</option>
+                        <option value="no">No, I don't have children</option>
+                    </select>
+                    <br>
+                    <label for="id_location">Location: </label>
+                    <input type="text" name="location" value="Texas" id="id_location" maxlength="100" required class="pac-target-input" placeholder="Enter a location">
+                    <br>
+                    <label for="id_birthday">Birthday: </label>
+                    <input type="date" name="birthday" required id="id_birthday">
+                    <div class="standard-form-submit">
+                        <input type="submit" value="UPDATE" class="submit-wide submit-success" name="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
+<style>
+    .navbar {
+    width: 100%;
+    height: 80px;
+    background-color: #FFB58E
+}
+.logo {
+    display: inline-block;
+    vertical-align: top;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+.card-form h3 {
+    text-align: center;
+    color: lightsalmon;
+    font-size: 2em;
+    font-family: futura;
+}
+.card {
+    position: relative;
+    display: flex;
+    word-wrap: break-word;
+    background-color: white;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25em;
+}
+.card-form p.card-form-subtitle {
+    text-align: center;
+    font-size: 1em;
+    color: #FFB58E;
+    margin-bottom: 15px;
+    font-weight: 90;
+}
+.card-form p.card-from-description {
+    font-size: 0.9em;
+    text-align: center;
+    margin: auto;
+    color: #575959;
+}
+body {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: white;
+}
+.card-form hr {
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+.standard-form {
+    width: 90%;
+    margin: 10px 0;
+    font-size: 0.8em;
+    color: #575959
+}
+select{
+    word-wrap: normal;
+}
+.standard-form-submit {
+    width: 90%;
+    margin: 10px;
+    font-size: 1em;
+}
+</style>

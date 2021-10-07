@@ -4,6 +4,9 @@ from django.http import HttpResponse
 def home(request):
      return render(request, 'home.html')
 
+def login(request):
+    return render(request, 'login.html')
+
 def profile(request):
      return render(request, 'profile.html')
 
@@ -15,17 +18,7 @@ def messages(request):
 
 def messages_room(request):
     return render(request, 'messages_room.html', {'recipient': 'Room'})
-# def home(request):
-#      return HttpResponse('<h1>Home</h1>')
 
-# def profile(request):
-#      return HttpResponse('<h1>Profile</h1>')
-
-# def messages(request):
-#     return HttpResponse('<h1>Messages</h1>')
-
-# def messages_room(request):
-#     return HttpResponse('<h1>Message Room</h1>')
 
 
 
