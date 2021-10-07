@@ -4,11 +4,14 @@ from PIL import Image, ImageDraw
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    first = models.CharField(max_length=100)
-    last = models.CharField(max_length=100)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
     city = models.CharField(max_length=50)
     age = models.CharField(max_length=3)
+    age_range = models.CharField(max_length=10, default=0000000000)
+    match_radius = models.CharField(max_length=7, default=0000000)
     bio = models.TextField()
+
     image = models.ImageField(default='default.jpg', upload_to='static/profile_pics')
 
     def __str__(self):
