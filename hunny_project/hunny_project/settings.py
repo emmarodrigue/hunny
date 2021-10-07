@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ckz0n0rv=h8d!-&6(il89q3dve)32uta1o90ilf_)1^+$1n!wp'
+SECRET_KEY = 'django-insecure-se6zq11awsd$ss*e6+1lzc%d*5_gjmbwptr)*p238cp3xi0rs8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'messaging.apps.MessagingConfig',
+    'hunny_app.apps.HunnyAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
