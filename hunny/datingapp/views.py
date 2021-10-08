@@ -8,3 +8,5 @@ def home(request):
 def about(request):
     return HttpResponse('DATING APP ABOUT PAGE')
 
+def user(request):
+    return render(request, 'datingapp/user.html',{})
