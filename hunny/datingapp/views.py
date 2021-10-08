@@ -9,4 +9,4 @@ def about(request):
     return HttpResponse('DATING APP ABOUT PAGE')
 
 def user(request):
-    return HttpResponse('WILL NAVIGATE USER TO 5 OPTIONS')
+    return render(request, 'datingapp/user.html',{})
