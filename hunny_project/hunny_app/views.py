@@ -1,6 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+
+def initial(request):
+     return render(request, 'initial.html')
+
+def terms_service(request):
+     return render(request, 'terms_service.html')
+
 def home(request):
      return render(request, 'home.html')
 
@@ -11,14 +18,13 @@ def profile(request):
      return render(request, 'profile.html')
 
 def messages(request):
-    context = {
-        'message_list': message_list
-    }
-    return render(request, 'messages.html', context)
+    return render(request, 'messages.html')
 
-def messages_room(request):
-    return render(request, 'messages_room.html', {'recipient': 'Room'})
+def about(request):
+    return render(request, 'about.html')
 
+def contact(request):
+    return render(request, 'contact.html')
 
 
 
