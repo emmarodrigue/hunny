@@ -7,4 +7,5 @@ urlpatterns = [
     path('profile/', views.profile, name='hunny-profile'),    
     path('messages/', views.messages, name='hunny-messages'),
     path('message/room/', views.messages_room, name='hunny-messages_room'),
+    path("register", views.register_request, name="register"),
 ]
