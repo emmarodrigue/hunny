@@ -6,6 +6,9 @@ def home(request):
 
 def login(request):
     return render(request, 'login.html')
+    
+def user(request):
+    return render(request, 'user.html')
 
 def profile(request):
      return render(request, 'profile.html')
