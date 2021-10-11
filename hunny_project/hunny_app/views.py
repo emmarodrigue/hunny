@@ -23,6 +23,9 @@ def profile(request):
 def messages(request):
     return render(request, 'messages.html')
 
+def user(request):
+    return render(request, 'user.html')
+
 def about(request):
     return render(request, 'about.html')
 
