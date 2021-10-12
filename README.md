@@ -8,7 +8,58 @@ Hunny is for those who are looking to meet new people that want a genuine connec
 -	Why you’re doing this, the impact or change you hope to make?
 We hope to break a user's cycle of falling for the wrong type by avoiding the overwhelming expectations of appearance.
 	
-> Live demo [_here_](https://www.example.com).
+# **Project Status:**
+- ## We have:
+	- the basic structure of our project complete using the Django framework along with most of the pages that we are planning on implementing in the future.
+	- the ability to sign up for our app and also sign in using the appropriate credentials.
+	- the base of our UI complete, but we need to diverge on an overall style and format.
+	- few functionalities in our pages, this is the main focus in our next sprint.
+- ## **Next steps:**
+	- creating a uniform and aesthetic look to our UI with styling and structure
+	- giving our pages more functionality including: 
+		- home page UI displaying other users profiles 
+		- uniform nav bar to switch between all pages
+		- like/dislike another user
+		- send and recieve messages with matches
+		- location tracking and radius
+		- animations (like/dislike, home page scrolling, loading, misc.)
+		
+# **Contributors:**
+- ## **Emma:**
+	- ### **Features:** 
+	- ### **Links to contributions:**
+	- ### **Next steps:**
+- ## **Saron:**
+	- ### **Features:** 
+	- ### **Links to contributions:**
+	- ### **Next steps:**
+- ## **Lily:**
+	- ### **Features:** 
+	- ### **Links to contributions:**
+	- ### **Next steps:**
+- ## **Isaac:**
+	- ### **Features:** 
+	- ### **Links to contributions:**
+	- ### **Next steps:**
+- ## **Kody:**
+    - ### **Features:** 
+		- created project structure using Django framework, linking and editing templates, and creating a file to format other templates to promote a uniform UI 
+	- ### **Links to contributions:**
+		- work done mostly within **kody** branch but also **demo** and **master**
+		- [created Django project directory with required files](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_project/) to hold our app and dependencies
+		- [configured hunny_project/urls.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_project/urls.py) to ensure the server has a path to our hunny_app
+		- [configured settings.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_project/settings.py) based on the Django framework
+		- [created Django app directory with required files](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/) to hold our actual code
+		- [configured hunny_app/urls.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/urls.py) to hold the urls to path to our templates
+		- [configured views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/views.py) to define the means of calling the urls and also contain some functionality of our pages
+		- [linked and pathed html templates using Django framework](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/) to make sure each page is accessible 
+		- [created base.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/base.html) for formatting templates to ensure reusable and flexible code
+	- ### **Next steps:**
+		- home page UI displaying other users profiles 
+
+
+
+
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -35,6 +86,7 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 - Django
 - HTML
 - CSS
+- Javascript
 
 ## Features
 List the ready features here:
