@@ -27,8 +27,15 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 # **Contributors:**
 - ## **Emma:**
 	- ### **Features:** 
+		- Created a profile route with the ability to save specific profile information in our database so that users who have created an account can view and edit their profile.
 	- ### **Links to contributions:**
+		- Work done on emma branch then implemented on demo branch with new file structure.
+		- [Configured hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/views.py) to edit and save user information.
+		- [Configured hunny_app/forms.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/forms.py) to create a form where the user can enter their information.
+		- [Configured hunny_app/models.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/models.py) to set restrictions for the type of data a user can enter.
+		- [Configured hunny_app/urls.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/urls.py) to set routes for the profile and edit profile pages.
 	- ### **Next steps:**
+		- Modify the steps taken to edit the user's original profile information to ensure that everything is done through our web application and not the django admin site.
 - ## **Saron:**
 	- ### **Features:** 
 	- ### **Links to contributions:**
