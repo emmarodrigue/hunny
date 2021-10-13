@@ -50,9 +50,19 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 	- ### **Links to contributions:**
 	- ### **Next steps:**
 - ## **Isaac:**
-	- ### **Features:** 
+	- ### **Features:**
+		- Configured the backend to allow users to register and implemented the code needed for the frontend so it can pass the information along
+		- Configured the backend to allow users to sign in, although the user page isn't done yet so it just refreshes the current page. 
 	- ### **Links to contributions:**
+		- [Configured hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/views.py) Edited the method register which will take in a request on the page and render the necessary information. *Currently in progress to add more features but works*
+		- [Configured hunny_app/forms.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/forms.py) created a class that will allow users to input the data which Django can understand and take in the information. *Completed*
+		- [Configured hunny_app/urls.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/urls.py) Slightly edited the urls so they could load the proper information. *Completed*
+		- [Configured hunny_app/templates/initial.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/templates/initial.html) to display the form to allow a person to register. *Completed, but may be able to add additional features*
+		- [Configured hunny_app/templates/login.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/templates/login.html) to allow a user to login (currently just refreshes page). *Mostly completed, some things needed to be changed*
+		- [Configured requirements.txt](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/requirements.txt) to update Django dependencies. *Completed for now*
 	- ### **Next steps:**
+		- Clean up UI, add more features to login/signup such as displaying a message that a user successfully created an account.
+		- link it so when the user logs in, it'll redirect them to Emma's user profile page.
 - ## **Kody:**
     - ### **Features:** 
 		- created project structure using Django framework, linking and editing templates, and creating a file to format other templates to promote a uniform UI 
