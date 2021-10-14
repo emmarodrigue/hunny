@@ -43,8 +43,13 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 		- Modify the steps taken to edit the user's original profile information to ensure that everything is done through our web application and not the django admin site.
 - ## **Saron:**
 	- ### **Features:** 
+		- Created a user page to navigate the user through the website and an account page.
 	- ### **Links to contributions:**
+		- Work was done in s_a383 branch that was later implemented into the master branch.
+		- [Configured hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/views.py) included user page to be displayed.
+		- [Configured hunny_project/hunny_app/templates/user.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/templates/user.html) navigates the user to other features once logged in.
 	- ### **Next steps:**
+		- Link the buttons to our other urls, complete account settings page.
 - ## **Lily:**
 	- ### **Features:** 
 	- ### **Links to contributions:**
