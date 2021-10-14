@@ -51,9 +51,17 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 	- ### **Next steps:**
 		- Link the buttons to our other urls, complete account settings page.
 - ## **Lily:**
-	- ### **Features:** 
+	- ### **Features:**
+		- Developed Front-End for the web application
 	- ### **Links to contributions:**
+		- [Created Static Folder](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/master/hunny_project/hunny_app/static/messages/): Static folder to manage all static files(images, CSS, JS ...)for front-end
+		- [Configured hunny_project/hunny_app/static/messages/main.css](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/master/hunny_project/hunny_app/static/messages/main.css): CSS file to style the content of homepage/login/singup pages 
+		- [Configure hunny_project/hunny_app/templates/login.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/master/hunny_project/hunny_app/templates/login.html) html Template- User Interface for login feature
+		- [Configured hunny_project/hunny_app/templates/messages.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/master/hunny_project/hunny_app/templates/messages.html) html Template- User Interface for message feature
+		- [Configured hunny_project/hunny_app/templates/home.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/master/hunny_project/hunny_app/templates/home.html) html Template- User Interface for sign-up feature
 	- ### **Next steps:**
+		- Create User-interface (html templates + CSS) for other features
+		- Develop the back-end for Match-Room features
 - ## **Isaac:**
 	- ### **Features:**
 		- Configured the backend to allow users to register and implemented the code needed for the frontend so it can pass the information along
