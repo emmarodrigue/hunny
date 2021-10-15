@@ -2,37 +2,43 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-        <link rel="stylesheet" type="text/css" href="{% static 'messages/main.css' %}">
-
-
-
-        {% if recipient %}
-        <title>Hunny - {{ recipient }}</title>
-        {% else %}
-        <title>Hunny</title>
-        {% endif %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'hunny_app/css/style.css' %}">
     </head>
-    <body>
-        <main role="main" class="container">
-            <div class="row">
-                <div class="col-md-12">
-                {% block content %}{% endblock %}
+    <header class="site-header">
+        <nav class="navbar navbar-expand-md fixed top">
+            <div class="navbar" id="navbar-container">
+                <button class="home-btn" onclick="location.href='/home'">
+                    <i style='font-size:24px' class='far'>&#xf004;</i>
+                </button>
+                <button class="chat-btn" onclick="location.href='/messages'">
+                    <i style='font-size:24px' class='far'>&#xf086;</i>
+                </button>
+                <button class="profile-btn" onclick="location.href='/profile'">
+                    <i style='font-size:24px' class='far'>&#xf2bd;</i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main role="main" class="page-content-containter">
+        <div class="padding">
+            <div class="row containter d-flex justify-content-center">
+                <div class="col-xl-6 col-md-12">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ messages.tags }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    {% block content %}{% endblock %}
                 </div>
             </div>
-        </main>
-          
-     
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    </body>
+        </div>
+    </main>
 </html>
