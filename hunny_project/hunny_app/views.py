@@ -7,8 +7,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 
 
-def initial(request):
-     return render(request, 'initial.html')
+def signup(request):
+     return render(request, 'signup.html')
 
 def terms_service(request):
      return render(request, 'terms_service.html')
@@ -61,7 +61,7 @@ def register(request):
             return redirect('hunny-login')
         
     context = {'form': form}
-    return render(request, 'initial.html', context)
+    return render(request, 'signup.html', context)
 
 @login_required
 def editProfile(request):
