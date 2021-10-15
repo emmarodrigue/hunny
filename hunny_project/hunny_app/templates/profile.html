@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<title>Your Profile</title>
+<body>
+    <div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-xl-6 col-md-12">
+                <div class="card user-card-full">
+                    <div class="row m-l-0 m-r-0">
+                        <div class="col-sm-4 bg-c-lite-green user-profile">
+                            <div class="card-block text-center text-white">
+                                <div class="media">
+                                    <img src="../../{{ user.profile.image }}" class="rounded-circle" width="90">
+                                </div>
+                                <h6 class="f-w-600">{{ user.profile.first_name }} {{ user.profile.last_name }}</h6>
+                                <button class="edit-btn" onclick="location.href='/edit-profile'">
+                                    <i class="far fa-edit"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-block">
+                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">About Me</h6>
+                                <div class="row">
+                                    <div class="col-sm-6 location">
+                                        <p class="m-b-10 f-w-600">Current City</p>
+                                        <h6 class="text-muted f-w-400">{{ user.profile.city }}</h6>
+                                    </div>
+                                    <div class="col-sm-6 age">
+                                        <p class="m-b-10 f-w-600">Age</p>
+                                        <h6 class="text-muted f-w-400">{{ user.profile.age }}</h6>
+                                    </div>
+                                </div>
+                                <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Bio</h6>
+                                <div class="row">
+                                    <div class="col-sm-10 bio">
+                                        <h6 class="text-muted f-w-400">{{ user.profile.bio }}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock content %}
