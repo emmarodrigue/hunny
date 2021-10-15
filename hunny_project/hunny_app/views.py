@@ -7,6 +7,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 
 
+def landing(request):
+     return render(request, 'landing.html')
+
 def signup(request):
      return render(request, 'signup.html')
 
