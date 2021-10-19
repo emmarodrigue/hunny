@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'hunny_app.apps.HunnyAppConfig',
+    'channels',
+    'hunny_app',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -68,7 +69,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'hunny_project.wsgi.application'
+
+
 
 
 # Database
@@ -124,3 +126,6 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# Channels
+ASGI_APPLICATION = 'hunny_project.asgi.application'
+WSGI_APPLICATION = 'hunny_project.wsgi.application'

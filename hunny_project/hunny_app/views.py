@@ -5,6 +5,7 @@ from django.contrib import messages
 from .forms import ProfileUpdateForm, CreateUserForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import get_user_model
 
 
 def landing(request):
@@ -39,8 +40,14 @@ def login(request):
 def profile(request):
      return render(request, 'profile.html')
 
+
+
 def messages(request):
-    return render(request, 'messages.html')
+    return render(request, 'messages.html', {})
+
+def messages_room(request, room_name):
+    return render(request, 'messages_room.html', {'room_name': room_name})
+
 
 def user(request):
     return render(request, 'user.html')
@@ -82,64 +89,3 @@ def editProfile(request):
     }
 
     return render(request, 'hunny_app/edit_profile.html', context)
-
-
-
-message_list = [
-    {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-    {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-    {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-    {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-        {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-        {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-        {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-        {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-]
