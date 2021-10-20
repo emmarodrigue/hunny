@@ -15,7 +15,7 @@ urlpatterns = [
     path('edit-profile/', views.editProfile, name='hunny-edit-profile'),
     
     path('messages/', views.messages, name='hunny-messages'),
-    path('<str:room_name>/', views.messages_room, name='hunny-messages-room'),
+    path('messages/<str:room_name>/', views.messages_room, name='hunny-messages-room'),
     
     path('user/', views.user, name='hunny-user'),
     path('about/', views.about, name='hunny-about'),
