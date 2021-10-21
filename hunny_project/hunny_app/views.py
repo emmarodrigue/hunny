@@ -92,8 +92,5 @@ def settings(request):
 def matchroom(request):
     return render(request, 'matchroom.html')
 
-def matchbox(request):
-    return render(request, 'matchbox.html')
-
 def preferences(request):
     return render(request, 'preferences.html')

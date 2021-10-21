@@ -22,9 +22,7 @@ urlpatterns = [
     
     path('user/', views.user, name='hunny-user'),
     path('settings/', views.settings, name='hunny-settings'),
+    path('preferences/', views.preferences, name='hunny-preferences'),
 
     path('matchroom/', views.matchroom, name='hunny-matchroom'),
-    path('matchbox/', views.matchbox, name='hunny-matchbox'),
-
-    path('preferences/', views.preferences, name='hunny-preferences'),
 ]
