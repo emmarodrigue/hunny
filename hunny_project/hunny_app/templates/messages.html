@@ -203,9 +203,60 @@ html, body {
 :-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.9);
 }
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(204, 119, 62)
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #fceedf;
+}
+
+.page{
+    width: 1500px;
+    height: 400px;
+    background: #FFFFFF;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    border-radius: 20px;
+}
+.body{
+    background-color:#FFDDC3;
+    border-radius: 20px;
+    padding: 100px;
+}
+
 </style></head><body>
 <div class='container' ng-cloak ng-app="chatApp">
-  <h1>Messages</h1>
+  <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+  <div class="nav-bar">
+      <ul class="site-menu main-menu js-clone-nav ml-auto" style="border-radius: 20px;">
+        <li class="active"><a href="/profile" class="nav-link">HUNNY</a></li>
+        <li><a href="/matchingroom" class="nav-link">HUNNY-MATCHING</a></li>
+        <li><a href="/message" class="nav-link">MATCH BOX</a></li>
+        <li><a href="/profile" class="nav-link">MY PROFILE</a></li>
+      </ul>
+  </div>
+  </nav>
+  <h1>YOUR HUNNY MATCHES</h1>
   <div class='chatbox' ng-controller="MessageCtrl as chatMessage">
     <div class='chatbox__user-list'>
       <h1>Matches</h1>

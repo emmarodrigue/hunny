@@ -9,37 +9,40 @@ from django.contrib.auth import authenticate, login, logout
 
 def landing(request):
      return render(request, 'landing.html')
+#lilly_note
+def matchingroom(request):
+    context = {}
+    return render(request, 'matchingroom.html', context)
 
-def signup(request):
-     return render(request, 'signup.html')
+
+#lilly_note
+def accountlogin(request):
+     if request.method == 'POST':
+         user_name = request.POST.get('username')
+         user_password = request.POST.get('password')
+         user = authenticate(request, username=user_name, password=user_password)
+         if user is not None:
+             login(request, user)
+             return redirect('hunny-profile')
+         else:
+             messages.info(request, "Username or Password is incorrect!")
+     context = {}
+     return render(request, 'login.html', context)
 
 def terms_service(request):
-     return render(request, 'terms_service.html')
+     return render(request, 'terms_service.html',context)
+
+def accountlogout(request):
+    logout(request)
+    return redirect('hunny-login')
 
 def home(request):
      return render(request, 'home.html')
 
-def login(request):
-    
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        
-        user = authenticate(request, username=username, password=password)
-        
-        if user is not None:
-            login(request, user)
-            redirect('hunny-initial')
-        # else:
-        #     messages.info(request, 'Username OR password is incorrect')
-    
-    context = {}
-    return render(request, 'login.html')
-
 def profile(request):
      return render(request, 'profile.html')
 
-def messages(request):
+def message(request):
     return render(request, 'messages.html')
 
 def user(request):
@@ -51,22 +54,23 @@ def about(request):
 def contact(request):
     return render(request, 'contact.html')
 
-def register(request):
+#lilly_note
+def signup(request):
     form = CreateUserForm();
-    
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
-            user = form.cleaned_data.get('username')
-            # messages.success(request, f'Account was created for {user}')
-            
+            user_name = form.cleaned_data.get('username')
+            messages.success(request,'Account was created successfully for ' + user_name )
             return redirect('hunny-login')
-        
     context = {'form': form}
     return render(request, 'signup.html', context)
 
-@login_required
+
+
+
+@login_required()
 def editProfile(request):
     if request.method == 'POST':
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
