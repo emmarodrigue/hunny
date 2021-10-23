@@ -51,7 +51,7 @@ def editProfile(request):
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
         if p_form.is_valid():
             p_form.save()
-            messages.success(request, f'Your profile has been saved!')
+            #messages.success(request, f'Your profile has been saved!')
             return redirect('/profile')
     else:
         p_form = ProfileUpdateForm(instance=request.user.profile)
@@ -60,7 +60,7 @@ def editProfile(request):
         'p_form': p_form,
     }
 
-    return render(request, 'hunny_app/edit_profile.html', context)
+    return render(request, 'profile_edit.html', context)
 
 def messages(request):
     return render(request, 'messages.html', {})
