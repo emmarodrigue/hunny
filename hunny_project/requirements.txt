@@ -1,2 +1,6 @@
 Django==3.2.8
+<<<<<<< HEAD
+=======
+Pillow
+>>>>>>> master
 django-crispy-forms
