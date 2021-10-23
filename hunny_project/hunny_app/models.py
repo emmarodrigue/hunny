@@ -11,7 +11,6 @@ class Profile(models.Model):
     age_range = models.CharField(max_length=10, default=0000000000)
     match_radius = models.CharField(max_length=7, default=0000000)
     bio = models.TextField()
-
     image = models.ImageField(default='default.jpg', upload_to='static/profile_pics')
 
     def __str__(self):
@@ -25,3 +24,13 @@ class Profile(models.Model):
             output_size = (90, 90)
             img.thumbnail(output_size)
             img.save(self.image.path)
+
+
+class Room(models.Model):
+    capacity = 0
+    name = models.CharField("roomname", max_length = 120)
+    chatter = models.CharField("roomname", max_length = 120)
+    messages = models.TextField(blank= True)
+
+    def __str__(self):
+        return self.name
