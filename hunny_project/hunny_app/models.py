@@ -4,11 +4,17 @@ from PIL import Image, ImageDraw
 from datetime import datetime
 
 class Profile(models.Model):
+    # gender choices
+    GENDER_CHOICES = [
+        ('F', 'Female'),
+        ('M', 'Male'),
+        ('NB', 'Nonbinary')
+    ]
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     city = models.CharField(max_length=50)
-    gender = models.CharField(default=None, null=True, max_length=10)
+    gender = models.CharField(max_length=2, choices=GENDER_CHOICES, null=True)
     birthday = models.DateField(default=None, blank=True, null=True)
     bio = models.TextField()
     image = models.ImageField(default='default.jpg', upload_to='static/profile_pics')
