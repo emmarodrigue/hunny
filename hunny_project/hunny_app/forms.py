@@ -8,7 +8,7 @@ from django import forms
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['first_name', 'last_name', 'city', 'age', 'age_range', 'match_radius', 'bio', 'image']
+        fields = ['first_name', 'last_name', 'city', 'gender', 'birthday', 'bio', 'image']
 class CreateUserForm(UserCreationForm):
     class Meta:
         model = User

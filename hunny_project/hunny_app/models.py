@@ -1,17 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image, ImageDraw
+from datetime import datetime
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     city = models.CharField(max_length=50)
-    age = models.CharField(max_length=3)
-    age_range = models.CharField(max_length=10, default=0000000000)
-    match_radius = models.CharField(max_length=7, default=0000000)
+    gender = models.CharField(default=None, null=True, max_length=10)
+    birthday = models.DateField(default=None, blank=True, null=True)
     bio = models.TextField()
     image = models.ImageField(default='default.jpg', upload_to='static/profile_pics')
+
+    objects = models.Manager()
 
     def __str__(self):
         return self.user.username
@@ -25,6 +27,9 @@ class Profile(models.Model):
             img.thumbnail(output_size)
             img.save(self.image.path)
 
+    @property
+    def age(self):
+        return int((datetime.now().date() - self.birthday).days / 365.25)
 
 class Room(models.Model):
     capacity = 0
