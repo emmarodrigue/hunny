@@ -73,11 +73,12 @@ def editProfile(request):
     context = {'p_form': p_form}
     return render(request, 'profile_edit.html', context)
 
-def messages_room(request, room_name):
-    return render(request, 'messages_room.html', {'room_name': room_name})
 
 def message(request):
-    return render(request, 'messages.html')
+    return render(request, 'messages.html', {})
+
+def messages_room(request, room_name):
+    return render(request, 'messages_room.html', {'room_name': room_name})
 
 def user(request):
     return render(request, 'user.html')

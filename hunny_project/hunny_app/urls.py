@@ -15,7 +15,7 @@ urlpatterns = [
     path('contact/', views.contact, name='hunny-contact'),
 
     # messaging routes
-#    path('messages/', views.messages, name='hunny-messages'),
+    path('message/', views.message, name='hunny-messages'),
     path('messages/<str:room_name>/', views.messages_room, name='hunny-messages-room'),
     path('matchroom/', views.matchingroom, name='hunny-matchroom'),
 
