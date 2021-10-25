@@ -3,7 +3,12 @@
 {%  extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<title>Edit Your Profile</title>
+<head>
+    <meta charset="utf-8"/>
+    <title>Edit Your Profile</title>
+
+</head>    
+<body style="background-color: #ffe6cc;">
     <div class="content-section">
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
@@ -19,4 +24,5 @@
             </div>
         </form>
     </div>
+</body>
 {% endblock content%}
