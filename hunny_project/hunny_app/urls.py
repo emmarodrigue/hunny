@@ -15,8 +15,8 @@ urlpatterns = [
     path('contact/', views.contact, name='hunny-contact'),
 
     # messaging routes
-    path('message/', views.message, name='hunny-messages'),
-    path('messages/<str:room_name>/', views.messages_room, name='hunny-messages-room'),
+    path('chat/', views.chat, name='hunny-chat'),
+    path('chat/<str:room_name>/', views.chat_room_temp, name='hunny-chat-room'),
     path('matchroom/', views.matchingroom, name='hunny-matchroom'),
 
     # user-specific routes
