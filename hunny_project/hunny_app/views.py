@@ -5,6 +5,7 @@ from django.contrib import messages
 from .forms import ProfileUpdateForm, CreateUserForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
+from .models import Profile
 
 
 def landing(request):
@@ -13,8 +14,8 @@ def landing(request):
 
 # lilly_note
 def matchingroom(request):
-    context = {}
-    return render(request, 'matchingroom.html', context)
+    context = Profile.objects.all
+    return render(request, 'matchingroom.html', {'all': context})
 
 
 # lilly_note

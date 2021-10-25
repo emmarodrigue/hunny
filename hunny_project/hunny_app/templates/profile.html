@@ -126,7 +126,7 @@
                 <form method="POST" class="edit-profile" id="profile-edit-form" action="">
                     {% csrf_token %}
                     <h3>Edit Profile</h3>
-                    {{ form.first_name }}
+                    <p>{{ user.username }}</p>
                     <p>Edit Profile</p>
                 </form>
             </div>
