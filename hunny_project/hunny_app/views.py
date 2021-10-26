@@ -61,12 +61,12 @@ def editProfile(request):
     return render(request, 'profile_edit.html', context)
 
 @login_required(login_url='/landing')
-def message(request):
-    return render(request, 'messages.html', {})
+def chat(request):
+    return render(request, 'chat.html', {})
 
 @login_required(login_url='/landing')
-def messages_room(request, room_name):
-    return render(request, 'messages_room.html', {'room_name': room_name})
+def chat_room_temp(request, room_name):
+    return render(request, 'chat_room_temp.html', {'room_name': room_name})
 
 @login_required(login_url='/landing')
 def user(request):
@@ -84,62 +84,3 @@ def preferences(request):
 def matchingroom(request):
     context = {}
     return render(request, 'matchingroom.html', context)
-
-messages = [
-    {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-    {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-    {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-    {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-        {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-        {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-        {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-        {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-]
