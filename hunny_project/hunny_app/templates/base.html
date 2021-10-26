@@ -44,12 +44,52 @@
             </span>
             <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto" style="border-radius: 20px;">
-                    <li class="active"><a href="/landing" class="nav-link">HUNNY</a></li>
-                    <li><a href="/matchroom" class="nav-link">Match Room</a></li>
-                    <li><a href="/chat" class="nav-link">Chat Room</a></li>
-                    <li><a href="/profile" class="nav-link">Profile</a></li>
-                    <li><a href="/preferences" class="nav-link">Preferences</a></li>
-                    <li><a href="/settings" class="nav-link">Settings</a></li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user">HUNNY</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/landing">HUNNY</a>
+                        </li>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/matchroom">Match Room</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/signup">Sign In</a>
+                        </li>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/chat">Chat Room</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About</a>
+                        </li>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/profile">Profile</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact</a>
+                        </li>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/preferences">Preferences</a>
+                        </li>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/settings">Settings</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>
