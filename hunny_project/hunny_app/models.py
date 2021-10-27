@@ -3,6 +3,11 @@ from django.contrib.auth.models import User
 from PIL import Image, ImageDraw
 from datetime import datetime
 
+# print all users in DB cmd line
+all_users = User.objects.values()
+print(all_users)
+print(all_users[0]['username'])
+
 class Profile(models.Model):
     # gender choices
     GENDER_CHOICES = [
