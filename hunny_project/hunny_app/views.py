@@ -65,8 +65,8 @@ def chat(request):
     return render(request, 'chat.html', {})
 
 @login_required(login_url='/landing')
-def chat_room_temp(request, room_name):
-    return render(request, 'chat_room_temp.html', {'room_name': room_name})
+def chat_room(request, room_name):
+    return render(request, 'chat_room.html', {'room_name': room_name})
 
 @login_required(login_url='/landing')
 def user(request):
