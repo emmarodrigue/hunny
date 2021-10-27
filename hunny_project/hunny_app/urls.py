@@ -4,13 +4,14 @@ from . import views
 app_name = 'chat'
 
 urlpatterns = [
-    # login/register routes
+    # login/logout/register routes
     path('', views.landing, name='hunny-landing'),
     path('landing/', views.landing, name='hunny-landing'),
     path('signup/', views.signup, name='hunny-signup'),
     path('terms_service/', views.terms_service, name='hunny-terms-service'),
     path('home/', views.home, name='hunny-home'),
     path('login/', views.login, name='hunny-login'),
+    path('logout/', views.logout_user, name='hunny-logout'),
     path('about/', views.about, name='hunny-about'),
     path('contact/', views.contact, name='hunny-contact'),
 

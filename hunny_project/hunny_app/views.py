@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import ProfileUpdateForm, CreateUserForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 def landing(request):
      return render(request, 'landing.html')
@@ -31,6 +31,11 @@ def signup(request):
             return redirect('hunny-login')
     context = {'form': form}
     return render(request, 'signup.html', context)
+
+@login_required(login_url='/landing')
+def logout_user(request):
+    logout(request)
+    return redirect('/landing')
 
 def terms_service(request):
      return render(request, 'terms_service.html')
