@@ -5,13 +5,22 @@ from django.contrib import messages
 from .forms import ProfileUpdateForm, CreateUserForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
+from .models import Profile
+from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
+
+
+
+
 
 
 def landing(request):
      return render(request, 'landing.html')
 #lilly_note
 def matchingroom(request):
-    context = {}
+    User = get_user_model()
+    first = User.objects.filter()[:1].get()
+    context = {'first':first}
     return render(request, 'matchingroom.html', context)
 
 
@@ -29,12 +38,30 @@ def accountlogin(request):
      context = {}
      return render(request, 'login.html', context)
 
+def like_next(request):
+     User = get_user_model()
+     next = User.objects.filter()[2:3].get()
+     profile= request.user.userprofile
+     profile.who_like_me.add(next)
+     context = {'next':next, 'current':1}
+     return render(request, 'likenext.html',context)
+
+def dislike_next(request):
+     User = get_user_model()
+     next = User.objects.filter()[4:5].get()
+     context = {'next':next, 'current':1}
+     return render(request, 'dislikenext.html',context)
+
+
 def terms_service(request):
+     context = {}
      return render(request, 'terms_service.html',context)
 
 def accountlogout(request):
     logout(request)
     return redirect('hunny-login')
+
+
 
 def home(request):
      return render(request, 'home.html')
@@ -66,6 +93,13 @@ def signup(request):
             return redirect('hunny-login')
     context = {'form': form}
     return render(request, 'signup.html', context)
+#lilly_note
+
+def send_matchrequest(request, id):
+    from_account = request.user
+    to_account = Profile.objects.get(id=id)
+    match_request = MatchRequest.object.get_or_create(from_account, to_account)
+    return redirect('hunny-matchingroom')
 
 
 

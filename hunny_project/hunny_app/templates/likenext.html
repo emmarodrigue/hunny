@@ -41,7 +41,6 @@
     border: none;
     background: none;
     }
-
             ul {
           list-style-type: none;
           margin: 0;
@@ -82,7 +81,9 @@
         }
   </style>
 </head>
-  <!-- need to implement this nav bar into base.html for use -->
+
+<body class="">
+    <!-- need to implement this nav bar into base.html for use -->
   <div class="col-9  text-right";>
       <span class="d-inline-block d-lg-none"><a href="#" class="text-primary site-menu-toggle js-menu-toggle py-5"><span class="icon-menu h3 text-white"></span></a></span>
           <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
@@ -96,7 +97,6 @@
           </div>
           </nav>
   </div>
-<body class="">
 
 <!-- Add your content of header -->
 <div class="background-color-layer" style="background-image: url('{% static 'hunny_app/images/signup-image.jpg' %}')"
@@ -104,9 +104,8 @@
 <main class="content-wrapper">
   <header class="white-text-container section-container">
     <div class="text-center">
-      <img src="{% static 'hunny_app/images/img-01.jpg' %}" class=" profile_pic " alt="...">
-
-      <h1>{{first.username}}</h1>
+      <img src="{% static 'hunny_app/images/img-03.jpg' %}" class=" profile_pic " alt="...">
+      <h1>{{next.username}}</h1>
       <p>Web designer</p>
       <div >
       <form method = POST action="{% url 'hunny-like' %}" style = "display:inline">
@@ -118,26 +117,6 @@
         <button href="/matchingroom" type="submit"><i class="fas blackHeart fa-heart-broken"></i></button>
       </form>
       </div>
-
-
-
-      <p>
-        <a class="fa-icon fa-icon-2x" href="https://facebook.com/" title="">
-          <i class="fa fa-facebook"></i>
-        </a>
-        <a class="fa-icon fa-icon-2x" href="https://twitter.com/" title="">
-          <i class="fa fa-twitter"></i>
-        </a>
-        <a class="fa-icon fa-icon-2x" href="https://dribbble.com/" title="">
-          <i class="fa fa-dribbble"></i>
-        </a>
-        <a class="fa-icon fa-icon-2x" href="https://www.linkedin.com/" title="">
-          <i class="fa fa-linkedin"></i>
-        </a>
-        <a class="fa-icon fa-icon-2x" href="https://vimeo.com/" title="">
-          <i class="fa fa-vimeo"></i>
-        </a>
-      </p>
     </div>
   </header>
 
@@ -157,7 +136,7 @@
                 <p><img src="{% static 'hunny_app/images/img-8.jpg' %}" alt=""></p>
               </div>
               <div class="col-md-8">
-                  <p> {{first.Profile.bio}}</p>
+                <p> {{next.userprofile.bio}}</p>
               </div>
             </div>
           </div>

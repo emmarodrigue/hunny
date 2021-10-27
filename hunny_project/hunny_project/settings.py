@@ -101,6 +101,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#lilly_note
+AUTH_PROFILE_MODULE = 'hunny_app.Profile'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
