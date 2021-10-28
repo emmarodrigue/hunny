@@ -11,24 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body a link="white" vlink="white">
-  <div class="col-9  text-right">
-    <span class="d-inline-block d-lg-none">
-      <a href="#" class="text-primary site-menu-toggle js-menu-toggle py-5">
-          <span class="icon-menu h3 text-white"></span>
-      </a>
-  </span>
-  <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-            <ul class="site-menu main-menu js-clone-nav ml-auto ">
-              <li class="active"><a href="/signup" class="nav-link">HUNNY</a></li>
-              <li><a href="/matchroom" class="nav-link">Match Room</a></li>
-              <li><a href="/message" class="nav-link">Message Room</a></li>
-              <li><a href="/profile" class="nav-link">User Profile</a></li>
-              <li><a href="/preferences" class="nav-link">Preferences</a></li>
-              <li><a href="/settings" class="nav-link">Settings</a></li>
-            </ul>
-    </nav>
-</div>
+<body>
 <div class="container light-style flex-grow-1 container-p-y">
     <div class="card overflow-hidden">
       <div class="row no-gutters row-bordered row-border-light">
@@ -36,9 +19,6 @@
           <div class="list-group list-group-flush account-settings-links">
             <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
             <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
-            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Info</a>
-            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-social-links">Social links</a>
-            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-connections">Connections</a>
             <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-notifications">Notifications</a>
           </div>
         </div>
@@ -76,10 +56,6 @@
                     Your email is not confirmed. Please check your inbox.<br>
                     <a href="javascript:void(0)">Resend confirmation</a>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Company</label>
-                  <input type="text" class="form-control" value="Company Ltd.">
                 </div>
               </div>
 
@@ -129,69 +105,10 @@
 
               </div>
               <hr class="border-light m-0">
-              <div class="card-body pb-2">
-
-                <h6 class="mb-4">Contacts</h6>
-                <div class="form-group">
-                  <label class="form-label">Phone</label>
-                  <input type="text" class="form-control" value="+0 (123) 456 7891">
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Website</label>
-                  <input type="text" class="form-control" value="">
-                </div>
-
-              </div>
       
             </div>
-            <div class="tab-pane fade" id="account-social-links">
-              <div class="card-body pb-2">
-
-                <div class="form-group">
-                  <label class="form-label">Twitter</label>
-                  <input type="text" class="form-control" value="https://twitter.com/user">
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Facebook</label>
-                  <input type="text" class="form-control" value="https://www.facebook.com/user">
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Google+</label>
-                  <input type="text" class="form-control" value="">
-                </div>
-                <div class="form-group">
-                  <label class="form-label">LinkedIn</label>
-                  <input type="text" class="form-control" value="">
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Instagram</label>
-                  <input type="text" class="form-control" value="https://www.instagram.com/user">
-                </div>
-
-              </div>
-            </div>
-            <div class="tab-pane fade" id="account-connections">
-              <div class="card-body">
-                <button type="button" class="btn btn-twitter">Connect to <strong>Twitter</strong></button>
-              </div>
-              <hr class="border-light m-0">
-              <div class="card-body">
-                <h5 class="mb-2">
-                  <a href="javascript:void(0)" class="float-right text-muted text-tiny"><i class="ion ion-md-close"></i> Remove</a>
-                  <i class="ion ion-logo-google text-google"></i>
-                  You are connected to Google:
-                </h5>
-                nmaxwell@mail.com
-              </div>
-              <hr class="border-light m-0">
-              <div class="card-body">
-                <button type="button" class="btn btn-facebook">Connect to <strong>Facebook</strong></button>
-              </div>
-              <hr class="border-light m-0">
-              <div class="card-body">
-                <button type="button" class="btn btn-instagram">Connect to <strong>Instagram</strong></button>
-              </div>
-            </div>
+          
+            
             <div class="tab-pane fade" id="account-notifications">
               <div class="card-body pb-2">
 
@@ -279,38 +196,14 @@
   </div>
 
 <style>
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          background-color: rgb(204, 119, 62);
-          
-        }
-
-        li {
-          float: left;
-        }
-
-        li a {
-          display: block;
-          color: white;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-        }
-
-        li a:hover {
-          background-color: #EDD7BD;
-        }
 body{
     background: #FFDDC3;
-    margin-top:20;
+    margin-top:20px;
     float: none;
 }
 
 .ui-w-80 {
-    width: 100px !important;
+    width: 100px;
     height: auto;
 }
 
@@ -335,24 +228,14 @@ label.btn {
 }
 
 .text-light {
-    color: #babbbc !important;
+    color: #babbbc;
 }
 
-.btn-facebook {
-    border-color: rgba(0,0,0,0);
-    background: #3B5998;
-    color: #fff;
-}
-
-.btn-instagram {
-    border-color: rgba(0,0,0,0);
-    background: #000;
-    color: #fff;
-}
 
 .card {
     background-clip: padding-box;
     box-shadow: 0 1px 4px rgb(204, 119, 62);
+    position: center;
 }
 
 .row-bordered {
@@ -367,41 +250,41 @@ label.btn {
     opacity: 0;
 }
 .account-settings-links .list-group-item.active {
-    font-weight: bold !important;
+    font-weight: bold;
 }
 html:not(.dark-style) .account-settings-links .list-group-item.active {
-    background: transparent !important;
+    background: transparent;
 }
 .account-settings-multiselect ~ .select2-container {
-    width: 100% !important;
+    width: 100%;
 }
 .light-style .account-settings-links .list-group-item {
     padding: 0.85rem 1.5rem;
-    border-color: rgb(204, 119, 62) !important;
+    border-color: rgb(204, 119, 62);
 }
 .light-style .account-settings-links .list-group-item.active {
-    color: #4e5155 !important;
+    color: #4e5155;
 }
 .material-style .account-settings-links .list-group-item {
     padding: 0.85rem 1.5rem;
-    border-color: rgba(24, 28, 33, 0.03) !important;
+    border-color: rgba(24, 28, 33, 0.03);
 }
 .material-style .account-settings-links .list-group-item.active {
-    color: #4e5155 !important;
+    color: #4e5155;
 }
 .dark-style .account-settings-links .list-group-item {
     padding: 0.85rem 1.5rem;
-    border-color: rgba(255, 255, 255, 0.03) !important;
+    border-color: rgba(255, 255, 255, 0.03);
 }
 .dark-style .account-settings-links .list-group-item.active {
-    color: #fff !important;
+    color: #fff;
 }
 .light-style .account-settings-links .list-group-item.active {
-    color: #4E5155 !important;
+    color: #4E5155;
 }
 .light-style .account-settings-links .list-group-item {
     padding: 0.85rem 1.5rem;
-    border-color: rgba(24,28,33,0.03) !important;
+    border-color: rgba(24,28,33,0.03);
 }
 
 
