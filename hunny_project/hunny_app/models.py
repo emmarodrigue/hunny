@@ -30,7 +30,7 @@ class Profile(models.Model):
 #lilly_note
     matches = models.ManyToManyField(User, related_name='matches', blank=True)
     who_like_me = models.ManyToManyField(User, related_name='who_like_me', blank=True)
-    current_check = ""
+    current_check = 0
 
     def __str__(self):
         return str(self.user)

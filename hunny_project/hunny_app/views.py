@@ -38,14 +38,17 @@ def accountlogin(request):
      context = {}
      return render(request, 'login.html', context)
 
+#lilly_note
 def like_next(request):
-     User = get_user_model()
-     next = User.objects.filter()[2:3].get()
+     Users = get_user_model()
+     next = Users.objects.filter()[2:3].get()
      profile= request.user.userprofile
-     profile.who_like_me.add(next)
+     profile.bio = "I have changed!"
+     profile.save()
      context = {'next':next, 'current':1}
      return render(request, 'likenext.html',context)
 
+#lilly_note
 def dislike_next(request):
      User = get_user_model()
      next = User.objects.filter()[4:5].get()
@@ -57,6 +60,7 @@ def terms_service(request):
      context = {}
      return render(request, 'terms_service.html',context)
 
+#lilly_note
 def accountlogout(request):
     logout(request)
     return redirect('hunny-login')
@@ -93,14 +97,8 @@ def signup(request):
             return redirect('hunny-login')
     context = {'form': form}
     return render(request, 'signup.html', context)
+
 #lilly_note
-
-def send_matchrequest(request, id):
-    from_account = request.user
-    to_account = Profile.objects.get(id=id)
-    match_request = MatchRequest.object.get_or_create(from_account, to_account)
-    return redirect('hunny-matchingroom')
-
 
 
 
