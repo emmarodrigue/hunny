@@ -2,3 +2,4 @@ Django==3.2.8
 django_channels==0.7.0
 channels==3.0.4
 Pillow==8.4.0
+django-crispy-forms==1.13.0
