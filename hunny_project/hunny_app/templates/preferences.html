@@ -1,4 +1,135 @@
 {% extends 'base.html' %}
 {% block content %}
-<title>Preferences</title>
+<head>
+    <meta charset="utf-8"/>
+    <title>Preferences</title>
+</head>
+<body>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="content" class="content content-full-width">
+                <div class="preferences-content">
+                    <div class="tab-content p-0">
+                        <div class="tab-pane fade in active show">
+                            {% csrf_token %}
+                            <div class="table-responsive">
+                                <table class="table table-profile">
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>
+                                            <h4>Current Preferences</h4>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="divider">
+                                        <td colspan="2"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="field">Interested in:</td>
+                                        <td>{{ user.profile.gender_preference }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="field">Looking for:</td>
+                                        <td>{{ user.profile.relationship_preference }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="field">Children:</td>
+                                        <td>{{ user.profile.children_preference }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="field">Age Range:</td>
+                                        <td>{{ user.profile.age_range }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="field">Distance (in miles):</td>
+                                        <td>{{ user.profile.match_radius }}</td>
+                                    </tr>
+                                    <tr class="divider">
+                                        <td colspan="2"></td>
+                                    </tr>
+                                    <td class="field">&nbsp;</td>
+                                    <td class="p-t-10 p-b-10">
+                                        <button class="preferences-button" onclick="location.href='/edit-preferences'">Edit Preferences</button>
+                                    </td>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<style>
+    .preferences-content {
+        padding: 30px 25px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .preferences-content:after,
+    .preferences-content:before {
+        content: '';
+        display: table;
+        clear: both
+    }
+
+    .preferences-content .tab-content,
+    .preferences-content .tab-pane {
+        background: 0 0
+    }
+
+    h4 {
+        font-size: 20px;
+        margin-top: 0
+    }
+
+    td,th {
+        border: none;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-right: 10px;
+        color: #242a30;
+        background: 0 0
+    }
+
+    td.field {
+        width: 20%;
+        text-align: right;
+        font-weight: 600;
+        color: #2d353c
+    }
+
+    tr.highlight>td {
+        border-top: 1px solid #b9c3ca;
+        border-bottom: 1px solid #b9c3ca
+    }
+
+    tr.divider>td {
+        padding: 0!important;
+        height: 10px
+    }
+
+    .preferences-button {
+        background: #FAC8B1;
+        border-radius: 8px;
+        border-color: #FAC8B1;
+        font-size: 14px;
+    }
+
+    .preferences-button:hover {
+        background: #FF9A65;
+        cursor: pointer;
+    }
+
+    .preferences-button:active {
+        background: #FAC8B1;
+    }
+</style>
 {% endblock content %}

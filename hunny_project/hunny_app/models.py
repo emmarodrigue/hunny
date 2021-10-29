@@ -11,18 +11,46 @@ print(all_users[0]['username'])
 class Profile(models.Model):
     # gender choices
     GENDER_CHOICES = [
-        ('F', 'Female'),
-        ('M', 'Male'),
-        ('NB', 'Nonbinary')
+        ('Female', 'Female'),
+        ('Male', 'Male'),
+        ('Nonbinary', 'Nonbinary')
     ]
+    # gender preference choices
+    PREFERRED_GENDER_CHOICES = [
+        ('Men', 'Men'),
+        ('Women', 'Women'),
+        ('No Preference', 'No Preference')
+    ]
+    # children preference choices
+    CHILDREN_CHOICES = [
+        ('Children are a dealbreaker', 'Children are a dealbreaker'),
+        ('Looking for children in the future', 'Looking for children in the future'),
+        ('Prefer someone with children', 'Prefer someone with children'),
+        ('No Preference', 'No Preference')
+    ]
+    # relationship type choices
+    RELATIONSHIP_CHOICES = [
+        ('Casual Dating', 'Casual Dating'),
+        ('Serious Relationship', 'Serious Relationship'),
+        ('Dating', 'Dating'),
+        ('No Preference', 'No Preference')
+    ]
+    # user's public profile
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    city = models.CharField(max_length=50)
-    gender = models.CharField(max_length=2, choices=GENDER_CHOICES, null=True)
+    first_name = models.CharField(max_length=100, blank=True)
+    last_name = models.CharField(max_length=100, blank=True)
+    city = models.CharField(max_length=100, blank=True)
+    gender = models.CharField(max_length=100, choices=GENDER_CHOICES, null=True, blank=True)
     birthday = models.DateField(default=None, blank=True, null=True)
-    bio = models.TextField()
-    image = models.ImageField(default='default.jpg', upload_to='static/profile_pics')
+    bio = models.TextField(blank=True)
+    image = models.ImageField(default='default.jpg', upload_to='static/profile_pics', blank=True)
+
+    # user's preferences
+    gender_preference = models.CharField(max_length=100, choices=PREFERRED_GENDER_CHOICES, null=True, blank=True)
+    children_preference = models.CharField(max_length=100, choices=CHILDREN_CHOICES, null=True, blank=True)
+    relationship_preference = models.CharField(max_length=100, choices=RELATIONSHIP_CHOICES, null=True, blank=True)
+    age_range = models.CharField(max_length=100, null=True, blank=True)
+    match_radius = models.CharField(max_length=100, help_text='miles', blank=True)
 
     objects = models.Manager()
 

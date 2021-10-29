@@ -1,11 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-
-from .models import Room
-
-
-from .models import Profile
+from .models import Room, Profile
 
 class ProfileInline(admin.StackedInline):
     model = Profile
