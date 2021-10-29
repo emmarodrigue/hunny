@@ -14,7 +14,40 @@
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Profile Info</legend>
-                {{ p_form|crispy }}
+                <div class="table-responsive">
+                    <table class="table table-profile">
+                        <tbody>
+                        <tr>
+                            <td class="field">First Name</td>
+                            <td>{{ p_form.first_name }}</td>
+                        </tr>
+                        <tr>
+                            <td class="field">Last Name</td>
+                            <td>{{ p_form.last_name }}</td>
+                        </tr>
+                        <tr>
+                            <td class="field">Current City</td>
+                            <td>{{ p_form.city }}</td>
+                        </tr>
+                        <tr>
+                            <td class="field">Gender</td>
+                            <td>{{ p_form.gender }}</td>
+                        </tr>
+                        <tr>
+                            <td class="field">Birthday</td>
+                            <td>{{ p_form.birthday }}</td>
+                        </tr>
+                        <tr>
+                            <td class="field">Bio</td>
+                            <td>{{ p_form.bio }}</td>
+                        </tr>
+                        <tr>
+                            <td class="field">Profile Picture</td>
+                            <td>{{ p_form.image }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </fieldset>
             <div class="mt-5 text-right">
                 <div class="form-group">
