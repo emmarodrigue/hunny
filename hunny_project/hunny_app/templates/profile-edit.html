@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+{%  extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<head>
+    <meta charset="utf-8"/>
+    <title>Edit Your Profile</title>
+
+</head>
+<body style="background-color: #ffe6cc;">
+    <div class="content-section">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Profile Info</legend>
+                {{ p_form|crispy }}
+            </fieldset>
+            <div class="mt-5 text-right">
+                <div class="form-group">
+                    <button class="btn btn-primary back-button">Go Back<a class="ml-2" onclick="location.href='/profile'"></a></button>
+                    <button class="btn btn-primary profile-button" type="submit">Update</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+{% endblock content%}

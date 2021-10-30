@@ -9,13 +9,9 @@ from .models import Profile
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 
-
-
-
-
-
 def landing(request):
      return render(request, 'landing.html')
+
 #lilly_note
 def matchingroom(request):
      Users = get_user_model()
@@ -78,6 +74,18 @@ def terms_service(request):
      context = {}
      return render(request, 'terms_service.html',context)
 
+@login_required(login_url='/landing')
+def editProfile(request):
+    if request.method == 'POST':
+        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.userprofile)
+        if p_form.is_valid():
+            p_form.save()
+            return redirect('hunny-profile')
+    else:
+        p_form = ProfileUpdateForm(instance=request.user.userprofile)
+    context = {'p_form': p_form}
+    return render(request, 'profile-edit.html', context)
+
 #lilly_note
 def accountlogout(request):
     logout(request)
@@ -115,27 +123,6 @@ def signup(request):
             return redirect('hunny-login')
     context = {'form': form}
     return render(request, 'signup.html', context)
-
-#lilly_note
-
-
-
-@login_required()
-def editProfile(request):
-    if request.method == 'POST':
-        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
-        if p_form.is_valid():
-            p_form.save()
-            messages.success(request, f'Your profile has been saved!')
-            return redirect('/profile')
-    else:
-        p_form = ProfileUpdateForm(instance=request.user.profile)
-
-    context = {
-        'p_form': p_form,
-    }
-
-    return render(request, 'hunny_app/edit_profile.html', context)
 
 
 

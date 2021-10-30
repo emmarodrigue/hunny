@@ -19,10 +19,10 @@
                                     My Profile
                                   </h4>
                                 <div class="media">
-                                    <img src="../../{{ user.profile.image }}" class="rounded-circle" width="90">
+                                    <img src="../../{{ user.userprofile.image }}" class="rounded-circle" width="90">
                                 </div>
-                                <h6 class="f-w-600">{{ user.profile.first_name }} {{ user.profile.last_name }}</h6>
-                                <button class="edit-btn" onclick="location.href='/edit-profile'">
+                                <h6 class="f-w-600">{{ user.userprofile.first_name }} {{ user.userprofile.last_name }}</h6>
+                                <button class="edit-btn" onclick="location.href='/profile-edit'">
                                     <i class="far fa-edit"></i>
                                 </button>
                             </div>
@@ -33,17 +33,17 @@
                                 <div class="row">
                                     <div class="col-sm-6 location">
                                         <p class="m-b-10 f-w-600">Current City</p>
-                                        <h6 class="text-muted f-w-400">{{ user.profile.city }}</h6>
+                                        <h6 class="text-muted f-w-400">{{ user.userprofile.city }}</h6>
                                     </div>
                                     <div class="col-sm-6 age">
                                         <p class="m-b-10 f-w-600">Age</p>
-                                        <h6 class="text-muted f-w-400">{{ user.profile.age }}</h6>
+                                        <h6 class="text-muted f-w-400">{{ user.userprofile.age }}</h6>
                                     </div>
                                 </div>
                                 <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Bio</h6>
                                 <div class="row">
                                     <div class="col-sm-10 bio">
-                                        <h6 class="text-muted f-w-400">{{ user.profile.bio }}</h6>
+                                        <h6 class="text-muted f-w-400">{{ user.userprofile.bio }}</h6>
                                     </div>
                                 </div>
                             </div>
