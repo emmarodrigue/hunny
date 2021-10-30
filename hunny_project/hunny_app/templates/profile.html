@@ -27,7 +27,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div style="float: right;" class="col-sm-8">
+                        <div style="float: left;" class="col-sm-8">
                             <div class="card-block">
                                 <h6 class="m-b-20 p-b-5 b-b-default f-w-600">About Me</h6>
                                 <div class="row">
@@ -81,22 +81,23 @@
 .page-content .col-sm-8{
   width: 46%;
   background: #fff;
-  padding: 30px 25px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
 .page-content .col-sm-8 .card-block{
-  margin-bottom: 25px;
+  margin-bottom: auto;
+}
+.page-content .col-sm-8 .card-block p{
+  margin-left: 0px;
 }
 
 .page-content .col-sm-8 .card-block h6{
-    margin-bottom: 15px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #e0e0e0;
-    color: #353c4e;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  color: #353c4e;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
 }
 
 .page-content .col-sm-8 .location,
@@ -117,6 +118,7 @@
 .page-content .col-sm-8 .bio h6{
     color: #353c4e;
     margin-bottom: 5px;
+    padding: 0px;
 }
 
 .page-content .col-sm-8 .location p,
@@ -124,6 +126,7 @@
 .page-content .col-sm-8 .bio p{
   font-size: 13px;
   margin-bottom: 10px;
+  position: absolute;
   color: #919aa3;
 }
 </style>
