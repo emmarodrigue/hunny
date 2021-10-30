@@ -86,6 +86,19 @@ def preferences(request):
     return render(request, 'preferences.html')
 
 @login_required(login_url='/landing')
+def edit_preferences(request):
+    p_form = ProfileUpdateForm()
+    if request.method == 'POST':
+        p_form = ProfileUpdateForm(request.POST, instance=request.user.profile)
+        if p_form.is_valid():
+            p_form.save()
+            return redirect('/preferences')
+    else:
+        p_form = ProfileUpdateForm(instance=request.user.profile)
+    context = {'p_form':p_form}
+    return render(request, 'preferences_edit.html', context)
+
+@login_required(login_url='/landing')
 def matchingroom(request):
     context = {}
     return render(request, 'matchingroom.html', context)
