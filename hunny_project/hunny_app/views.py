@@ -13,6 +13,7 @@ def landing(request):
      return render(request, 'landing.html')
 
 #lilly_note
+@login_required(login_url='/landing')
 def matchingroom(request):
      Users = get_user_model()
      myprofile= request.user.userprofile
@@ -39,6 +40,7 @@ def accountlogin(request):
      return render(request, 'login.html', context)
 
 #lilly_note
+@login_required(login_url='/landing')
 def like_next(request):
      Users = get_user_model()
      myprofile= request.user.userprofile
@@ -53,6 +55,7 @@ def like_next(request):
      return render(request, 'likenext.html',context)
 
 #lilly_note
+@login_required(login_url='/landing')
 def dislike_next(request):
      Users = get_user_model()
      myprofile= request.user.userprofile
@@ -96,6 +99,7 @@ def accountlogout(request):
 def home(request):
      return render(request, 'home.html')
 
+@login_required(login_url='/landing')
 def profile(request):
      return render(request, 'profile.html')
 
