@@ -3,111 +3,42 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewpoint" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA_Compatible" content="ie=edge">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
-        <link rel="stylesheet" href="{% static 'hunny_app/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="{% static 'hunny_app/css/style.css' %}">
-        <style>
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          background-color: rgb(204, 119, 62)
-        }
-
-        li {
-          float: left;
-        }
-
-        li a {
-          display: block;
-          color: white;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-        }
-
-        li a:hover {
-          background-color: #EDD7BD;
-        }
-        .right-side {
-            float: right;
-        }
-    </style>
     </head>
-    <body style="background-color: #FFDDC3";>
-        <div class="col-9 text-right">
-            <span class="d-inline-block d-lg-none">
-                <a href="#" class="text-primary site-menu-toggle js-menu-toggle py-5">
-                    <span class="icon-menu h3 text-white"></span>
-                </a>
-            </span>
-            <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-                <ul class="site-menu main-menu js-clone-nav ml-auto" style="border-radius: 20px;">
-                    {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="/user">HUNNY</a>
-                        </li>
-                    {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="/landing">HUNNY</a>
-                        </li>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-md fixed top">
+            <div class="navbar" id="navbar-container">
+                <button class="home-btn" onclick="location.href='/signup'">
+                    <i style='font-size:24px' class='far'>&#xf004;</i>
+                </button>
+                <button class="chat-btn" onclick="location.href='/messages'">
+                    <i style='font-size:24px' class='far'>&#xf086;</i>
+                </button>
+                <button class="profile-btn" onclick="location.href='/profile'">
+                    <i style='font-size:24px' class='far'>&#xf2bd;</i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main role="main" class="page-content-containter">
+        <div class="padding">
+            <div class="row containter d-flex justify-content-center">
+                <div class="col-xl-6 col-md-12">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ messages.tags }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
                     {% endif %}
-                    {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="/matchroom">Match Room</a>
-                        </li>
-                    {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="/signup">Sign In</a>
-                        </li>
-                    {% endif %}
-                    {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="/chat">Chat Room</a>
-                        </li>
-                    {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about">About</a>
-                        </li>
-                    {% endif %}
-                    {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="/profile">Profile</a>
-                        </li>
-                    {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="/contact">Contact</a>
-                        </li>
-                    {% endif %}
-                    {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="/preferences">Preferences</a>
-                        </li>
-                    {% endif %}
-                    {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="/settings">Settings</a>
-                        </li>
-                    {% endif %}
-                    {% if user.is_authenticated %}
-                        <li class="nav-item right-side">
-                            <a class="nav-link" href="/logout">Logout</a>
-                        </li>
-                    {% endif %}
-                    {% if user.is_authenticated %}
-                        <li class="nav-item right-side">
-                            <a class="nav-link" href="/contact">Contact</a>
-                        </li>
-                    {% endif %}
-                </ul>
-            </nav>
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
         </div>
-    <div class="content">
-        {% block content %}{% endblock %}
-    </div>
-    </body>
+    </main>
 </html>
