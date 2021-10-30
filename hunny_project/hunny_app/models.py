@@ -89,7 +89,7 @@ class Profile(models.Model):
 
     @property
     def age(self):
-        return int((datetime.now().date() - self.birthday).days / 365.25)
+        return 30
 
 #lilly_note
 @receiver(post_save, sender=User)
