@@ -25,13 +25,12 @@ class Profile(models.Model):
     age_range = models.CharField(max_length=10, default=0000000000)
     match_radius = models.CharField(max_length=7, default=0000000)
     bio = models.TextField()
-    image = models.ImageField(default='images/img-01.jpg', upload_to='static/hunny_app/profile_pics')
+    image = models.ImageField(default='images/signup.jpg', upload_to='static/hunny_app/profile_pics')
 
 #lilly_note
     matches = models.ManyToManyField(User, related_name='matches', blank=True)
     who_like_me = models.ManyToManyField(User, related_name='who_like_me', blank=True)
-    current_check = 0
-
+    current_check = models.IntegerField(default=0)
     def __str__(self):
         return str(self.user)
 

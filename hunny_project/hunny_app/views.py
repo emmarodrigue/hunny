@@ -18,11 +18,15 @@ def landing(request):
      return render(request, 'landing.html')
 #lilly_note
 def matchingroom(request):
-    User = get_user_model()
-    first = User.objects.filter()[:1].get()
-    context = {'first':first}
-    return render(request, 'matchingroom.html', context)
-
+     Users = get_user_model()
+     myprofile= request.user.userprofile
+     c_k = myprofile.current_check
+     n_index = next_check_index(7, c_k)
+     myprofile.current_check = n_index
+     myprofile.save()
+     first = Users.objects.filter()[(n_index):(n_index + 1)].get()
+     context = {'first':first}
+     return render(request,'matchingroom.html',context)
 
 #lilly_note
 def accountlogin(request):
@@ -41,19 +45,33 @@ def accountlogin(request):
 #lilly_note
 def like_next(request):
      Users = get_user_model()
-     next = Users.objects.filter()[2:3].get()
-     profile= request.user.userprofile
-     profile.bio = "I have changed!"
-     profile.save()
-     context = {'next':next, 'current':1}
+     myprofile= request.user.userprofile
+     c_k = myprofile.current_check
+     c_k_profile = Users.objects.filter()[(c_k):(c_k + 1)].get()
+     myprofile.who_like_me.add(c_k_profile)
+     n_index = next_check_index(7, c_k)
+     myprofile.current_check = n_index
+     myprofile.save()
+     next = Users.objects.filter()[(n_index):(n_index + 1)].get()
+     context = {'next':next}
      return render(request, 'likenext.html',context)
 
 #lilly_note
 def dislike_next(request):
-     User = get_user_model()
-     next = User.objects.filter()[4:5].get()
-     context = {'next':next, 'current':1}
+     Users = get_user_model()
+     myprofile= request.user.userprofile
+     c_k = myprofile.current_check
+     n_index = next_check_index(7, c_k)
+     myprofile.current_check = n_index
+     myprofile.save()
+     next = Users.objects.filter()[(n_index):(n_index + 1)].get()
+     context = {'next':next}
      return render(request, 'dislikenext.html',context)
+
+def next_check_index(max, current_index):
+    if current_index == (max-1):
+        return 0
+    return (current_index + 1)
 
 
 def terms_service(request):
