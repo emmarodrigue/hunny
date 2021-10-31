@@ -32,8 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'channels',
-    'hunny_app',
+    'hunny_app.apps.HunnyAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -71,11 +71,10 @@ TEMPLATES = [
     },
 ]
 
+WSGI_APPLICATION = 'hunny_project.wsgi.application'
 
 
-
-
-# Database - @ISAAC change when switching DBs ?
+# Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
@@ -107,6 +106,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#lilly_note
+AUTH_PROFILE_MODULE = 'hunny_app.Profile'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -135,10 +137,12 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 # Channels
 ASGI_APPLICATION = 'hunny_project.asgi.application'
 WSGI_APPLICATION = 'hunny_project.wsgi.application'
 
+#Kody_note
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
