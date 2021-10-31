@@ -116,24 +116,6 @@ def home(request):
      return render(request, 'home.html')
 
 @login_required(login_url='/landing')
-<<<<<<< HEAD
-def edit_preferences(request):
-    p_form = ProfileUpdateForm()
-    if request.method == 'POST':
-        p_form = ProfileUpdateForm(request.POST, instance=request.user.profile)
-        if p_form.is_valid():
-            p_form.save()
-            return redirect('/preferences')
-    else:
-        p_form = ProfileUpdateForm(instance=request.user.profile)
-    context = {'p_form':p_form}
-    return render(request, 'preferences_edit.html', context)
-
-@login_required(login_url='/landing')
-def matchingroom(request):
-    context = {}
-    return render(request, 'matchingroom.html', context)
-=======
 def profile(request):
      return render(request, 'profile.html')
 
@@ -161,65 +143,3 @@ def signup(request):
             return redirect('hunny-login')
     context = {'form': form}
     return render(request, 'signup.html', context)
-
-
-
-message_list = [
-    {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-    {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-    {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-    {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-        {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-        {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-        {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-        {
-    'recipient': 'Recipient',
-    'message_contents': 'Message',
-    'date_recieved': 'Date Recieved',
-    'date_delivered': 'Date Delivered',
-    'date_read': 'Date Read',
-    },
-]
->>>>>>> 6bddc099b05025ec85514ace8d6eb107b8e6c17a

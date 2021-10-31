@@ -26,6 +26,9 @@
     <!-- Main css -->
     <link rel="stylesheet" href="{% static 'hunny_app/css/style.css' %}">
     <style>
+        .container{
+            background-color: white;
+        }
         ul {
           list-style-type: none;
           margin: 0;
@@ -48,6 +51,11 @@
 
         li a:hover {
           background-color: #EDD7BD;
+        }
+
+        .img{
+            width: 80%;
+            border-radius: 8%;
         }
 
 </style>
@@ -105,7 +113,7 @@
                         {{form.errors}}
                     </div>
                     <div class="signup-image">
-                        <figure><img src="{% static 'hunny_app/images/signup-image.jpg' %}" alt="sing up image"></figure>
+                        <figure><img src="{% static 'hunny_app/images/signup-image.jpg' %}" class="img" alt="sing up image"></figure>
                         <a href="/login" class="signup-image-link">I am already member</a>
                     </div>
                 </div>
