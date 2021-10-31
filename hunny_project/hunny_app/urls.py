@@ -10,7 +10,6 @@ urlpatterns = [
     path('login/', views.accountlogin, name='hunny-login'),
     path('profile/', views.profile, name='hunny-profile'),    
     path('profile-edit/', views.editProfile, name='hunny-edit-profile'),
-    path('message/', views.message, name='hunny-message'),
     path('matchingroom/', views.matchingroom, name='hunny-matchingroom'),
     path('like_next/', views.like_next, name='hunny-like'),
     path('dislike_next/', views.dislike_next, name='hunny-dislike'),
