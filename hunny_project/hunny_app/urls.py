@@ -18,4 +18,6 @@ urlpatterns = [
     path('about/', views.about, name='hunny-about'),
     path('contact/', views.contact, name='hunny-contact'),
     path('logout/', views.accountlogout, name='hunny-logout'),
+    path('chat/', views.chat, name='hunny-chat'),
+    path('chat/<str:room_name>/', views.chat_room, name='hunny-chat-room'),
 ]

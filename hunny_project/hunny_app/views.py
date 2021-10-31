@@ -89,10 +89,26 @@ def editProfile(request):
     context = {'p_form': p_form}
     return render(request, 'profile-edit.html', context)
 
+@login_required(login_url='/landing')
 #lilly_note
 def accountlogout(request):
     logout(request)
     return redirect('hunny-login')
+
+#kody_note
+@login_required(login_url='/landing')
+def chat(request):
+    return render(request, 'chat.html', {})
+
+#kody_note
+@login_required(login_url='/landing')
+def chat_room(request, room_name):
+    return render(request, 'chat_room.html', {'room_name': room_name})
+
+#kody_note
+@login_required(login_url='/landing')
+def user(request):
+    return render(request, 'user.html')
 
 
 
