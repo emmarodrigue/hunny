@@ -19,4 +19,7 @@ urlpatterns = [
     path('logout/', views.accountlogout, name='hunny-logout'),
     path('chat/', views.chat, name='hunny-chat'),
     path('chat/<str:room_name>/', views.chat_room, name='hunny-chat-room'),
+    path('preferences/', views.preferences, name='hunny-preferences'),
+    path('edit-preferences/', views.editPreferences, name='hunny-edit-preferences'),
+    path('settings/', views.settings, name='hunny-settings'),
 ]

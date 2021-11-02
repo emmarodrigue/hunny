@@ -1,18 +1,13 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import ProfileUpdateForm, CreateUserForm
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
-from .models import Profile
 from django.contrib.auth import get_user_model
-from django.contrib.auth.models import User
 
 def landing(request):
      return render(request, 'landing.html')
 
-#lilly_note
 @login_required(login_url='/landing')
 def matchingroom(request):
      Users = get_user_model()
@@ -25,7 +20,6 @@ def matchingroom(request):
      context = {'first':first}
      return render(request,'matchingroom.html',context)
 
-#lilly_note
 def accountlogin(request):
      if request.method == 'POST':
          user_name = request.POST.get('username')
@@ -39,7 +33,6 @@ def accountlogin(request):
      context = {}
      return render(request, 'login.html', context)
 
-#lilly_note
 @login_required(login_url='/landing')
 def like_next(request):
      Users = get_user_model()
@@ -54,7 +47,6 @@ def like_next(request):
      context = {'next':next}
      return render(request, 'likenext.html',context)
 
-#lilly_note
 @login_required(login_url='/landing')
 def dislike_next(request):
      Users = get_user_model()
@@ -72,7 +64,6 @@ def next_check_index(max, current_index):
         return 0
     return (current_index + 1)
 
-
 def terms_service(request):
      context = {}
      return render(request, 'terms_service.html',context)
@@ -87,30 +78,23 @@ def editProfile(request):
     else:
         p_form = ProfileUpdateForm(instance=request.user.userprofile)
     context = {'p_form': p_form}
-    return render(request, 'profile-edit.html', context)
+    return render(request, 'profile_edit.html', context)
 
-@login_required(login_url='/landing')
-#lilly_note
 def accountlogout(request):
     logout(request)
-    return redirect('hunny-login')
+    return redirect('/landing')
 
-#kody_note
 @login_required(login_url='/landing')
 def chat(request):
     return render(request, 'chat.html', {})
 
-#kody_note
 @login_required(login_url='/landing')
 def chat_room(request, room_name):
     return render(request, 'chat_room.html', {'room_name': room_name})
 
-#kody_note
 @login_required(login_url='/landing')
 def user(request):
     return render(request, 'user.html')
-
-
 
 def home(request):
      return render(request, 'home.html')
@@ -125,7 +109,6 @@ def about(request):
 def contact(request):
     return render(request, 'contact.html')
 
-#lilly_note
 def signup(request):
     form = CreateUserForm();
     if request.method == 'POST':
@@ -137,3 +120,24 @@ def signup(request):
             return redirect('hunny-login')
     context = {'form': form}
     return render(request, 'signup.html', context)
+
+@login_required(login_url='/landing')
+def preferences(request):
+    return render(request, 'preferences.html')
+
+@login_required(login_url='/landing')
+def editPreferences(request):
+    p_form = ProfileUpdateForm()
+    if request.method == 'POST':
+        p_form = ProfileUpdateForm(request.POST, instance=request.user.userprofile)
+        if p_form.is_valid():
+            p_form.save()
+            return redirect('/preferences')
+    else:
+        p_form = ProfileUpdateForm(instance=request.user.userprofile)
+    context = {'p_form':p_form}
+    return render(request, 'preferences_edit.html', context)
+
+@login_required(login_url='/landing')
+def settings(request):
+    return render(request, 'settings.html')
