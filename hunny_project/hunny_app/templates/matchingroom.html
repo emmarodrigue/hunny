@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -82,20 +84,6 @@
         }
   </style>
 </head>
-  <!-- need to implement this nav bar into base.html for use -->
-  <div class="col-9  text-right";>
-      <span class="d-inline-block d-lg-none"><a href="#" class="text-primary site-menu-toggle js-menu-toggle py-5"><span class="icon-menu h3 text-white"></span></a></span>
-          <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-          <div class="nav-bar">
-              <ul class="site-menu main-menu js-clone-nav ml-auto" style="border-radius: 20px;">
-                <li class="active"><a href="/profile" class="nav-link">HUNNY</a></li>
-                <li><a href="/matchingroom" class="nav-link">HUNNY-MATCHING</a></li>
-                <li><a href="/message" class="nav-link">MATCH BOX</a></li>
-                <li><a href="/profile" class="nav-link">MY PROFILE</a></li>
-              </ul>
-          </div>
-          </nav>
-  </div>
 <body class="">
 
 <!-- Add your content of header -->
@@ -321,5 +309,6 @@
 --><script type="text/javascript" src="{% static 'hunny_app/js/matching.js' %}" ></script></body>
 
 </html>
+{% endblock content %}
 
 

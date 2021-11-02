@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -7,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hunny</title>
+    <title>Contact</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="{% static 'hunny_app/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
@@ -45,33 +47,18 @@
             background: #FFFFFF;
             margin-left: auto;
             margin-right: auto;
-            padding: 30px; 
+            padding: 30px;
             border-radius: 20px;
         }
         .body{
             background-color:#FFDDC3;
             border-radius: 20px;
-            padding: 100px; 
+            padding: 100px;
         }
 
     </style>
 </head>
 <body>
-    <!-- need to implement this nav bar into base.html for use -->
-    <div class="col-9  text-right";>
-        <span class="d-inline-block d-lg-none"><a href="#" class="text-primary site-menu-toggle js-menu-toggle py-5"><span class="icon-menu h3 text-white"></span></a></span>
-            <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-            <div class="nav-bar">
-                <ul class="site-menu main-menu js-clone-nav ml-auto" style="border-radius: 20px;">
-                  <li class="active"><a href="/landing" class="nav-link">HUNNY</a></li>
-                  <li><a href="/signup" class="nav-link">Sign Up</a></li>
-                  <li><a href="/about" class="nav-link">About</a></li>
-                  <li><a href="/contact" class="nav-link">Contact</a></li>
-                </ul>
-            </div>
-            </nav>
-    </div>
-
     <div class="main" style="background-color: #ffe6cc;">
         <!-- Sing in  Form -->
         <section class="page">
@@ -80,3 +67,4 @@
     </div>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
+{% endblock content %}
