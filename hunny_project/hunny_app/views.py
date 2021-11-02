@@ -111,9 +111,9 @@ def user(request):
     return render(request, 'user.html')
 
 
-
-def home(request):
-     return render(request, 'home.html')
+@login_required(login_url='/landing')
+def settings(request):
+     return render(request, 'settings.html')
 
 @login_required(login_url='/landing')
 def profile(request):

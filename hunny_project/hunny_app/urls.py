@@ -6,7 +6,6 @@ urlpatterns = [
     path('landing/', views.landing, name='hunny-landing'),
     path('signup/', views.signup, name='hunny-signup'),
     path('terms_service/', views.terms_service, name='hunny-terms_service'),
-    path('home/', views.home, name='hunny-home'),
     path('login/', views.accountlogin, name='hunny-login'),
     path('profile/', views.profile, name='hunny-profile'),    
     path('profile-edit/', views.editProfile, name='hunny-edit-profile'),
@@ -17,6 +16,7 @@ urlpatterns = [
     path('about/', views.about, name='hunny-about'),
     path('contact/', views.contact, name='hunny-contact'),
     path('logout/', views.accountlogout, name='hunny-logout'),
+    path('settings/', views.settings, name='hunny-settings'),
     path('chat/', views.chat, name='hunny-chat'),
     path('chat/<str:room_name>/', views.chat_room, name='hunny-chat-room'),
 ]
