@@ -86,6 +86,8 @@ class Profile(models.Model):
 
     @property
     def age(self):
+        if self.birthday is None:
+            return "Not set."
         return int((datetime.now().date() - self.birthday).days / 365.25)
 
 #lilly_note
