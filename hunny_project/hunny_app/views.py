@@ -5,6 +5,8 @@ from .forms import ProfileUpdateForm, CreateUserForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth import get_user_model
 from django.db.models import Count
+from django.contrib.auth.models import User
+import datetime
 
 def landing(request):
      return render(request, 'landing.html')
@@ -98,11 +100,16 @@ def accountlogout(request):
 
 @login_required(login_url='/landing')
 def chat(request):
-    return render(request, 'chat.html', {})
+    user = User.objects.get(username=request.user)
+    last_online = user.last_login.strftime('%a')
+    return render(request, 'chat.html', {'last_online': last_online})
 
 @login_required(login_url='/landing')
 def chat_room(request, room_name):
-    return render(request, 'chat_room.html', {'room_name': room_name})
+    current_date = datetime.datetime.now()
+    user = User.objects.get(username=request.user)
+    last_online = user.last_login.strftime('%a')
+    return render(request, 'chat_room.html', {'room_name': room_name,'current_date': current_date, 'last_online': last_online})
 
 @login_required(login_url='/landing')
 def user(request):

@@ -41,7 +41,7 @@
         left: 0;
         width: 20%;
         padding: 10px;
-        background: rgb(204, 119, 62);
+        background: rgba(204, 119, 62, 0.829);
         color: white;
         font-size: 17px;
         border: 1px solid grey;
@@ -66,15 +66,11 @@
     }
 
     .centered{
+        padding-bottom: 40px;
         display: table-cell;
             width: 800px;
         text-align: center;
         vertical-align: middle;
-    }
-
-    h1{
-        padding: 0px;
-        font-size: xlarge;
     }
 
     .match-list{
@@ -89,10 +85,10 @@
         margin:auto;
         max-width:400px;
         height: 90px;
-        background: rgb(204, 119, 62); /* Green background */
+        background: rgba(204, 119, 62, 0.829); /* Green background */
         border: 3px solid rgb(255, 255, 255); /* Green border */
         color: white; /* White text */
-        padding: 20px 24px; /* Some padding */
+        padding: 0px 24px; /* Some padding */
         cursor: pointer; /* Pointer/hand icon */
         width: 50%; /* Set a width if needed */
         display: block; /* Make the buttons appear below each other */
@@ -133,15 +129,16 @@
         width: 50px;
     }
 
-    .user-att{
-        text-align: right;
-    }
     
-    .user-att small{
+    .user-det small{
+        padding: 0px;
+        align-items: right;
         font-size: 10px;
     }
 
     .user-att large{
+        top: 10;
+        font-weight:bolder;
         font-size: 20px;
     }
 
@@ -152,7 +149,7 @@
 
             <!-- search bar -->
             <form class="example" action="/chat" style="margin:auto;max-width:400px">
-                <input id="room-name-input" type="text" placeholder="Search...">
+                <input id="room-name-input" type="text" placeholder="Search . . .">
                 <button id="room-name-submit" type="submit" style="font-size: 28px; margin-bottom: 10px; padding-top: 3px;">⌕</button>
             </form>
             <!-- loop match list -->
@@ -160,19 +157,47 @@
                 <div class="match-list">
                     <button id="close-image">
                         <!-- <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"> -->
-                        <a class="list" href="/profile"><h1>Kody Gentry</h1></a>
-                    </button>
-                    <button id="close-image">
-                        <!-- <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"> -->
-                        <a class="list" href="/profile">
+                        <a class="list" href="/chat/1">
                             <div class="user-att">
-                                <small>Last seen: {{time}}</small>
-                                <large>Kody Gentry</large></a>
+                                <large>Edward Richtofen</large></a>
+                            </div>
+                            <div class="user-det">
+                                <small>Active: {{user.is_active}} - </small>
+                                <small>Last Seen: {{last_online}}</small>
                             </div>
                     </button>
                     <button id="close-image">
                         <!-- <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"> -->
-                        <a class="list" href="/profile"><h1>Kody Gentry</h1></a>
+                        <a class="list" href="/chat/2">
+                            <div class="user-att">
+                                <large>Takeo Masaki</large></a>
+                            </div>
+                            <div class="user-det">
+                                <small>Active: {{user.is_active}} - </small>
+                                <small>Last Seen: {{last_online}}</small>
+                            </div>
+                    </button>
+                    <button id="close-image">
+                        <!-- <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"> -->
+                        <a class="list" href="/chat/3">
+                            <div class="user-att">
+                                <large>Nikolai Belinski</large></a>
+                            </div>
+                            <div class="user-det">
+                                <small>Active: {{user.is_active}} - </small>
+                                <small>Last Seen: {{last_online}}</small>
+                            </div>
+                    </button>
+                    <button id="close-image">
+                        <!-- <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"> -->
+                        <a class="list" href="/chat/">
+                            <div class="user-att">
+                                <large>"Tank" Dempsey</large></a>
+                            </div>
+                            <div class="user-det">
+                                <small>Active: {{user.is_active}} - </small>
+                                <small>Last Seen: {{last_online}}</small>
+                            </div>
                     </button>
                 </div>
             </div>
