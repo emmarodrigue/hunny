@@ -4,6 +4,7 @@ from django.contrib import messages
 from .forms import ProfileUpdateForm, CreateUserForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth import get_user_model
+from django.db.models import Count
 
 def landing(request):
      return render(request, 'landing.html')
@@ -13,10 +14,7 @@ def matchingroom(request):
      Users = get_user_model()
      myprofile= request.user.userprofile
      c_k = myprofile.current_check
-     n_index = next_check_index(7, c_k)
-     myprofile.current_check = n_index
-     myprofile.save()
-     first = Users.objects.filter()[(n_index):(n_index + 1)].get()
+     first = Users.objects.filter()[(c_k):(c_k + 1)].get()
      context = {'first':first}
      return render(request,'matchingroom.html',context)
 
@@ -38,21 +36,33 @@ def like_next(request):
      Users = get_user_model()
      myprofile= request.user.userprofile
      c_k = myprofile.current_check
-     c_k_profile = Users.objects.filter()[(c_k):(c_k + 1)].get()
-     myprofile.who_like_me.add(c_k_profile)
-     n_index = next_check_index(7, c_k)
+     c_k_user = Users.objects.filter()[(c_k):(c_k + 1)].get()
+     myprofile.who_like_me.add(c_k_user)
+     n_index = next_check_index(Users.objects.count(), c_k)
      myprofile.current_check = n_index
      myprofile.save()
+     add_match_if_bothlike(request.user,c_k_user)
      next = Users.objects.filter()[(n_index):(n_index + 1)].get()
      context = {'next':next}
      return render(request, 'likenext.html',context)
+
+def add_match_if_bothlike(user1, user2):
+    if user1 in user2.userprofile.who_like_me.all():
+        user1.userprofile.matches.add(user2)
+        user2.userprofile.matches.add(user1)
+    return
+
+
+
+
+
 
 @login_required(login_url='/landing')
 def dislike_next(request):
      Users = get_user_model()
      myprofile= request.user.userprofile
      c_k = myprofile.current_check
-     n_index = next_check_index(7, c_k)
+     n_index = next_check_index(Users.objects.count(), c_k)
      myprofile.current_check = n_index
      myprofile.save()
      next = Users.objects.filter()[(n_index):(n_index + 1)].get()
@@ -63,6 +73,8 @@ def next_check_index(max, current_index):
     if current_index == (max-1):
         return 0
     return (current_index + 1)
+
+
 
 def terms_service(request):
      context = {}
