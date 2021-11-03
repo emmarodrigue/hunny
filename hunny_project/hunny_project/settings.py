@@ -78,15 +78,22 @@ WSGI_APPLICATION = 'hunny_project.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'TEST': {
-            'NAME': os.path.join(BASE_DIR, 'db_test.sqlite3')
-        }
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    #     'TEST': {
+    #         'NAME': os.path.join(BASE_DIR, 'db_test.sqlite3')
+    #     }
+    # }
+     'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'users',
+        'USER': 'hunny-db',
+        'PASSWORD': 'zNb1xdur7L3cBbsC',
+        'PORT': 3306,
+        'HOST': '35.224.18.77',
+     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
