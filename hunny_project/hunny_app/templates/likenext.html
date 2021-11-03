@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -41,6 +43,7 @@
     border: none;
     background: none;
     }
+
             ul {
           list-style-type: none;
           margin: 0;
@@ -79,24 +82,12 @@
             border-radius: 20px;
             padding: 100px;
         }
+        .profile_pic {
+        border-radius: 50%;
+        }
   </style>
 </head>
-
 <body class="">
-    <!-- need to implement this nav bar into base.html for use -->
-  <div class="col-9  text-right";>
-      <span class="d-inline-block d-lg-none"><a href="#" class="text-primary site-menu-toggle js-menu-toggle py-5"><span class="icon-menu h3 text-white"></span></a></span>
-          <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-          <div class="nav-bar">
-              <ul class="site-menu main-menu js-clone-nav ml-auto" style="border-radius: 20px;">
-                <li class="active"><a href="/profile" class="nav-link">HUNNY</a></li>
-                <li><a href="/matchingroom" class="nav-link">HUNNY-MATCHING</a></li>
-                <li><a href="/message" class="nav-link">MATCH BOX</a></li>
-                <li><a href="/profile" class="nav-link">MY PROFILE</a></li>
-              </ul>
-          </div>
-          </nav>
-  </div>
 
 <!-- Add your content of header -->
 <div class="background-color-layer" style="background-image: url('{% static 'hunny_app/images/signup-image.jpg' %}')"
@@ -104,7 +95,8 @@
 <main class="content-wrapper">
   <header class="white-text-container section-container">
     <div class="text-center">
-      <img src="{% static 'hunny_app/images/img-03.jpg' %}" class=" profile_pic " alt="...">
+      <img src="{% static 'hunny_app/images/img-01.jpg' %}" class=" alt="..." style="width:200px, border-radius: 50%">
+
       <h1>{{next.username}}</h1>
       <p>Web designer</p>
       <div >
@@ -116,8 +108,6 @@
         {% csrf_token %}
         <button href="/matchingroom" type="submit"><i class="fas blackHeart fa-heart-broken"></i></button>
       </form>
-      </div>
-    </div>
   </header>
 
 
@@ -136,80 +126,28 @@
                 <p><img src="{% static 'hunny_app/images/img-8.jpg' %}" alt=""></p>
               </div>
               <div class="col-md-8">
-                <p> {{next.userprofile.bio}}</p>
+                  <p> {{next.userprofile.bio}}</p>
               </div>
             </div>
           </div>
         </div>
-
         <div class="card">
           <div class="card-block">
-            <h2>Work</h2>
-            <div class="work-experience">
-              <small class="date">2017-2015</small>
-              <h3 class="h5 date-title">Web developer - <a href="http://en.orson.io" title="Create professionnal website">Orson.io</a></h3>
-
-
-              <p>Leo vel orci porta non pulvinar neque laoreet suspendisse interdum. Vitae ultricies leo integer malesuada nunc. Imperdiet proin fermentum leo vel orci porta non pulvinar neque. Fermentum leo vel orci porta non. Posuere sollicitudin aliquam ultrices sagittis. Aliquam faucibus purus in massa tempor nec.</p>
-            </div>
-
-            <div class="work-experience">
-              <small class="date">2017-2015</small>
-              <h3 class="h5 date-title">Web developer - <a href="http://mashup-template.com" title="">Mashup Template</a></h3>
-
-              <p>Fermentum leo vel orci porta non. Posuere sollicitudin aliquam ultrices sagittis. Aliquam faucibus purus in massa tempor nec.</p>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="card">
-          <div class="card-block">
-            <h2>Education</h2>
-            <div class="row">
-              <div class="col-md-4">
-                <div class="education-experience">
-                  <small class="date">2017-2015</small>
-                  <h3 class="h5 date-title">Design Master</h3>
-                  <p>Chicago University</p>
-                </div>
-
-              </div>
-              <div class="col-md-4">
-                <div class="education-experience">
-                  <small class="date">2015-2012</small>
-                  <h3 class="h5 date-title">Metrics Degree</h3>
-                  <p>Ecole 87</p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="education-experience">
-                  <small class="date">2012-2011</small>
-                  <h3 class="h5 date-title">Motion Design Course</h3>
-                  <p>Pascal’s Lee Studio</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-block">
-            <h2>Language</h2>
+            <h2>Profile</h2>
             <div class="row">
               <div class="col-md-4">
                 <div class="language-experience">
-                  <h3 class="h5">English  <small>Bilingual</small></h3>
+                  <h3 class="h5"> Age  <small> {{next.userprofile.age}}</small></h3>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="language-experience">
-                  <h3 class="h5">French  <small>Fluent</small></h3>
+                  <h3 class="h5"> City <small>{{next.userprofile.city}}</small></h3>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="language-experience">
-                  <h3 class="h5">Russian  <small>Beginner</small></h3>
+                  <h3 class="h5"> Looking For <small>{{next.userprofile.relationship_preference}}</small></h3>
                 </div>
               </div>
             </div>
@@ -298,7 +236,12 @@
 </script>
 
 --><script type="text/javascript" src="{% static 'hunny_app/js/matching.js' %}" ></script></body>
+{% if match %}
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script> swal("YOU'VE GOT A MATCH!"); </script>
+{% endif %}
 
 </html>
+{% endblock content %}
 
 
