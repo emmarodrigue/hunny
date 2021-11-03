@@ -14,8 +14,8 @@ def matchingroom(request):
      Users = get_user_model()
      myprofile= request.user.userprofile
      c_k = myprofile.current_check
-     first = Users.objects.filter()[(c_k):(c_k + 1)].get()
-     context = {'first':first}
+     next = Users.objects.filter()[(c_k):(c_k + 1)].get()
+     context = {'next':next}
      return render(request,'matchingroom.html',context)
 
 def accountlogin(request):
@@ -41,16 +41,17 @@ def like_next(request):
      n_index = next_check_index(Users.objects.count(), c_k)
      myprofile.current_check = n_index
      myprofile.save()
-     add_match_if_bothlike(request.user,c_k_user)
+     match = add_match_if_bothlike(request.user,c_k_user)
      next = Users.objects.filter()[(n_index):(n_index + 1)].get()
-     context = {'next':next}
+     context = {'next':next, 'match':match}
      return render(request, 'likenext.html',context)
 
 def add_match_if_bothlike(user1, user2):
     if user1 in user2.userprofile.who_like_me.all():
         user1.userprofile.matches.add(user2)
         user2.userprofile.matches.add(user1)
-    return
+        return 1
+    return 0
 
 
 
