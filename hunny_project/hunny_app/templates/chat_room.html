@@ -10,27 +10,20 @@
 </head>
 <body>
 <div class="container">
-    <div class="row clearfix">
         <div class="chat">
             <div class="chat-header clearfix">
                 <div class="row">
-                    <a>
-                        <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y" alt="avatar">
-                    </a>
                     <div class="chat-about">
                         <h6 class="reciever">{{ request.user.username }}</h6>
-                        <small>{{ request.user.email }}<br>
-                               {{ request.user.matches }}<br>
-                               Last seen: {{ request.status }}</small>
                     </div>
                 </div>
             </div>
-
         </div>
+    <textarea id="chat-log" cols="120" rows="30"></textarea><br>
+    <div class="center">
+        <input id="chat-message-input" type="text" placeholder="Enter Message . . .">
+        <button id="chat-message-submit" type="button" value="Send">➤</button>
     </div>
-    <textarea id="chat-log" cols="120" rows="40"></textarea><br>
-    <input id="chat-message-input" type="text" size="98" placeholder="Enter text here..."><br>
-    <input id="chat-message-submit" type="button" value="Send">
 </div>
 
 <style type="text/css">
@@ -42,7 +35,10 @@ body{
 
 .container{
     border-radius: 12px;
-    background: transparent;
+    margin-top: 40px;
+    padding-bottom: 10px;
+    background: rgba(204, 119, 62, 0.575);
+    border: 2px solid rgb(255, 255, 255);
 }
 .chat-log{
     justify-content: center;
@@ -51,76 +47,78 @@ body{
 }
 
 .chat{
+    margin:auto;
     background: transparent;
     border-radius: 1.3rem;
 }
 
-.chat-message-input{
-    border-radius: 12px;
-    background-color: white;
-    font-weight: bold;
-}
-
-.chat-message-submit:hover{
-    border-radius: 12px;
-    background-color: rgb(245, 132, 132);
-    font-weight: bold;
-}
-
-.chat-message-submit{
-    justify-content: center;
-    display: flexbox;
-}
-
 .chat .chat-header {
     border-radius: 12px;
-    padding: 30px 10px;
     border-bottom: 3px solid #f4f7f6;
-    background: rgba(204, 119, 62, 0.6);
+    background: transparent;
 }
 
 .chat .chat-header img {
-    float: left;
+    float: right;
+    padding: 0;
     border-radius: 40px;
-    width: 40px
+    width: 100px
 }
 
-.reciever{
-    font-size: 30px;
-    height: 7px;
-}
-
-.chat .chat-header .chat-about {
-    float: left;
-    padding-top: 0px;
+.chat .chat-header .reciever {
+    margin: auto;
+    height: 50;
     color: white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 50px;
+    text-align: left;
+    font-size:50px;
+    text-transform:lowercase;
 }
 
-.chat .chat-message-input {
-    padding: 20px;
-    background-color: rgba(204, 119, 62, 0.6);
+#chat-message-submit{
+    display: inline;
+    max-width:80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
 }
 
-.clearfix:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0
+#chat-message-input{
+    display: inline;
+    height: 40px;
+    max-width:400px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
 }
+.center button {
+        z-index: -5;
+        display: inline;
+        border-radius: 12px;
+        width: 20%;
+        background: rgba(204, 119, 62, 0.6);
+        color: rgb(255, 251, 249);
+        font-size: 15px;
+        border: 1px solid rgb(0, 0, 0);
+        cursor: pointer;
+        margin-top: 10px;
+        margin-right: 10px;
 
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
-    .chat-app .chat-list {
-        height: 480px;
-        overflow-x: auto
     }
-    .chat-app .chat-log {
-        height: calc(100vh - 350px);
-        overflow-x: auto
-    }
+.center button:hover {
+        background: rgb(255, 214, 186);
 }
+.center{
+    align-items: center;
+    padding-bottom: 0px;
+    display: table-cell;
+        width: 1000px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
 </style>
 
 {{ room_name|json_script:"room-name" }}
