@@ -34,9 +34,9 @@
                     Upload new photo
                     <input type="file" class="account-settings-fileinput">
                   </label> &nbsp;
-                  <button type="button" class="btn btn-default md-btn-flat">Reset</button>
+                 <!-- <button type="button" class="btn btn-default md-btn-flat"></button>-->
 
-                  <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
+                  <div class="text-light small mt-1"></div>
                 </div>
               </div>
               <hr class="border-light m-0">
@@ -44,19 +44,16 @@
               <div class="card-body">
                 <div class="form-group">
                   <label class="form-label">Username</label>
-                  <input type="text" class="form-control mb-1" value="nmaxwell">
+                  <input type="text" class="form-control mb-1" value="">
                 </div>
                 <div class="form-group">
                   <label class="form-label">Name</label>
-                  <input type="text" class="form-control" value="Nelle Maxwell">
+                  <input type="text" class="form-control" value="">
                 </div>
                 <div class="form-group">
                   <label class="form-label">E-mail</label>
-                  <input type="text" class="form-control mb-1" value="nmaxwell@mail.com">
-                  <div class="alert alert-warning mt-3">
-                    Your email is not confirmed. Please check your inbox.<br>
-                    <a href="javascript:void(0)">Resend confirmation</a>
-                  </div>
+                  <input type="text" class="form-control mb-1" value="">
+                  
                 </div>
               </div>
 
@@ -198,9 +195,23 @@
 
 <style>
 body{
-    background: #FFDDC3;
     margin-top:20px;
-    float: none;
+    display: block;
+    position: sticky;
+    background-color: green;
+}
+.form-label{
+  display: block;
+  padding: 10px;
+  position:sticky;
+  color: rgb(204, 119, 62);
+  font-weight: bold;
+}
+.form-control{
+  display: block;
+  padding: 0px;
+  position: sticky ;
+
 }
 
 .ui-w-80 {
@@ -209,9 +220,11 @@ body{
 }
 
 .btn-default {
-    border-color: rgb(204, 119, 62);
-    background: rgb(204, 119, 62);
-    color: #FFDDC3;
+  background: rgb(204, 119, 62);
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  float: right;
 }
 
 label.btn {
@@ -219,9 +232,21 @@ label.btn {
 }
 
 .btn-outline-primary {
-    border-color: #26B4FF;
+    border-color: rgb(204, 119, 62);
     background: transparent;
-    color: #26B4FF;
+    color: rgb(204, 119, 62);
+    display: block;
+    position: relative;
+    width: auto;
+    float: left;
+}
+
+.btn-primary{
+  background: rgb(204, 119, 62);
+  border-color: rgb(204, 119, 62);;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
 }
 
 .btn {
@@ -229,18 +254,24 @@ label.btn {
 }
 
 .text-light {
-    color: #babbbc;
+    color: rgb(204, 119, 62);
 }
 
 
 .card {
-    background-clip: padding-box;
-    box-shadow: 0 1px 4px rgb(204, 119, 62);
-    position: center;
+    border: none;
+    padding: 0px ;
+}
+
+.card-body{
+  padding: 25px 50px 75px 100px;
 }
 
 .row-bordered {
     overflow: hidden;
+    padding: 0px;
+    float: left;
+    position: sticky;
 }
 
 .account-settings-fileinput {
@@ -255,37 +286,15 @@ label.btn {
 }
 html:not(.dark-style) .account-settings-links .list-group-item.active {
     background: transparent;
+    
 }
-.account-settings-multiselect ~ .select2-container {
-    width: 100%;
+
+.light-style .account-settings-links .list-group-item.active {
+    color:rgb(204, 119, 62);;
 }
 .light-style .account-settings-links .list-group-item {
     padding: 0.85rem 1.5rem;
-    border-color: rgb(204, 119, 62);
-}
-.light-style .account-settings-links .list-group-item.active {
-    color: #4e5155;
-}
-.material-style .account-settings-links .list-group-item {
-    padding: 0.85rem 1.5rem;
-    border-color: rgba(24, 28, 33, 0.03);
-}
-.material-style .account-settings-links .list-group-item.active {
-    color: #4e5155;
-}
-.dark-style .account-settings-links .list-group-item {
-    padding: 0.85rem 1.5rem;
-    border-color: rgba(255, 255, 255, 0.03);
-}
-.dark-style .account-settings-links .list-group-item.active {
-    color: #fff;
-}
-.light-style .account-settings-links .list-group-item.active {
-    color: #4E5155;
-}
-.light-style .account-settings-links .list-group-item {
-    padding: 0.85rem 1.5rem;
-    border-color: rgba(24,28,33,0.03);
+    border-color: rgba(24, 28, 33, 0.021);
 }
 
 
@@ -298,3 +307,4 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 </body>
 </html>
 {% endblock content %}
+
