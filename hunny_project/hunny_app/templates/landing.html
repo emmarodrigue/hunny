@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hunny</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'hunny_app/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'hunny_app/css/style.css' %}">
+    <style>
+
+        .landing-container {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        width: 25%;
+        }
+
+        /* Ripple Out */
+        @-webkit-keyframes hvr-ripple-out {
+        100% {
+            top: -12px;
+            right: -12px;
+            bottom: -12px;
+            left: -12px;
+            opacity: 0;
+            border-radius: 50%;
+        }
+        }
+        @keyframes hvr-ripple-out {
+        100% {
+            top: -12px;
+            right: -12px;
+            bottom: -12px;
+            left: -12px;
+            opacity: 0;
+            border-radius: 50%;
+        }
+        }
+        .hvr-ripple-out {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        position: relative;
+        border-radius: 50%;
+        }
+        .hvr-ripple-out:before {
+        content: '';
+        position: absolute;
+        border: #e1e1e1 solid 6px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        border-radius: 50%;
+        }
+        .hvr-ripple-out:hover:before, .hvr-ripple-out:focus:before, .hvr-ripple-out:active:before {
+        -webkit-animation-name: hvr-ripple-out;
+        animation-name: hvr-ripple-out;
+        border-radius: 50%;
+        }
+
+
+        .buttons{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Grow Shadow */
+        .hvr-grow-shadow {
+        color: rgba(204, 119, 62, 0.6);
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: box-shadow, transform;
+        transition-property: box-shadow, transform;
+        }
+        .hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
+        box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        }
+        
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        .text{
+            font-size:x-large;
+        }
+
+        
+    
+
+    </style>
+</head>
+<body style="background-color: #ffe6cc; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <div class="main" style="background-color:#ffe6cc">
+            <div class="landing-container">
+                <div class="hvr-ripple-out">
+                    <img src="{% static 'hunny_app/images/signin-image.jpg' %}" alt="image" 
+                    style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+                    border-radius: 50%; display: block; margin-left: auto; margin-right: auto;">
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="text">
+                    <a href="/signup" class="hvr-grow-shadow">Sign Up</a>
+                    <a style="color: rgba(0, 0, 0, 0);">.........</a>
+                    <a href="/login" class="hvr-grow-shadow">Login</a>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
+{% endblock content %}

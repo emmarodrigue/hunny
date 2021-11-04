@@ -18,6 +18,7 @@ body {
   
   .site-header .navbar-nav .nav-link {
     color: #cbd5db;
+    border-radius: 20px;
   }
   
   .site-header .navbar-nav .nav-link:hover {

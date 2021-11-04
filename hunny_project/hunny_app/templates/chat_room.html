@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
+    <!--  All snippets are MIT license http://bootdey.com/license -->
+    <title>Hunny</title>
+</head>
+<body>
+<div class="container">
+        <div class="chat">
+            <div class="chat-header clearfix">
+                <div class="row">
+                    <div class="chat-about">
+                        <h6 class="reciever">{{ room_name }}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <textarea id="chat-log" cols="120" rows="30"></textarea><br>
+    <div class="center">
+        <input id="chat-message-input" type="text" placeholder="Enter Message . . .">
+        <button id="chat-message-submit" type="button" value="Send">➤</button>
+    </div>
+</div>
+
+<style type="text/css">
+
+body{
+    background-color: #ffe6cc;
+    margin-top:20px;
+}
+
+.container{
+    border-radius: 12px;
+    margin-top: 40px;
+    padding-bottom: 10px;
+    background: rgba(204, 119, 62, 0.575);
+    border: 2px solid rgb(255, 255, 255);
+}
+.chat-log{
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-shrink: calc();
+}
+
+.chat{
+    margin:auto;
+    background: transparent;
+    border-radius: 1.3rem;
+}
+
+.chat .chat-header {
+    border-radius: 12px;
+    border-bottom: 3px solid #f4f7f6;
+    background: transparent;
+}
+
+.chat .chat-header img {
+    float: right;
+    padding: 0;
+    border-radius: 40px;
+    width: 100px
+}
+
+.chat .chat-header .reciever {
+    margin: auto;
+    height: 50;
+    color: white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 50px;
+    text-align: left;
+    font-size:50px;
+    text-transform:lowercase;
+}
+
+#chat-message-submit{
+    display: inline;
+    max-width:80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+}
+
+#chat-message-input{
+    display: inline;
+    height: 40px;
+    max-width:400px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
+}
+.center button {
+        z-index: -5;
+        display: inline;
+        border-radius: 12px;
+        width: 20%;
+        background: rgba(204, 119, 62, 0.6);
+        color: rgb(255, 251, 249);
+        font-size: 15px;
+        border: 1px solid rgb(0, 0, 0);
+        cursor: pointer;
+        margin-top: 10px;
+        margin-right: 10px;
+
+    }
+.center button:hover {
+        background: rgb(255, 214, 186);
+}
+.center{
+    align-items: center;
+    padding-bottom: 0px;
+    display: table-cell;
+        width: 1000px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+</style>
+
+{{ room_name|json_script:"room-name" }}
+    <script type="text/javascript">
+        const roomName = JSON.parse(document.getElementById('room-name').textContent);
+
+        const chatSocket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/chat/'
+            + roomName
+            + '/'
+        );
+
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            document.querySelector('#chat-log').value += (data.message + '\n');
+        };
+
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+
+        document.querySelector('#chat-message-input').focus();
+        document.querySelector('#chat-message-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // enter, return
+                document.querySelector('#chat-message-submit').click();
+            }
+        };
+
+        document.querySelector('#chat-message-submit').onclick = function(e) {
+            const messageInputDom = document.querySelector('#chat-message-input');
+            const message = messageInputDom.value;
+            var user = "{{ user|safe }}";
+            chatSocket.send(JSON.stringify({
+                'message': user + ': ' + message
+            }));
+            messageInputDom.value = '';
+        };
+    </script>
+</body>
+</html>
+
+{% endblock content %}
