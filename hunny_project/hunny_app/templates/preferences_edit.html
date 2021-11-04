@@ -6,7 +6,159 @@
 </head>
 <body>
 <br>
-<div class="container" style="background-color: white; margin-top: 20px;>
+<div class="container" style="background-color: #FFDDC3; margin-top: 20px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="content" class="content content-full-width">
+                <div class="preferences-content">
+                    <div class="tab-content p-0">
+                        <div class="tab-pane fade in active show">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <div class="table-responsive">
+                                    <table class="table table-preferences">
+                                        <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>
+                                                <h4>Current Preferences</h4>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr class="divider">
+                                            <td colspan="2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="field">Interested in:</td>
+                                            <td>{{ p_form.gender_preference }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="field">Looking for:</td>
+                                            <td>{{ p_form.relationship_preference }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="field">Children:</td>
+                                            <td>{{ p_form.children_preference }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="field">Age Range:</td>
+                                            <td>{{ p_form.age_range }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="field">Distance (in miles):</td>
+                                            <td>{{ p_form.match_radius }}</td>
+                                        </tr>
+                                        <tr class="divider">
+                                            <td colspan="2"></td>
+                                        </tr>
+                                        <td class="field">&nbsp;</td>
+                                        <td class="p-t-10 p-b-10">
+                                            <button class="btn btn-primary preferences-button" type="submit" onclick="location.href='/preferences'">Update</button>
+                                        </td>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<style type="text/css">
+    body{
+        background: #FFDDC3;
+        margin-top:20px;
+        padding: 50px;
+    }
+    .content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 0 solid transparent;
+        border-radius: .25rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%);
+        color: rgb(204, 119, 62);
+    }
+    
+    .me-2 {
+        margin-right: .5rem!important;
+    }
+    .btn{
+        float: right;
+        background-color: rgb(204, 119, 62);
+        border-color: rgb(204, 119, 62);
+        color: white;
+    }
+    .table{
+        height: 100px;
+    }
+    .preferences-content {
+        padding: 30px 25px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .preferences-content:after,
+    .preferences-content:before {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .preferences-content .tab-content,
+    .preferences-content .tab-pane {
+        background: 0 0;
+    }
+
+    h4 {
+        font-size: 20px;
+        margin-top: 0;
+    }
+
+    td,th {
+        border: none;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-right: 10px;
+        color: #242a30;
+        background: 0 0;
+    }
+
+  
+
+  
+ 
+
+    .preferences-button {
+        background: rgb(204, 119, 62);
+        border-radius: 8px;
+        border-color: rgb(204, 119, 62);
+        font-size: 14px;
+    }
+
+    .preferences-button:hover {
+        background: #FF9A65;
+        cursor: pointer;
+    }
+
+    .preferences-button:active {
+        background: rgb(204, 119, 62);
+    }
+    </style>
+    
+    <!--
+<br>
+<div class="container" style="background-color: white; margin-top: 20px;">
     <div class="row">
         <div class="col-md-12">
             <div id="content" class="content content-full-width">
@@ -133,5 +285,5 @@
     .preferences-button:active {
         background: #FAC8B1;
     }
-</style>
+</style> -->
 {% endblock content %}
