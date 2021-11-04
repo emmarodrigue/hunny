@@ -102,8 +102,11 @@ def accountlogout(request):
 @login_required(login_url='/landing')
 def chat(request):
     user = User.objects.get(username=request.user)
+    myprofile = request.user.userprofile
+    matches = myprofile.matches.all()
+    context = {'matches': matches}
     last_online = user.last_login.strftime('%a')
-    return render(request, 'chat.html', {'last_online': last_online})
+    return render(request, 'chat.html', context)
 
 @login_required(login_url='/landing')
 def chat_room(request, room_name):

@@ -155,50 +155,19 @@
             <!-- loop match list -->
             <div class="btn-group">
                 <div class="match-list">
+                    {% for match in matches %}
                     <button id="close-image">
                         <!-- <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"> -->
                         <a class="list" href="/chat/1">
                             <div class="user-att">
-                                <large>Edward Richtofen</large></a>
+                                <large>{{ match.username}}</large></a>
                             </div>
                             <div class="user-det">
                                 <small>Active: {{user.is_active}} - </small>
                                 <small>Last Seen: {{last_online}}</small>
                             </div>
                     </button>
-                    <button id="close-image">
-                        <!-- <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"> -->
-                        <a class="list" href="/chat/2">
-                            <div class="user-att">
-                                <large>Takeo Masaki</large></a>
-                            </div>
-                            <div class="user-det">
-                                <small>Active: {{user.is_active}} - </small>
-                                <small>Last Seen: {{last_online}}</small>
-                            </div>
-                    </button>
-                    <button id="close-image">
-                        <!-- <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"> -->
-                        <a class="list" href="/chat/3">
-                            <div class="user-att">
-                                <large>Nikolai Belinski</large></a>
-                            </div>
-                            <div class="user-det">
-                                <small>Active: {{user.is_active}} - </small>
-                                <small>Last Seen: {{last_online}}</small>
-                            </div>
-                    </button>
-                    <button id="close-image">
-                        <!-- <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"> -->
-                        <a class="list" href="/chat/">
-                            <div class="user-att">
-                                <large>"Tank" Dempsey</large></a>
-                            </div>
-                            <div class="user-det">
-                                <small>Active: {{user.is_active}} - </small>
-                                <small>Last Seen: {{last_online}}</small>
-                            </div>
-                    </button>
+                    {% endfor %}
                 </div>
             </div>
         </div>
