@@ -98,17 +98,10 @@ def editProfile(request):
         if p_form.is_valid():
             p_form.save()
             return redirect('hunny-profile')
+    else:
+        p_form = ProfileUpdateForm(instance=request.user.userprofile)
     context = {'p_form': p_form}
     return render(request, 'profile_edit.html', context)
-#    if request.method == 'POST':
-#        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.userprofile)
-#        if p_form.is_valid():
-#            p_form.save()
-#            return redirect('hunny-profile')
-#    else:
-#        p_form = ProfileUpdateForm(instance=request.user.userprofile)
-#    context = {'p_form': p_form}
-#    return render(request, 'profile_edit.html', context)
 
 def accountlogout(request):
     logout(request)
