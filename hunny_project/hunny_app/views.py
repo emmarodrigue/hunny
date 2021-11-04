@@ -55,11 +55,6 @@ def add_match_if_bothlike(user1, user2):
         return 1
     return 0
 
-
-
-
-
-
 @login_required(login_url='/landing')
 def dislike_next(request):
      Users = get_user_model()
@@ -77,16 +72,29 @@ def next_check_index(max, current_index):
         return 0
     return (current_index + 1)
 
-
-
 def terms_service(request):
      context = {}
      return render(request, 'terms_service.html',context)
 
 @login_required(login_url='/landing')
 def editProfile(request):
+    p_form = ProfileUpdateForm()
     if request.method == 'POST':
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        city = request.POST.get('city')
+        gender = request.POST.get('gender')
+        birthday = request.POST.get('gender')
+        bio = request.POST.get('bio')
+        image = request.FILES.get('image')
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.userprofile)
+        p_form.first_name = first_name
+        p_form.last_name = last_name
+        p_form.city = city
+        p_form.gender = gender
+        p_form.birthday = birthday
+        p_form.bio = bio
+        p_form.image = image
         if p_form.is_valid():
             p_form.save()
             return redirect('hunny-profile')
