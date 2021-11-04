@@ -11,31 +11,31 @@
         <link rel="stylesheet" type="text/css" href="{% static 'hunny_app/css/style.css' %}">
         <style>
         ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          background-color: rgb(204, 119, 62)
+          list-style-type: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          overflow: hidden !important;
+          background-color: rgb(204, 119, 62) !important
         }
 
         li {
-          float: left;
+          float: left !important;
         }
 
         li a {
-          display: block;
-          color: white;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
+          display: block !important;
+          color: white !important;
+          text-align: center !important;
+          padding: 14px 16px !important;
+          text-decoration: none !important;
         }
 
         li a:hover {
-          background-color: #EDD7BD;
-          color: white;
+          background-color: #EDD7BD !important;
+          color: white !important;
         }
         .right-side {
-            float: right;
+            float: right !important;
         }
     </style>
     </head>
@@ -47,7 +47,7 @@
                 </a>
             </span>
             <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-                <ul class="site-menu main-menu js-clone-nav ml-auto" style="border-radius: 20px;">
+                <ul class="site-menu main-menu js-clone-nav ml-auto" style="border-radius: 20px !important;">
                     {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="/user">HUNNY</a>
