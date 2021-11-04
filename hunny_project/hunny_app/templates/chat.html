@@ -158,13 +158,12 @@
                     {% for match in matches %}
                     <button id="close-image">
                         <!-- <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"> -->
-                        <a class="list" href="/chat/1">
+                        <a class="list" href="/chat/chatroom">
                             <div class="user-att">
-                                <large>{{ match.username}}</large></a>
+                                <large>{{ match.userprofile.first_name }} {{ match.userprofile.last_name }}</large></a>
                             </div>
                             <div class="user-det">
-                                <small>Active: {{user.is_active}} - </small>
-                                <small>Last Seen: {{last_online}}</small>
+                                <!-- <small>Last Seen: {{match.userprofile.last_login}}</small> -->
                             </div>
                     </button>
                     {% endfor %}

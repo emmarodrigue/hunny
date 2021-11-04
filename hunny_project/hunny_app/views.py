@@ -112,8 +112,11 @@ def chat(request):
 def chat_room(request, room_name):
     current_date = datetime.datetime.now()
     user = User.objects.get(username=request.user)
+    myprofile = request.user.userprofile
+    matches = myprofile.matches.all()
     last_online = user.last_login.strftime('%a')
-    return render(request, 'chat_room.html', {'room_name': room_name,'current_date': current_date, 'last_online': last_online})
+    context = {'matches': matches, 'room_name': room_name,'current_date': current_date, 'last_online': last_online}
+    return render(request,'chat_room.html', context)
 
 @login_required(login_url='/landing')
 def user(request):

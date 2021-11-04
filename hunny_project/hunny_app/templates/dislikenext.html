@@ -34,9 +34,9 @@
     }
 
     img {
-    width: 400px;
+    width: 200px;
     height: auto;
-
+      border-radius: 50%;
     }
     button {
     padding: 0;
@@ -85,20 +85,25 @@
         .profile_pic {
         border-radius: 50%;
         }
+
+        .content-wrapper{
+          background-color: #ffe6cc;
+        }
+  </style>
   </style>
 </head>
 <body class="">
 
 <!-- Add your content of header -->
-<div class="background-color-layer" style="background-image: url('{% static 'hunny_app/images/signup-image.jpg' %}')"
-></div>
+<!-- <div class="background-color-layer" style="background-image: url('{% static 'hunny_app/images/signup-image.jpg' %}')"
+></div> -->
 <main class="content-wrapper">
   <header class="white-text-container section-container">
     <div class="text-center">
-      <img src="{% static 'hunny_app/images/img-01.jpg' %}" class=" alt="..." style="width:200px, border-radius: 50%">
+      <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y">
 
-      <h1>{{next.username}}</h1>
-      <p>Web designer</p>
+      <h1 style="-webkit-text-stroke: .5px black;">{{next.username}}</h1>
+      <p style="-webkit-text-stroke: .5px black;">Web designer</p>
       <div >
       <form method = POST action="{% url 'hunny-like' %}" style = "display:inline">
         {% csrf_token %}
@@ -154,14 +159,14 @@
           </div>
         </div>
 
-        <div class="card">
+        <!-- <div class="card">
           <div class="card-block">
             <h2>My Photographs</h2>
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> -->
 
 
             <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
+            <!-- <div class="carousel-inner" role="listbox">
               <div class="item active">
                 <img src="{% static 'hunny_app/images/img-01.jpg' %}" class="img-responsive" alt="...">
                 <div class="carousel-caption">
@@ -175,19 +180,19 @@
                   <h3 class="h5">Jules for Bastion</h3>
                   <p>2017</p>
                 </div>
-              </div>
-
+              </div> -->
+<!-- 
               <div class="item">
                 <img src="{% static 'hunny_app/images/img-03.jpg' %}" class="img-responsive" alt="...">
                 <div class="carousel-caption">
                   <h3 class="h5">Jules for Bastion</h3>
                   <p>2017</p>
                 </div>
-              </div>
+              </div> -->
             </div>
 
             <!-- Indicators -->
-            <ol class="carousel-indicators">
+            <!-- <ol class="carousel-indicators">
               <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
               <li data-target="#carousel-example-generic" data-slide-to="1"></li>
               <li data-target="#carousel-example-generic" data-slide-to="2"></li>
@@ -195,7 +200,7 @@
 
           </div>
           </div>
-        </div>
+        </div> -->
 
 
      </div>
