@@ -49,7 +49,7 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
         - [Modified hunny_app/templates/base.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/base.html) to contain a dynamic universal navbar that was implemented on all pages.
         - [Created hunny_app/templates/preferences.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/preferences.html) to display a user's current match preferences.
         - [Created hunny_app/templates/preferences_edit.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/preferences_edit.html) to allow the user to change/update their match preferences.
-        - [Modified hunny_app/templates/user.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/user.html) to include the correct routes and a login button with correct functionality.
+        - [Modified hunny_app/templates/user.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/user.html) to include the correct routes and a logout button with correct functionality.
         - [Added login_required decorators to user-only pages on hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/views.py) to ensure that some pages are only available when the user is logged in.
 	- ### **Next steps:**
         - Allow the user to upload multiple pictures.
