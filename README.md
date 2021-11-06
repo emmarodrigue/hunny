@@ -70,18 +70,35 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 		- [Modified hunny_project/hunny_app/templates/preferences_edit.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/preferences_edit.html) connected format to others to clean up website which will allow them to input their preferences.
 	- ### **Next steps:**
 		- Utilize modifications and edit navigation bar for edited pages.
-- ## **Lily:**
+- ## **Lilly:**
 	- ### **Features:**
 		- Developed Front-End for the web application
+		- Enable users to login/ display error messeges when they enter wrong information
+		- Built Front-End for Matching system
+		- Enable users to see profiles of other accounts one by one
+		- Enable users to like/dislike profiles
+		- Enable the matching system to instantiate matches among users and save all likes/matches information in the database
+		- Automate Userprofile-creation upon Register-time
 	- ### **Links to contributions:**
 		- [Created Static Folder](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/master/hunny_project/hunny_app/static/messages/): Static folder to manage all static files(images, CSS, JS ...)for front-end
 		- [Configured hunny_project/hunny_app/static/messages/main.css](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/master/hunny_project/hunny_app/static/messages/main.css): CSS file to style the content of homepage/login/singup pages 
 		- [Configure hunny_project/hunny_app/templates/login.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/master/hunny_project/hunny_app/templates/login.html) html Template- User Interface for login feature
 		- [Configured hunny_project/hunny_app/templates/messages.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/master/hunny_project/hunny_app/templates/messages.html) html Template- User Interface for message feature
-		- [Configured hunny_project/hunny_app/templates/home.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/master/hunny_project/hunny_app/templates/home.html) html Template- User Interface for sign-up feature
+		- [Configured hunny_project/hunny_app/templates/home.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/templates/signup.html) html Template- User Interface for sign-up feature
+		- [Configured hunny_project/hunny_app/templates/matchingroom.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/templates/matchingroom.html) html Template- User Interface for Matching feature
+		- [Configured hunny_project/hunny_app/templates/likenext.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/templates/likenext.html) html Template- User Interface,which users will be brought to after clicking like-button
+		- [Configured hunny_project/hunny_app/templates/dislikenext.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/templates/dislikenext.html)  html Template- User Interface,which users will be brought to after clicking like-button
+		- [Configured hunny_project/hunny_app/models.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/models.py) Added attributes of Profile model to store matches,like, current profile to check out
+		- [Configured hunny_project/hunny_app/urls.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/urls.py) enable urls link for like/dislike/matchingroom pages
+		- [Configured hunny_project/hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/views.py) implemented back-end for matching-room to see the current profile when users doen't make decision on likes/dislikes
+		- [Configured https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_project/settings.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_project/settings.py) Adding details for userprofile-creation automation
+		- [Configured hunny_project/hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/views.py) implemented back-end for like-button
+		- [Configured hunny_project/hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/views.py) implemented back-end for dislike-button
+		- [Configured hunny_project/hunny_app/models.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/models.py) Added attributes of Profile model to store matches,like, current profile to check out
 	- ### **Next steps:**
-		- Create User-interface (html templates + CSS) for other features
-		- Develop the back-end for Match-Room features
+		- refactor views.py and other hmtl files
+		- use preference data to implement filter function for matching-system
+		- edit the matching-system user-interface 
 - ## **Isaac:**
 	- ### **Features:**
 		- Configured the backend to allow users to register and implemented the code needed for the frontend so it can pass the information along
