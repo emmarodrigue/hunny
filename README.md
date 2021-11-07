@@ -113,9 +113,11 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
         - Whatever else needs to be done too
 - ## **Kody:**
     - ### **Features:** 
-		- created project structure using Django framework, linking and editing templates, and creating a file to format other templates to promote a uniform UI 
+		- (Sprint 1) created project structure using Django framework, linking and editing templates, and creating a file to format other templates to promote a uniform UI 
+		- (Sprint 2) created chat and chat room interface, created a landing page, handled matches for using websockets to enable chat functionality between users
 	- ### **Links to contributions:**
-		- work done mostly within **kody** branch but also **demo** and **master**
+		- **Sprint 1**
+		- work done mostly within **kody** branch but also **develop** and **demo**
 		- [created Django project directory with required files](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_project/) to hold our app and dependencies
 		- [configured hunny_project/urls.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_project/urls.py) to ensure the server has a path to our hunny_app
 		- [configured settings.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_project/settings.py) based on the Django framework
@@ -124,8 +126,14 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 		- [configured views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/views.py) to define the means of calling the urls and also contain some functionality of our pages
 		- [linked and pathed html templates using Django framework](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/) to make sure each page is accessible 
 		- [created base.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/base.html) for formatting templates to ensure reusable and flexible code
+		- **Sprint 2**
+		- work done mostly within **kody** branch but also **develop** and **demo**
+		- [configured websockets](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_project/settings.py) based on the Django framework
+		- [chat functionality](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project) based on the Django framework
+		- [chat UI](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/chat.html) 
+		- [chat room UI](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/chat_room.html) 
 	- ### **Next steps:**
-		- home page UI displaying other users profiles 
+		- better chat room ui and save chat history to DB 
 
 
 
