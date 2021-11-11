@@ -110,4 +110,10 @@ class MatchRequest(models.Model):
         return f"{self.sender}-{self.receiver}-{self.status}"
 
 
+class Message(models.Model):
+    author = models.ForeignKey(User, related_name='messages', on_delete=models.CASCADE)
+    context = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+
 

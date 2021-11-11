@@ -154,7 +154,7 @@ body{
             const message = messageInputDom.value;
             var user = "{{ user|safe }}";
             chatSocket.send(JSON.stringify({
-                'message': user + ': ' + message
+                'message': message
             }));
             messageInputDom.value = '';
         };
