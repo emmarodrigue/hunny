@@ -87,6 +87,7 @@ def editProfile(request):
         birthday = request.POST.get('gender')
         bio = request.POST.get('bio')
         image = request.FILES.get('image')
+
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.userprofile)
         p_form.first_name = first_name
         p_form.last_name = last_name
