@@ -19,8 +19,7 @@
                                     My Profile
                                   </h4>
                                 <div class="media">
-                                    <!-- <img src="../../{{ user.userprofile.image }}" class="rounded-circle" width="90"> -->
-                                    <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y">
+                                    <img src="{{ user.userprofile.image.url }}" class="rounded-circle" width="90">
                                 </div>
                                 <h6 class="f-w-600">{{ user.userprofile.first_name }} {{ user.userprofile.last_name }}</h6>
                                 <button class="edit-btn" onclick="location.href='/profile-edit'">

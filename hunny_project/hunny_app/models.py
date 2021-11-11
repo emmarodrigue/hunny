@@ -27,13 +27,6 @@ class Profile(models.Model):
         ('Women', 'Women'),
         ('No Preference', 'No Preference')
     ]
-    # children preference choices
-    CHILDREN_CHOICES = [
-        ('Children are a dealbreaker', 'Children are a dealbreaker'),
-        ('Looking for children in the future', 'Looking for children in the future'),
-        ('Prefer someone with children', 'Prefer someone with children'),
-        ('No Preference', 'No Preference')
-    ]
     # relationship type choices
     RELATIONSHIP_CHOICES = [
         ('Casual Dating', 'Casual Dating'),
@@ -49,10 +42,9 @@ class Profile(models.Model):
     gender = models.CharField(max_length=100, choices=GENDER_CHOICES, null=True, blank=True)
     birthday = models.DateField(default=None, blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
-    image = models.ImageField(default='images/signup.jpg', upload_to='static/hunny_app/profile_pics')
+    image = models.ImageField(default='static/profile_pics/default.jpg', upload_to='static/profile_pics')
     # user's preferences
     gender_preference = models.CharField(max_length=100, choices=PREFERRED_GENDER_CHOICES, null=True, blank=True)
-    children_preference = models.CharField(max_length=100, choices=CHILDREN_CHOICES, null=True, blank=True)
     relationship_preference = models.CharField(max_length=100, choices=RELATIONSHIP_CHOICES, null=True, blank=True)
     age_range = models.CharField(max_length=100, null=True, blank=True)
     match_radius = models.CharField(max_length=100, help_text='miles', blank=True, null=True)
@@ -67,11 +59,11 @@ class Profile(models.Model):
 
     def save(self, *args, **kwargs):
         super(Profile, self).save(*args, **kwargs)
-        # img = Image.open(self.image.path)
-        # if img.height > 300 or img.width > 300:
-            # output_size = (300,300)
-            # img.thumbnail(output_size)
-            # img.save(self.image.path)
+        img = Image.open(self.image.path)
+        if img.height > 300 or img.width > 300:
+            output_size = (300,300)
+            img.thumbnail(output_size)
+            img.save(self.image.path)
 
     def next_check(self):
         super().save()
