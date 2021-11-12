@@ -110,21 +110,26 @@ def accountlogout(request):
 
 @login_required(login_url='/landing')
 def chat(request):
-    user = User.objects.get(username=request.user)
     myprofile = request.user.userprofile
     matches = myprofile.matches.all()
     context = {'matches': matches}
-    last_online = user.last_login.strftime('%a')
     return render(request, 'chat.html', context)
 
 @login_required(login_url='/landing')
 def chat_room(request, room_name):
-    current_date = datetime.datetime.now()
-    user = User.objects.get(username=request.user)
+    Users = get_user_model()
+    myprofile= request.user.userprofile
+    c_k = myprofile.current_check
+    c_k_user = Users.objects.filter()[(c_k):(c_k + 1)].get()
+    myprofile.who_like_me.add(c_k_user)
+    n_index = next_check_index(Users.objects.count(), c_k)
+    myprofile.current_check = n_index
+    myprofile.save()
+    match = add_match_if_bothlike(request.user,c_k_user)
+    next = Users.objects.filter()[(n_index):(n_index + 1)].get()
     myprofile = request.user.userprofile
     matches = myprofile.matches.all()
-    last_online = user.last_login.strftime('%a')
-    context = {'matches': matches, 'room_name': room_name,'current_date': current_date, 'last_online': last_online}
+    context = {'matches': matches, 'room_name': room_name, 'next': next}
     return render(request,'chat_room.html', context)
 
 @login_required(login_url='/landing')

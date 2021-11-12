@@ -14,7 +14,7 @@
             <div class="chat-header clearfix">
                 <div class="row">
                     <div class="chat-about">
-                        <h6 class="reciever">{{ room_name }}</h6>
+                        <h6 class="reciever" id="room">{{next.first_name}} {{next.last_name}}</h6>
                     </div>
                 </div>
             </div>
@@ -124,7 +124,6 @@ body{
 {{ room_name|json_script:"room-name" }}
     <script type="text/javascript">
         const roomName = JSON.parse(document.getElementById('room-name').textContent);
-
         const chatSocket = new WebSocket(
             'ws://'
             + window.location.host
