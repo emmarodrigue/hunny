@@ -37,14 +37,14 @@ def accountlogin(request):
 def like_next(request):
      Users = get_user_model()
      myprofile= request.user.userprofile
-     c_k = myprofile.current_check
-     c_k_user = Users.objects.filter()[(c_k):(c_k + 1)].get()
-     myprofile.who_like_me.add(c_k_user)
-     n_index = next_check_index(Users.objects.count(), c_k)
-     myprofile.current_check = n_index
+     current_check = myprofile.current_check
+     current_check_user = Users.objects.filter()[(current_check):(current_check + 1)].get()
+     myprofile.who_like_me.add(current_check_user)
+     next_check = next_check_index(Users.objects.count(), current_check)
+     myprofile.current_check = next_check
      myprofile.save()
-     match = add_match_if_bothlike(request.user,c_k_user)
-     next = Users.objects.filter()[(n_index):(n_index + 1)].get()
+     match = add_match_if_bothlike(request.user,current_check_user)
+     next = Users.objects.filter()[(next_check):(next_check + 1)].get()
      context = {'next':next, 'match':match}
      return render(request, 'likenext.html',context)
 
@@ -55,15 +55,23 @@ def add_match_if_bothlike(user1, user2):
         return 1
     return 0
 
+def remove_likes(user1, user2):
+    user1.userprofile.who_like_me.remove(user2)
+    user2.userprofile.who_like_me.remove(user1)
+
+def filter(user):
+    gender = user.userprofile.gender_preference;
+
+
 @login_required(login_url='/landing')
 def dislike_next(request):
      Users = get_user_model()
      myprofile= request.user.userprofile
-     c_k = myprofile.current_check
-     n_index = next_check_index(Users.objects.count(), c_k)
-     myprofile.current_check = n_index
+     current_check = myprofile.current_check
+     next_check = next_check_index(Users.objects.count(), current_check)
+     myprofile.current_check = next_check
      myprofile.save()
-     next = Users.objects.filter()[(n_index):(n_index + 1)].get()
+     next = Users.objects.filter()[(next_check):(next_check + 1)].get()
      context = {'next':next}
      return render(request, 'dislikenext.html',context)
 
