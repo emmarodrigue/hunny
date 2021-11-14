@@ -10,12 +10,16 @@
         <link rel="stylesheet" href="{% static 'hunny_app/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'hunny_app/css/style.css' %}">
         <style>
+            body{
+                width: auto;
+                height: 1000px;
+            }
         ul {
           list-style-type: none !important;
           margin: 0 !important;
           padding: 0 !important;
           overflow: hidden !important;
-          background-color: rgb(204, 119, 62) !important
+          background-color: transparent !important
         }
 
         li {
@@ -37,9 +41,11 @@
         .right-side {
             float: right !important;
         }
+
+
     </style>
     </head>
-    <body style="background-color: #FFDDC3";>
+    <body>
         <div class="col-9 text-right">
             <span class="d-inline-block d-lg-none">
                 <a href="#" class="text-primary site-menu-toggle js-menu-toggle py-5">

@@ -87,7 +87,8 @@
         }
 
         .content-wrapper{
-          background-color: #ffe6cc;
+          background: linear-gradient(44deg, #ff9e2d, #ffcece, #f78131);
+          background-size: 2000% 2000%;
         }
   </style>
   </style>
@@ -103,8 +104,8 @@
       <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y">
 
 
-      <h1 style="-webkit-text-stroke: .5px black;">{{next.username}}</h1>
-      <p style="-webkit-text-stroke: .5px black;">Web designer</p>
+      <h1>{{next.username}}</h1>
+      <p>Web designer</p>
       <div >
       <form method = POST action="{% url 'hunny-like' %}" style = "display:inline">
         {% csrf_token %}
