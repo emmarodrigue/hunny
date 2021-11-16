@@ -177,10 +177,19 @@ def preferences(request):
 def editPreferences(request):
     p_form = ProfileUpdateForm()
     if request.method == 'POST':
+        gender = request.POST.get('gender_preference')
+        relationship = request.POST.get('relationship_preference')
+        age_range = request.POST.get('age_range')
+        distance = request.POST.get('match_radius')
+
         p_form = ProfileUpdateForm(request.POST, instance=request.user.userprofile)
+        p_form.gender_preference = gender
+        p_form.relationship_preference = relationship
+        p_form.age_range = age_range
+        p_form.match_radius = distance
         if p_form.is_valid():
             p_form.save()
-            return redirect('/preferences')
+            return redirect('hunny-preferences')
     else:
         p_form = ProfileUpdateForm(instance=request.user.userprofile)
     context = {'p_form':p_form}
