@@ -12,14 +12,32 @@
 <div class="container">
         <div class="chat">
             <div class="chat-header clearfix">
-                <div class="row">
                     <div class="chat-about">
                         <h6 class="reciever" id="room">{{next.first_name}} {{next.last_name}}</h6>
-                    </div>
+                        <input id="toggle" type="checkbox" style="display: inline;">
+                        <small style="color: white;">more info</small>
+                        <div id="expand">
+                            <section>
+                                <p class="moreinfo" style="color: white;">{{next.userprofile.age}} ◈ {{next.userprofile.gender}} ◈ {{next.userprofile.city}}</p>
+                                <p class="moreinfo" style="color: white;">{{next.userprofile.bio}}</p>
+
+                            </section>
+                                <div class="pics">
+                                    <section>
+                                        <img class="pic" src="{{ next.userprofile.image.url }}">
+                                        <img class="pic" src="{{ next.userprofile.image.url }}">
+                                        <img class="pic" src="{{ next.userprofile.image.url }}">
+                                    </section>
+                                </div>
+                            </section>
+                            
+                        </div>
                 </div>
             </div>
         </div>
+
     <textarea id="chat-log" cols="120" rows="30"></textarea><br>
+
     <div class="center">
         <input id="chat-message-input" type="text" placeholder="Enter Message . . .">
         <button id="chat-message-submit" type="button" value="Send">➤</button>
@@ -34,12 +52,65 @@ body{
     margin-top:20px;
 }
 
+.pics{
+    width: 77%;
+    height: 30%;
+    margin-top: 40px;
+}
+
+.pic{
+    filter: blur(7px);
+    -webkit-filter: blur(7px);
+    height: 100%;
+    float: right;
+    padding: 0;
+    border-radius: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    width: 150px
+}
+
+.pic:hover{
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+    height: 100%;
+}
+
+
+.moreinfo{
+    text-align: center;
+    font-size: large;
+}
+
+#expand{
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s;
+    background: rgba(241, 147, 85, 0);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+section{
+    padding: 0 15px;
+}
+
+#toggle:checked ~ #expand{
+    height: 400px;
+}
+
+
+#toggle2:checked ~ #blur{
+    color: black;
+}
+
+
 .container{
     border-radius: 12px;
     margin-top: 40px;
     padding-bottom: 10px;
     background: rgba(241, 147, 85, 0.5);
-    border: 2px solid rgb(255, 255, 255);
+    border: 3px solid rgb(255, 255, 255);
 }
 .chat-log{
     justify-content: center;
@@ -59,12 +130,6 @@ body{
     background: transparent;
 }
 
-.chat .chat-header img {
-    float: right;
-    padding: 0;
-    border-radius: 40px;
-    width: 100px
-}
 
 .chat .chat-header .reciever {
     margin: auto;
