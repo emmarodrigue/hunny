@@ -5,191 +5,179 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <!-- <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width,initial-scale=1" name="viewport">
   <meta content="description" name="description">
   <meta name="google" content="notranslate" />
   <meta content="Mashup templates have been developped by Orson.io team" name="author">
 
-  <!-- Disable tap highlight on IE -->
+  <!-- Disable tap highlight on IE
   <meta name="msapplication-tap-highlight" content="no">
 
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
-  <link href="./assets/favicon.ico" rel="icon">
+  <link href="./assets/favicon.ico" rel="icon"> -->
 
-  <title>Title page</title>
+  <title>Hunny</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/7cf11bd0ef.js" crossorigin="anonymous"></script>
-  <link href="{% static 'hunny_app/css/matchingroom.css' %}" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+  <link href="./assets/favicon.ico" rel="icon">
+  <!-- <link href="{% static 'hunny_app/css/matchingroom.css' %}" rel="stylesheet"> -->
   <style>
     .redHeart {
-    color: red;
-    font-size: 150px;
-    padding-right: 50px;
+      color: rgb(204, 119, 62);
+      font-size: 80px;
+      padding-right: 50px;
     }
 
     .blackHeart {
-    color: #5A1E8C;
-    font-size: 150px;
+      color: #7f5f99;
+      font-size: 80px;
     }
 
     .redHeart:hover{
-    color:red;
-    transform: rotate(45deg) scale(1.2);
-    opacity: 0.7;
+      color:red;
+      transform: rotate(45deg) scale(1.2);
+      opacity: 0.7;
     }
 
     .blackHeart:hover{
-    color:#5A1E8C;
-    transform: rotate(-45deg) scale(1.2);
-    opacity: 0.7;
+      color:#48196e;
+      transform: rotate(-45deg) scale(1.2);
+      opacity: 0.7;
     }
 
     img {
-    width: 200px;
-    height: auto;
-    border-radius: 50%;
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
     }
     button {
-    padding: 0;
-    border: none;
-    background: none;
+      padding-top: 20px;
+      margin-top: 40px;
+      border: none;
+      background: none;
+    }
+    .page{
+      width: 1500px;
+      height: 400px;
+      background: #FFFFFF;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 30px;
+      border-radius: 20px;
+    }
+    body{
+      background: linear-gradient(44deg, #ff9e2d, #ffcece, #f78131);
+      background-size: 2000% 2000%;
+    }
+    .profile_pic {
+      margin-top: 50px;
+      filter: blur(8px);
+      border: 5px solid white;
+      transition: transform .2s;
     }
 
-            ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          background-color: rgb(204, 119, 62)
-        }
 
-        li {
-          float: left;
-        }
+    .profile_pic:hover {
+      transform: scale(1.2);
+    }
 
-        li a {
-          display: block;
-          color: white;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-        }
+    .container{
+        margin-top: 40px;
+        display: table;
+        background-color: rgba(241, 147, 85, 0.5);
+        border: 3px solid rgb(255, 255, 255);
+    }
 
-        li a:hover {
-          background-color: #fceedf;
-        }
+    .centered{
+        padding-bottom: 60px;
+        display: table-cell;
+            width: 800px;
+        text-align: center;
+        vertical-align: middle;
+    }
 
-        .page{
-            width: 1500px;
-            height: 400px;
-            background: #FFFFFF;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 30px;
-            border-radius: 20px;
-        }
-        .body{
-            background-color:#FFDDC3;
-            border-radius: 20px;
-            padding: 100px;
-        }
-        .profile_pic {
-        filter: blur(8px);
-        }
+    .username{
+      margin: auto;
+      color: rgb(255, 255, 255); 
+      font-size: 50px;
+      padding-bottom: -20px;
+    }
 
-        .content-wrapper{
-          background: linear-gradient(44deg, #ff9e2d, #ffcece, #f78131);
-          background-size: 2000% 2000%;
-        }
-  </style>
+    .moreinfo{
+      text-align: center;
+      font-size: large;
+      overflow-wrap: break-word;
+    }
+
+    .swal-overlay {
+      background-color: rgba(241, 147, 85, 0.5);
+      border: 3px solid white;
+    }
+
+    .swal-title {
+      margin: 0px;
+      font-size: 25px;
+      margin-bottom: 28px;
+    }
+
+    .swal-text {
+      padding: 17px;
+      display: block;
+      margin: 22px;
+      text-align: center;
+      color: #61534e;
+    }
+
+    .swal-button {
+      padding: 7px 19px;
+      border-radius: 2px;
+      background-color: rgb(241, 147, 85);
+      font-size: 12px;
+      border: 1px solid #3e549a;
+      text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+    }
+
   </style>
 </head>
-<body class="">
-
-<!-- Add your content of header -->
-<!-- <div class="background-color-layer" style="background-image: url('{% static 'hunny_app/images/signup-image.jpg' %}')"
-></div> -->
-<main class="content-wrapper">
-  <header class="white-text-container section-container">
-    <div class="text-center">
+<body class></body>
+  <div class="container">
+    <div class="centered">
       <img class="profile_pic" src="{{ next.userprofile.image.url }}">
-
-
-      <h1>{{next.username}}</h1>
-      <p>Web designer</p>
-      <div >
+      <div>
+        <h1 class="username">{{next.first_name}} {{next.last_name}}</h1>
+        <section>
+          <p class="moreinfo" style="color: white;">{{next.userprofile.age}} ◈ {{next.userprofile.gender}} ◈ {{next.userprofile.city}}</p>
+          <p class="moreinfo" style="color: white;">Looking for: {{next.userprofile.relationship_preference}}</p>
+          <p class="moreinfo" style="color: white;">{{next.userprofile.bio}}</p>
+        </section>
+      </div>
       <form method = POST action="{% url 'hunny-like' %}" style = "display:inline">
         {% csrf_token %}
-        <button class="button" href="/profile" type="submit"><i class="fas redHeart fa-heart"></i></button>
+        <button class="button" href="/profile" type="submit" id="pic"><i class="fas redHeart fa-heart"></i></button>
       </form>
       <form method = POST action="{% url 'hunny-dislike' %}" style = "display:inline">
         {% csrf_token %}
-        <button class="button" href="/matchingroom" type="submit"><i class="fas blackHeart fa-heart-broken"></i></button>
-      </form>
-  </header>
-
-
-
-<!-- Add your site or app content here -->
-
- <div class="container">
-   <div class="row">
-     <div class="col-xs-12">
-
-        <div class="card">
-          <div class="card-block">
-            <h2>About me</h2>
-            <div class="row">
-              <div class="col-md-4">
-                <p><img src="{% static 'hunny_app/images/img-8.jpg' %}" alt=""></p>
-              </div>
-              <div class="col-md-8">
-                  <p> {{next.userprofile.bio}}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-block">
-            <h2>Profile</h2>
-            <div class="row">
-              <div class="col-md-4">
-                <div class="language-experience">
-                  <h3 class="h5"> Age  <small> {{next.userprofile.age}}</small></h3>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="language-experience">
-                  <h3 class="h5"> City <small>{{next.userprofile.city}}</small></h3>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="language-experience">
-                  <h3 class="h5"> Looking For <small>{{next.userprofile.relationship_preference}}</small></h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-     </div>
-   </div>
- </div>
-
-</main>
-<footer class="footer-container white-text-container text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <p><img src="{% static 'hunny_app/images/signup-image.jpg' %}" alt=""></p>
-
-        <p>©All right reserved. Design <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
-      </div>
+        <button class="button" href="/matchingroom" type="submit" id="pic"><i class="fas blackHeart fa-heart-broken"></i></button>
+      </form?>
+      <p style="text-align: right; color: white; padding-right: 30px; padding-bottom: 0px; margin-top: 20px;">@{{next.username}}</p>
     </div>
   </div>
-  <div>Icons made by <a href="https://www.flaticon.com/authors/kmg-design" title="kmg design">kmg design</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-  <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-</footer>
+</body>
+
+
+<script>
+var intDuration = 2000; //time in ms
+setInterval(
+   function(){
+       $('#pic').animate({"width": "-=10px"},'slow').delay(1000)
+           .animate({"width": "+=10px"},'slow');
+   }, 
+   intDuration
+);
+</script>
 
 <script>
   document.addEventListener("DOMContentLoaded", function (event) {
@@ -200,7 +188,11 @@
 <script type="text/javascript" src="{% static 'hunny_app/js/matching.js' %}" ></script></body>
 {% if match %}
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script> swal("YOU'VE GOT A MATCH!"); </script>
+  <script> 
+    usermatch = "{{next.first_name}}";
+    console.log("test " + usermatch);
+    swal("You've got a match!", "Go message them in Chat Room!", "success"); 
+  </script>
 {% endif %}
 
 </html>

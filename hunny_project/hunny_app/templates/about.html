@@ -21,7 +21,10 @@
             display:flexbox;
             justify-content: center;
             align-items: center;
-            background: #ffcece;
+            background: linear-gradient(44deg, #ff9e2d, #ffcece, #f78131);
+            background-size: 2000% 2000%;
+            border-radius: 20px;
+            padding: 100px; 
             margin: 10px;
             padding: 20px;
             box-sizing: border-box;
@@ -49,6 +52,9 @@
         }
         .container{
             position: relative;
+            color: white;
+            background-color: rgba(241, 147, 85, 0.5);
+            border: 3px solid rgb(255, 255, 255);
             display: flex;
             margin-top: 50px;
             justify-content: center;
@@ -64,7 +70,7 @@
             margin: 30px;
             box-shadow: 20 px 20px 50px rgba(0, 0, 0, 0.5);
             border-radius: 15px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 0, 0, 0.1);
             overflow: hidden;
             display: block;
             justify-content: center;
@@ -140,19 +146,15 @@
           background-color: #fceedf;
         }
         
-        .body{
-            background: linear-gradient(44deg, #ff9e2d, #ffcece, #f78131);
-            background-size: 2000% 2000%;
-            border-radius: 20px;
-            padding: 100px; 
-        }
+        
         .landing-page{
             width: 1500px;
             height: 40px;
-            background: #FFDDC3;
+            background: transparent;
             text-align: center;
             margin-left: auto;
             margin-right: auto;
+            margin-bottom: 70px;
             padding: 30px; 
             border-radius: 20px;
         }
@@ -176,7 +178,7 @@
    
     <div class="container">
       <section class="landing-page">
-        <div>About</div>
+        <h1>About</h1>
         <div>The Hunny App was created by a group of young individuals looking to change the outlook of online dating. </div>
         <div>Checkout the below panels for more information!</div>
     </section>
