@@ -18,7 +18,7 @@ def matchingroom(request):
      c_k = myprofile.current_check
      next = Users.objects.filter()[(c_k):(c_k + 1)].get()
      context = {'next':next}
-     return render(request,'matchingroom.html',context)
+     return render(request,'dislikenext.html',context)
 
 def accountlogin(request):
      if request.method == 'POST':
@@ -72,9 +72,6 @@ def remove_likes(user1, user2):
 
 def filter(user):
     gender = user.userprofile.gender_preference;
-
-
-
 
 def next_check_index(max, current_index):
     if current_index == (max-1):
