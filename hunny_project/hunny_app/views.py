@@ -35,18 +35,29 @@ def accountlogin(request):
 
 @login_required(login_url='/landing')
 def like_next(request):
+    return searching_process(request, 1)
+
+@login_required(login_url='/landing')
+def dislike_next(request):
+    return searching_process(request, 0)
+
+def searching_process(request, like):
      Users = get_user_model()
      myprofile= request.user.userprofile
      current_check = myprofile.current_check
-     current_check_user = Users.objects.filter()[(current_check):(current_check + 1)].get()
-     myprofile.who_like_me.add(current_check_user)
      next_check = next_check_index(Users.objects.count(), current_check)
      myprofile.current_check = next_check
      myprofile.save()
-     match = add_match_if_bothlike(request.user,current_check_user)
      next = Users.objects.filter()[(next_check):(next_check + 1)].get()
-     context = {'next':next, 'match':match}
-     return render(request, 'likenext.html',context)
+     if like == 1:
+        current_check_user = Users.objects.filter()[(current_check):(current_check + 1)].get()
+        myprofile.who_like_me.add(current_check_user)
+        match = add_match_if_bothlike(request.user, current_check_user)
+        context = {'next':next, 'match':match}
+        return render(request, 'likenext.html', context)
+     if like == 0:
+        context = {'next':next}
+        return render(request, 'dislikenext.html',context)
 
 def add_match_if_bothlike(user1, user2):
     if user1 in user2.userprofile.who_like_me.all():
@@ -63,17 +74,7 @@ def filter(user):
     gender = user.userprofile.gender_preference;
 
 
-@login_required(login_url='/landing')
-def dislike_next(request):
-     Users = get_user_model()
-     myprofile= request.user.userprofile
-     current_check = myprofile.current_check
-     next_check = next_check_index(Users.objects.count(), current_check)
-     myprofile.current_check = next_check
-     myprofile.save()
-     next = Users.objects.filter()[(next_check):(next_check + 1)].get()
-     context = {'next':next}
-     return render(request, 'dislikenext.html',context)
+
 
 def next_check_index(max, current_index):
     if current_index == (max-1):
