@@ -83,7 +83,7 @@
             padding: 100px;
         }
         .profile_pic {
-        border-radius: 50%;
+        filter: blur(8px);
         }
 
         .content-wrapper{
@@ -101,7 +101,7 @@
 <main class="content-wrapper">
   <header class="white-text-container section-container">
     <div class="text-center">
-      <img src="{{ next.userprofile.image.url }}">
+      <img class="profile_pic" src="{{ next.userprofile.image.url }}">
 
 
       <h1>{{next.username}}</h1>
