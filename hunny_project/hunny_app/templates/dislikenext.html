@@ -22,22 +22,27 @@
   <script src="https://kit.fontawesome.com/7cf11bd0ef.js" crossorigin="anonymous"></script>
   <link href="{% static 'hunny_app/css/matchingroom.css' %}" rel="stylesheet">
   <style>
-    .button {
-      transition-duration: 1s;
-    }
-
-    .button:hover {
-      color: white;
-    }
     .redHeart {
     color: red;
-    font-size: 100px;
+    font-size: 150px;
     padding-right: 50px;
     }
 
     .blackHeart {
     color: #5A1E8C;
-    font-size: 100px;
+    font-size: 150px;
+    }
+
+    .redHeart:hover{
+    color:red;
+    transform: rotate(45deg) scale(1.2);
+    opacity: 0.7;
+    }
+
+    .blackHeart:hover{
+    color:#5A1E8C;
+    transform: rotate(-45deg) scale(1.2);
+    opacity: 0.7;
     }
 
     img {
@@ -167,51 +172,6 @@
             </div>
           </div>
         </div>
-<!--
-        <div class="card">
-          <div class="card-block">
-            <h2>My Photographs</h2>
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> -->
-
-
-            <!-- Wrapper for slides -->
-            <!-- <div class="carousel-inner" role="listbox">
-              <div class="item active">
-                <img src="{% static 'hunny_app/images/img-01.jpg' %}" class="img-responsive" alt="...">
-                <div class="carousel-caption">
-                  <h3 class="h5">Jules for Bastion</h3>
-                  <p>2017</p>
-                </div>
-              </div>
-              <div class="item">
-                <img src="{% static 'hunny_app/images/img-02.jpg' %}" alt="...">
-                <div class="carousel-caption">
-                  <h3 class="h5">Jules for Bastion</h3>
-                  <p>2017</p>
-                </div>
-              </div> -->
-
-              <!-- <div class="item">
-                <img src="{% static 'hunny_app/images/img-03.jpg' %}" class="img-responsive" alt="...">
-                <div class="carousel-caption">
-                  <h3 class="h5">Jules for Bastion</h3>
-                  <p>2017</p>
-                </div>
-              </div>
-            </div> -->
-
-            <!-- Indicators -->
-            <!-- <ol class="carousel-indicators">
-              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            </ol>
-
-          </div>
-          </div>
-        </div> -->
-
-
      </div>
    </div>
  </div>
