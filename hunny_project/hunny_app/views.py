@@ -92,7 +92,9 @@ def editProfile(request):
         gender = request.POST.get('gender')
         birthday = request.POST.get('gender')
         bio = request.POST.get('bio')
-        image = request.FILES.get('image')
+        image0 = request.FILES.get('image0')
+        image1 = request.FILES.get('image1')
+        image2 = request.FILES.get('image2')
 
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.userprofile)
         p_form.first_name = first_name
@@ -101,7 +103,9 @@ def editProfile(request):
         p_form.gender = gender
         p_form.birthday = birthday
         p_form.bio = bio
-        p_form.image = image
+        p_form.image0 = image0
+        p_form.image1 = image1
+        p_form.image2 = image2
         if p_form.is_valid():
             p_form.save()
             return redirect('hunny-profile')

@@ -145,7 +145,7 @@
 <body class></body>
   <div class="container">
     <div class="centered">
-      <img class="profile_pic" src="{{ next.userprofile.image.url }}">
+      <img class="profile_pic" src="{{ next.userprofile.image0.url }}">
       <div>
         <h1 class="username">{{next.first_name}} {{next.last_name}}</h1>
         <section>
@@ -161,7 +161,7 @@
       <form method = POST action="{% url 'hunny-dislike' %}" style = "display:inline">
         {% csrf_token %}
         <button class="button" href="/matchingroom" type="submit" id="pic"><i class="fas blackHeart fa-heart-broken"></i></button>
-      </form?>
+      </form>
       <p style="text-align: right; color: white; padding-right: 30px; padding-bottom: 0px; margin-top: 20px;">@{{next.username}}</p>
     </div>
   </div>
