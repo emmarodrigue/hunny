@@ -21,7 +21,7 @@
                                 <div class="media">
                                     <img src="{{ user.userprofile.image0.url }}" class="rounded-circle" width="90">
                                 </div>
-                                <h6 class="f-w-600">{{ user.userprofile.first_name }} {{ user.userprofile.last_name }}</h6>
+                                <h6 class="f-w-600" style="font-size: 20px;">{{ user.userprofile.first_name }} {{ user.userprofile.last_name }}</h6>
                                 <button class="edit-btn" onclick="location.href='/profile-edit'">
                                     <i class="far fa-edit"></i>
                                 </button>
@@ -67,6 +67,8 @@
 }
 
 .page-content .user-profile img{
+  height: 200px;
+  width: 200px;
   border-radius: 5px;
   margin-bottom: 10px;
 }
