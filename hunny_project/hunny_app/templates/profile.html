@@ -1,11 +1,9 @@
-{% extends 'base.html' %}
 {% block content %}
-<!DOCTYPE html>
-<html>
 <head>
     <meta charset="utf-8"/>
     <title>Your Profile</title>
 </head>
+<br>
 <body style="background: linear-gradient(44deg, #ff9e2d, #ffcece, #f78131);background-size: 2000% 2000%;">
 <div class="page-content page-container" id="page-content">
     <div class="padding">
@@ -56,14 +54,77 @@
 </div>
 <style>
 
+.page-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin:auto;
+
+  
+}
+
+.page-content .padding{
+  position: relative;
+        text-align: center;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center;
+        padding: 60px;
+}
+
+.padding .m-r-0{
+    border: 3px solid #fff;
+    padding: 40px;
+    display: inline-block;
+    width: 100%;
+    min-width: 540px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-align: left;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    background-color: rgba(241, 147, 85, 0.5);
+}
+
+.padding h4{
+  color: #fff;
+        text-align: left;
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 5px;
+}
+
+.padding h4{
+  margin-bottom: 30px;
+}
+
+.padding p{
+  color: #fff;
+        text-align: left;
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 20px;
+        margin-bottom: 30px;
+}
+
+
+
+
 .page-content .user-profile{
   width: 35%;
-  background: linear-gradient(to right,rgb(204, 119, 62),rgb(204, 119, 62));
   padding: 30px 25px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   text-align: center;
-  color: #fff;
 }
 
 .page-content .user-profile img{
@@ -80,7 +141,6 @@
 }
 .col-sm-8{
   width: 46%;
-  background: #fff;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
    display: flex;
@@ -88,12 +148,7 @@
   
 }
 
-.card-block{
-  margin-bottom: auto;
-}
-.card-block .p{
-  margin-left: 0px;
-}
+
 
 .card-block .h6{
   margin-bottom: 15px;
@@ -102,8 +157,6 @@
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-
-
 
 .col-sm-8 .h6{
     color: #353c4e;
@@ -119,5 +172,4 @@
 }
 </style>
 </body>
-</html>
 {% endblock content %}
