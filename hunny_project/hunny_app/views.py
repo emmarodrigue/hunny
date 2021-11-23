@@ -63,12 +63,10 @@ def add_match_if_bothlike(user1, user2):
     if user1 in user2.userprofile.who_like_me.all():
         user1.userprofile.matches.add(user2)
         user2.userprofile.matches.add(user1)
+        user2.userprofile.who_like_me.remove(user1)
+        user1.userprofile.who_like_me.remove(user2)
         return 1
     return 0
-
-def remove_likes(user1, user2):
-    user1.userprofile.who_like_me.remove(user2)
-    user2.userprofile.who_like_me.remove(user1)
 
 def filter(user):
     gender = user.userprofile.gender_preference;
