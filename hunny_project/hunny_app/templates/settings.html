@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="utf-8">
     <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
@@ -19,14 +17,12 @@
           <div class="list-group list-group-flush account-settings-links">
             <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
             <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
-            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-notifications">Notifications</a>
           </div>
         </div>
         <div class="col-md-9">
           <div class="tab-content">
             <div class="tab-pane fade active show" id="account-general">
               <hr class="border-light m-0">
-
               <div class="card-body">
                 <div class="form-group">
                   <label class="form-label">Username</label>
@@ -63,110 +59,9 @@
                 </div>
 
               </div>
-            </div>
-            <div class="tab-pane fade" id="account-info">
-              <div class="card-body pb-2">
-
-                <div class="form-group">
-                  <label class="form-label">Bio</label>
-                  <textarea class="form-control" rows="5"></textarea>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Birthday</label>
-                  <input type="text" class="form-control" value="May 3, 1995">
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Country</label>
-                  <select class="custom-select">
-                    <option>USA</option>
-                    <option selected="">Canada</option>
-                    <option>UK</option>
-                    <option>Germany</option>
-                    <option>France</option>
-                  </select>
-                </div>
-
-
-              </div>
-              <hr class="border-light m-0">
-      
+            </div>     
             </div>
           
-            
-            <div class="tab-pane fade" id="account-notifications">
-              <div class="card-body pb-2">
-
-                <h6 class="mb-4">Activity</h6>
-
-                <div class="form-group">
-                  <label class="switcher">
-                    <input type="checkbox" class="switcher-input" checked="">
-                    <span class="switcher-indicator">
-                      <span class="switcher-yes"></span>
-                      <span class="switcher-no"></span>
-                    </span>
-                    <span class="switcher-label">Email me when someone comments on my article</span>
-                  </label>
-                </div>
-                <div class="form-group">
-                  <label class="switcher">
-                    <input type="checkbox" class="switcher-input" checked="">
-                    <span class="switcher-indicator">
-                      <span class="switcher-yes"></span>
-                      <span class="switcher-no"></span>
-                    </span>
-                    <span class="switcher-label">Email me when someone answers on my forum thread</span>
-                  </label>
-                </div>
-                <div class="form-group">
-                  <label class="switcher">
-                    <input type="checkbox" class="switcher-input">
-                    <span class="switcher-indicator">
-                      <span class="switcher-yes"></span>
-                      <span class="switcher-no"></span>
-                    </span>
-                    <span class="switcher-label">Email me when someone follows me</span>
-                  </label>
-                </div>
-              </div>
-              <hr class="border-light m-0">
-              <div class="card-body pb-2">
-
-                <h6 class="mb-4">Application</h6>
-
-                <div class="form-group">
-                  <label class="switcher">
-                    <input type="checkbox" class="switcher-input" checked="">
-                    <span class="switcher-indicator">
-                      <span class="switcher-yes"></span>
-                      <span class="switcher-no"></span>
-                    </span>
-                    <span class="switcher-label">News and announcements</span>
-                  </label>
-                </div>
-                <div class="form-group">
-                  <label class="switcher">
-                    <input type="checkbox" class="switcher-input">
-                    <span class="switcher-indicator">
-                      <span class="switcher-yes"></span>
-                      <span class="switcher-no"></span>
-                    </span>
-                    <span class="switcher-label">Weekly product updates</span>
-                  </label>
-                </div>
-                <div class="form-group">
-                  <label class="switcher">
-                    <input type="checkbox" class="switcher-input" checked="">
-                    <span class="switcher-indicator">
-                      <span class="switcher-yes"></span>
-                      <span class="switcher-no"></span>
-                    </span>
-                    <span class="switcher-label">Weekly blog digest</span>
-                  </label>
-                </div>
-
-              </div>
-            </div>
             <div class="text-right mt-3">
               <button type="button" class="btn btn-primary">Save changes</button>&nbsp;
               <button type="button" class="btn btn-default">Cancel</button>
@@ -176,135 +71,109 @@
       </div>
     </div>
   </div>
+</body>
+
 <style>
-body{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.form-group{
-  position: relative;
-  text-align: center;
-  display: flex;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  align-items: center;
-  padding: 60px;
-  
-}
-.form-label{
-  padding: 10px;
-  display: block;
-  width: 100%;
-        min-width: 540px;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px;
-        text-align: left;
-        -webkit-transition: all 0.4s ease;
-        transition: all 0.4s ease;
-        background-color: transparent;
-        color: white;
-
-}
-.form-control{
-  position: relative;
-  margin-top: 80px;
-}
-.card {
-  background-color: transparent;
-  border: 3px solid #fff;
-  border-radius: 10px;
-
-}
-.card a{
-  border-radius: 3px;
-  background-color: #FFDDC3;;
-  color: white;
-}
-
-.btn-default {
-  background: rgb(204, 119, 62);
-  border-radius: 8px;
-  color: white;
-  font-size: 14px;
-  float: right;
-}
-
-label.btn {
-    margin-bottom: 0;
-}
-
-.btn-outline-primary {
-    border-color: rgb(204, 119, 62);
-    background: transparent;
-    color: rgb(204, 119, 62);
-    display: block;
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .form-group{
     position: relative;
-    width: auto;
-    float: left;
-}
-
-.btn-primary{
-  background: rgb(204, 119, 62);
-  border-color: rgb(204, 119, 62);;
-  border-radius: 8px;
-  color: white;
-  font-size: 14px;
-}
-
-.btn:hover{
-	background: #FFDDC3;
-	border-color: #FFDDC3;
-  cursor: pointer;
-}
-.text-light {
-    color: rgb(204, 119, 62);
-}
-
-
-
-.row-bordered {
-    overflow: hidden;
-    padding: 0px;
-    float: left;
-    position: sticky;
-}
-
-.account-settings-fileinput {
-    position: absolute;
-    visibility: hidden;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-}
-.account-settings-links .list-group-item.active {
-    font-weight: bold;
-}
-html:not(.dark-style) .account-settings-links .list-group-item.active {
-    background: transparent;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
     
-}
+  }
+  .form-label{
+    padding: 10px;
+    display: inline-block;
+    width: auto;
+    min-width: 540px;
+    border-radius: 10px;
+    text-align: left;
+    background-color: transparent;
+    color: white;
 
-.light-style .account-settings-links .list-group-item.active {
-    color:rgb(204, 119, 62);;
-}
-.light-style .account-settings-links .list-group-item {
-    padding: 0.85rem 1.5rem;
-    border-color: rgba(24, 28, 33, 0.021);
-}
+  }
+  .form-control{
+    position: relative;
+    margin-top: 80px;
+  }
+  .card {
+    background-color: transparent;
+    border: 3px solid #fff;
+    border-radius: 10px;
 
+  }
+  .card a{
+    border-radius: 3px;
+    background-color: #FFDDC3;;
+    color: white;
+  }
 
+  .btn-default {
+    background: rgb(204, 119, 62);
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    float: right;
+  }
+
+  .btn-outline-primary {
+      border-color: rgb(204, 119, 62);
+      background: transparent;
+      color: rgb(204, 119, 62);
+      display: block;
+      position: relative;
+      width: auto;
+      float: left;
+  }
+
+  .btn-primary{
+    background: rgb(204, 119, 62);
+    border-color: rgb(204, 119, 62);;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+  }
+
+  .btn:hover{
+    background: #FFDDC3;
+    border-color: #FFDDC3;
+    cursor: pointer;
+    color: white;
+  }
+  .account-settings-links .list-group-item.active {
+      font-weight: bold;
+  }
+  html:not(.dark-style) .account-settings-links .list-group-item.active {
+      background: whitesmoke;
+      
+  }
+  .light-style .account-settings-links .list-group-item.active {
+      font-weight: bold;
+      color: rgba(241, 147, 85, 0.5);
+  }
+  .light-style .account-settings-links .list-group-item {
+      padding: 0.85rem 1.5rem;
+      border-color: white;
+      background-color: transparent;
+  }
 
 </style>
 
 <script type="text/javascript">
 
 </script>
-</body>
-</html>
+
+
 {% endblock content %}
 

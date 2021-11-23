@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 {% block content %}
 <head>
     <meta charset="utf-8"/>
@@ -6,11 +7,8 @@
 <br>
 <body style="background: linear-gradient(44deg, #ff9e2d, #ffcece, #f78131);background-size: 2000% 2000%;">
 <div class="page-content page-container" id="page-content">
-    <div class="padding">
         <div class="row container d-flex justify-content-center">
-            <div class="col-xl-6 col-md-12" style="border-radius: 12px;">
                 <div class="card user-card-full" style="border-radius: 12px;">
-                    <div class="row m-l-0 m-r-0">
                         <div style="float: left;" class="col-sm-4 bg-c-lite-green user-profile">
                             <div class="card-block text-center text-white">
                                 <h4 class="font-weight-bold">
@@ -26,7 +24,7 @@
                             </div>
                         </div>
                         <div style="float: left;" class="col-sm-8">
-                            <div class="card-block">
+                            <div class="card-block info">
                                 <h6 class="m-b-20 p-b-5 b-b-default f-w-600">About Me</h6>
                                 <div class="row">
                                     <div class="col-sm-6 location">
@@ -46,11 +44,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
-            </div>
+            
         </div>
-    </div>
 </div>
 <style>
 
@@ -65,26 +61,22 @@
   
 }
 
-.page-content .padding{
+.page-content .card{
   position: relative;
         text-align: center;
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
         display: flex;
         -webkit-justify-content: center;
         justify-content: center;
         -webkit-align-items: center;
         align-items: center;
-        padding: 60px;
+        padding: 10px;
 }
 
-.padding .m-r-0{
+.card{
     border: 3px solid #fff;
-    padding: 40px;
+    padding: 10px;
     display: inline-block;
-    width: 100%;
+    width: auto;
     min-width: 540px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -95,29 +87,27 @@
     background-color: rgba(241, 147, 85, 0.5);
 }
 
-.padding h4{
+.card h4{
   color: #fff;
-        text-align: left;
-        font-size: 28px;
-        font-weight: 600;
-        margin-bottom: 5px;
+  text-align: left;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
-.padding h4{
+.card h4{
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.card p{
+  color: #fff;
+  text-align: left;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 20px;
   margin-bottom: 30px;
 }
-
-.padding p{
-  color: #fff;
-        text-align: left;
-        font-size: 17px;
-        font-weight: 300;
-        line-height: 20px;
-        margin-bottom: 30px;
-}
-
-
-
 
 .page-content .user-profile{
   width: 35%;
@@ -125,6 +115,7 @@
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   text-align: center;
+  background-color: transparent;
 }
 
 .page-content .user-profile img{
@@ -138,6 +129,7 @@
 
 .page-content .user-profile .p{
   font-size: 12px;
+  text-align: center;
 }
 .col-sm-8{
   width: 46%;
@@ -147,8 +139,25 @@
   justify-content: space-between;
   
 }
+.col-xl-6{
+  background-color: transparent;
+  box-shadow: none;
+  box-sizing: 300px;
+}
+.d-flex{
+  background-color: transparent;
+  box-shadow: none;
+}
 
+.m-l-0{
+  width: auto;
+}
+.info{
+  text-align: left;
+  margin-left: 10px;
+  color: white;
 
+}
 
 .card-block .h6{
   margin-bottom: 15px;
@@ -158,10 +167,17 @@
   letter-spacing: 2px;
 }
 
+.col-sm-6 p{
+  padding: 10px;
+}
+.col-sm-6 h6{
+  padding: 0px;
+}
 .col-sm-8 .h6{
     color: #353c4e;
     margin-bottom: 5px;
     padding: 0px;
+    background-color: rgba(241, 147, 85, 0.548);
 }
 
 .col-sm-8 .p{
@@ -169,6 +185,22 @@
   margin-bottom: 10px;
   position: absolute;
   color: #919aa3;
+}
+
+.edit-btn{
+  background: rgba(204, 119, 62, 0.6);
+  color: rgb(255, 251, 249);
+  outline: none;
+  border: 0px;
+  box-shadow: none;
+  border-radius: 8px;
+  font-size: 14px;
+  padding:8px 30px;
+  text-align: center;
+}
+.edit-btn:hover{
+  background: rgb(255, 214, 186);
+  cursor: default;
 }
 </style>
 </body>

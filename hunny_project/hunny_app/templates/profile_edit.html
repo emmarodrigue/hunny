@@ -100,29 +100,45 @@
 <style>
 
 
-
-.main-body .card-body{
+.container{
+	background-color: rgba(241, 147, 85, 0.5);
+	box-shadow: none;
 	border: 3px solid #fff;
-        padding: 40px;
-        display: block;
-        width: 100%;
-        min-width: 540px;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px;
+    padding: 10px;
+    display: block;
+    width: auto;
+    min-width: 540px;
+    text-align: left;
+}
+.main-body .card-body{
+    padding: 10px;
+        display: inline-block;
         text-align: left;
-        -webkit-transition: all 0.4s ease;
-        transition: all 0.4s ease;
         background-color: rgba(241, 147, 85, 0.5);
+		color: white;
+		box-shadow: none;
+		margin-bottom: 0px;
+}
+.card{
+	background-color: transparent;
+	outline: none;
+	box-shadow: none;
+	border: none;
 }
 .d-flex{
 	display: flex;
+	
 }
 .btn{
 	float: right;
 	background-color: rgb(204, 119, 62);
 	border-color: rgb(204, 119, 62);
 	color: white;
+}
+.btn:hover{
+  background: rgb(255, 214, 186);
+  cursor: default;
+  border: white;
 }
 .bio{
 	height: 100px;
