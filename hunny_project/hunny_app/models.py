@@ -23,8 +23,8 @@ class Profile(models.Model):
     ]
     # gender preference choices
     PREFERRED_GENDER_CHOICES = [
-        ('Men', 'Men'),
-        ('Women', 'Women'),
+        ('Female', 'Female'),
+        ('Male', 'Male'),
         ('No Preference', 'No Preference')
     ]
     # relationship type choices
