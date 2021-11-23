@@ -13,7 +13,7 @@
         <div class="chat">
             <div class="chat-header clearfix">
                     <div class="chat-about">
-                        <h6 class="reciever" id="room">{{next.first_name}} {{next.last_name}}</h6>
+                        <h6 class="reciever" id="room">{{next.userprofile.first_name}} {{next.userprofile.last_name}}</h6>
                         <input id="toggle" type="checkbox" style="display: inline;">
                         <small style="color: white;">more info</small>
                         <div id="expand">
@@ -24,9 +24,9 @@
                             </section>
                                 <div class="pics">
                                     <section>
-                                        <img class="pic" src="{{ next.userprofile.image.url }}">
-                                        <img class="pic" src="{{ next.userprofile.image.url }}">
-                                        <img class="pic" src="{{ next.userprofile.image.url }}">
+                                        <img class="pic" src="{{ next.userprofile.image0.url }}">
+                                        <img class="pic" src="{{ next.userprofile.image1.url }}">
+                                        <img class="pic" src="{{ next.userprofile.image2.url }}">
                                     </section>
                                 </div>
                             </section>
@@ -52,6 +52,7 @@ body{
     margin-top:20px;
 }
 
+
 .pics{
     width: 77%;
     height: 30%;
@@ -61,7 +62,7 @@ body{
 .pic{
     filter: blur(7px);
     -webkit-filter: blur(7px);
-    height: 100%;
+    height: 150px;
     float: right;
     padding: 0;
     border-radius: 10px;
@@ -72,7 +73,6 @@ body{
 .pic:hover{
     filter: blur(0px);
     -webkit-filter: blur(0px);
-    height: 100%;
 }
 
 

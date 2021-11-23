@@ -50,7 +50,7 @@
 
     img {
       width: 200px;
-      height: auto;
+      height: 200px;
       border-radius: 10px;
     }
     button {
@@ -89,6 +89,7 @@
         display: table;
         background-color: rgba(241, 147, 85, 0.5);
         border: 3px solid rgb(255, 255, 255);
+
     }
 
     .centered{
@@ -107,6 +108,8 @@
     }
 
     .moreinfo{
+      margin-left: 40px;
+      margin-right: 40px;
       text-align: center;
       font-size: large;
       overflow-wrap: break-word;
@@ -145,13 +148,13 @@
 <body class></body>
   <div class="container">
     <div class="centered">
-      <img class="profile_pic" src="{{ next.userprofile.image.url }}">
+      <img class="profile_pic" src="{{ next.userprofile.image0.url }}">
       <div>
-        <h1 class="username">{{next.first_name}} {{next.last_name}}</h1>
+        <h1 class="username">{{next.userprofile.first_name}} {{next.userprofile.last_name}}</h1>
         <section>
-          <p class="moreinfo" style="color: white;">{{next.userprofile.age}} ◈ {{next.userprofile.gender}} ◈ {{next.userprofile.city}}</p>
-          <p class="moreinfo" style="color: white;">Looking for: {{next.userprofile.relationship_preference}}</p>
-          <p class="moreinfo" style="color: white;">{{next.userprofile.bio}}</p>
+          <p class="moreinfo" style="color: white; font-size: 15px;">{{next.userprofile.age}} ◈ {{next.userprofile.gender}} ◈ {{next.userprofile.city}}</p>
+          <p class="moreinfo" style="color: white; font-size: 15px;">Looking for: {{next.userprofile.relationship_preference}}</p>
+          <p class="moreinfo" style="color: white; font-size: 20px;">{{next.userprofile.bio}}</p>
         </section>
       </div>
       <form method = POST action="{% url 'hunny-like' %}" style = "display:inline">

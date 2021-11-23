@@ -18,12 +18,16 @@
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="row">
-				    <div class="col-lg-4">
+                    <div class="col-lg-4">
 					    <div class="card">
 						    <div class="card-body">
 							    <div class="d-flex flex-column align-items-center text-center">
-								    <img src="{{ user.userprofile.image.url }}">
-								    <input type="file" name="image" id="image">
+                                    {% if user.userprofile.image0 %}
+                                    <img src="{{ user.userprofile.image0.url }}">
+                                    {% else %}
+								    <img src="static/profile_pics/default.jpg">
+                                    {% endif %}
+								    <input type="file" name="image0">
 							    </div>
 						    </div>
 					    </div>
@@ -84,6 +88,15 @@
 									    <input type="text" class="form-control bio" name="bio" id="bio">
 								    </div>
 							    </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Additional Photos</h6>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="file" name="image1" class="profile-image-container">
+                                        <input type="file" name="image2" class="profile-image-container">
+                                    </div>
+                                </div>
 							    <div class="row">
 								    <div class="col-sm-3"></div>
 								    <div class="col-sm-9 text-secondary">
@@ -92,12 +105,14 @@
 							    </div>
 						    </div>
 					    </div>
-				    </div>
-			    </div>
+                    </div>
+                </div>
             </form>
-		</div>
-	</div>
+        </div>
+    </div>
+</body>
 <style>
+<<<<<<< HEAD
 
 
 .container{
@@ -129,6 +144,17 @@
 	display: flex;
 	
 }
+=======
+.container {
+    position: relative;
+    display: block;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+	color: rgb(204, 119, 62);
+}
+>>>>>>> b6db03e330f5372a2c009f5a417177bddc6d5fdc
 .btn{
 	float: right;
 	background-color: rgb(204, 119, 62);

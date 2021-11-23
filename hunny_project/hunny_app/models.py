@@ -42,7 +42,9 @@ class Profile(models.Model):
     gender = models.CharField(max_length=100, choices=GENDER_CHOICES, null=True, blank=True)
     birthday = models.DateField(default=None, blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
-    image = models.ImageField(default='static/profile_pics/default.jpg', upload_to='static/profile_pics')
+    image0 = models.ImageField(default='static/profile_pics/default.jpg', upload_to='static/profile_pics')
+    image1 = models.ImageField(default='static/profile_pics/default.jpg', upload_to='static/profile_pics')
+    image2 = models.ImageField(default='static/profile_pics/default.jpg', upload_to='static/profile_pics')
     # user's preferences
     gender_preference = models.CharField(max_length=100, choices=PREFERRED_GENDER_CHOICES, null=True, blank=True)
     relationship_preference = models.CharField(max_length=100, choices=RELATIONSHIP_CHOICES, null=True, blank=True)
@@ -59,11 +61,6 @@ class Profile(models.Model):
 
     def save(self, *args, **kwargs):
         super(Profile, self).save(*args, **kwargs)
-        img = Image.open(self.image.path)
-        if img.height > 300 or img.width > 300:
-            output_size = (300,300)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
 
     def next_check(self):
         super().save()
