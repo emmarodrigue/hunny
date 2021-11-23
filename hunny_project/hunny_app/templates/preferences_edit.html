@@ -15,12 +15,12 @@ background-size: 2000% 2000%;">
                         <h3>Edit Preferences</h3>
                         <form method="POST">
                             {% csrf_token %}
-                            <div class="field">Interested in:</div>
+                            <div class="field">Gender Preference:</div>
                             <div class="col-md-12">
                                 <select class="form-select mt-3" name="gender_preference">
                                     <option value="none">--select--</option>
-                                    <option value="Men">Men</option>
-                                    <option value="Women">Women</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
                                     <option value="No Preference">No Preference</option>
                                 </select>
                             </div>

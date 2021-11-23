@@ -72,7 +72,15 @@ def gender_condition(user1,user2):
     gender_pre2 = user2.userprofile.gender_preference
     gender1 = user1.userprofile.gender
     gender2 = user2.userprofile.gender
-    return ((gender_pre1 == gender2) and (gender_pre2 == gender1))
+    if (gender_pre1 == 'No Preference'):
+        gen_con1 = True
+    else:
+        gen_con1 = (gender_pre1 == gender2)
+    if (gender_pre2 == 'No Preference'):
+        gen_con2 = True
+    else:
+        gen_con2 = (gender_pre2 == gender1)
+    return ((gen_con1) and (gen_con2))
 
 def relationship_condtition(user1,user2):
     rel_pre1 = user1.userprofile.relationship_preference
@@ -80,7 +88,7 @@ def relationship_condtition(user1,user2):
     return (rel_pre1 == rel_pre2)
 
 def meet_condition(user1, user2):
-    return relationship_condtition(user1, user2)
+    return (relationship_condtition(user1, user2) and gender_condition(user1,user2))
 
 def next_check_index(Users, max, user, current_index):
     if current_index == (max - 1):
@@ -89,7 +97,7 @@ def next_check_index(Users, max, user, current_index):
         next_index = current_index + 1
     while (True):
         next_user = Users.objects.filter()[(next_index):(next_index + 1)].get()
-        if meet_condition(user, next_user):
+        if ((user != next_user) and meet_condition(user, next_user)):
             return next_index
         else:
             if next_index == (max - 1):
