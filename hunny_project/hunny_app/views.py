@@ -45,7 +45,7 @@ def searching_process(request, like):
      Users = get_user_model()
      myprofile= request.user.userprofile
      current_check = myprofile.current_check
-     next_check = next_check_index(Users.objects.count(), current_check)
+     next_check = next_check_index(Users, Users.objects.count(), request.user, current_check)
      myprofile.current_check = next_check
      myprofile.save()
      next = Users.objects.filter()[(next_check):(next_check + 1)].get()
@@ -67,14 +67,36 @@ def add_match_if_bothlike(user1, user2):
         user1.userprofile.who_like_me.remove(user2)
         return 1
     return 0
+def gender_condition(user1,user2):
+    gender_pre1 = user1.userprofile.gender_preference
+    gender_pre2 = user2.userprofile.gender_preference
+    gender1 = user1.userprofile.gender
+    gender2 = user2.userprofile.gender
+    return ((gender_pre1 == gender2) and (gender_pre2 == gender1))
 
-def filter(user):
-    gender = user.userprofile.gender_preference;
+def relationship_condtition(user1,user2):
+    rel_pre1 = user1.userprofile.relationship_preference
+    rel_pre2 = user2.userprofile.relationship_preference
+    return (rel_pre1 == rel_pre2)
 
-def next_check_index(max, current_index):
-    if current_index == (max-1):
-        return 0
-    return (current_index + 1)
+def meet_condition(user1, user2):
+    return relationship_condtition(user1, user2)
+
+def next_check_index(Users, max, user, current_index):
+    if current_index == (max - 1):
+        next_index = 0
+    else:
+        next_index = current_index + 1
+    while (True):
+        next_user = Users.objects.filter()[(next_index):(next_index + 1)].get()
+        if meet_condition(user, next_user):
+            return next_index
+        else:
+            if next_index == (max - 1):
+                next_index = 0
+            else:
+                next_index = next_index + 1
+
 
 def terms_service(request):
      context = {}

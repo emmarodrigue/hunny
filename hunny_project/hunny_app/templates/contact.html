@@ -16,55 +16,159 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="{% static 'hunny_app/css/style.css' %}">
-    <style>
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          background-color: rgb(204, 119, 62)
-        }
-
-        li {
-          float: left;
-        }
-
-        li a {
-          display: block;
-          color: white;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-        }
-
-        li a:hover {
-          background-color: #fceedf;
-        }
-
-        .page{
-            width: 1500px;
-            height: 400px;
-            background: #FFFFFF;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 30px;
-            border-radius: 20px;
-        }
-        .body{
-            background-color:#FFDDC3;
-            border-radius: 20px;
-            padding: 100px;
-        }
-
-    </style>
+    
 </head>
 <body style="background: linear-gradient(44deg, #ff9e2d, #ffcece, #f78131);background-size: 2000% 2000%;">
-    <div class="main" style="background-color: transparent">
-        <!-- Sing in  Form -->
-        <section class="page">
-            <div>Contact</div>
-        </section>
-    </div>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+    <div class="container">
+      <div class="text">Contact Us</div>
+      <form action="#">
+         <div class="form-row">
+            <div class="input-data">
+               <input type="text" required>
+               <div class="underline"></div>
+               <label for="">First Name</label>
+            </div>
+            <div class="input-data">
+               <input type="text" required>
+               <div class="underline"></div>
+               <label for="">Last Name</label>
+            </div>
+         </div>
+         <div class="form-row">
+            <div class="input-data">
+               <input type="text" required>
+               <div class="underline"></div>
+               <label for="">Email Address</label>
+            </div>
+         </div>
+         <div class="form-row">
+            <div class="input-data">
+              <input type="text" required>
+               <div class="underline"></div>
+               <label for="">How can we improve?</label>
+               <br />
+               <div class="submit-btn">
+                <input type="submit" class="btn btn-primary px-4" value="Submit">
+               </div>
+            </div>
+         </div>
+      </form>
+   </div>
+</body>
+<style>
+
+
+.container{
+  max-width: 100%;
+  background:  rgba(241, 147, 85, 0.5);
+  width: auto;
+  padding: 25px 40px 10px 40px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  border: 3px solid white;
+}
+.container .text{
+  text-align: center;
+  font-size: 35px;
+  font-weight: 600;
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.container form{
+  padding: 30px 0 0 0;
+}
+.container form .form-row{
+  display: flex;
+  margin: 32px 0;
+}
+form .form-row .input-data{
+  width: 100%;
+  height: 40px;
+  margin: 0 20px;
+  position: relative;
+}
+form .form-row {
+  height: 70px;
+}
+.input-data input{
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid rgba(0,0,0, 0.12);
+  border-radius: 3px;
+  margin-left: -10px;
+  color: rgba(241, 147, 85, 0.5);
+}
+.input-data input:focus ~ label, 
+.input-data input:valid ~ label{
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: white;
+  margin-top: 40px;
+}
+
+.input-data label{
+  position: absolute;
+  pointer-events: none;
+  bottom: 0px;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  color: rgba(241, 147, 85, 0.5);
+}
+
+.input-data .underline{
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+}
+.input-data .underline:before{
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before{
+  transform: scale(1);
+}
+
+.btn{
+  width: 200%;
+	float: right;
+  color: white;
+	background-color: rgb(204, 119, 62);
+}
+.btn:hover{
+  background: rgb(255, 214, 186);
+  cursor: default;
+  border: white;
+  color: white;
+}
+
+@media (max-width: 700px) {
+  .container .text{
+    font-size: 30px;
+  }
+  .container form{
+    padding: 10px 0 0 0;
+  }
+  .container form .form-row{
+    display: block;
+  }
+  form .form-row {
+    margin: 35px ;
+  }
+  .btn {
+    width: 40%;
+  }
+}
+</style>
 </html>
 {% endblock content %}
