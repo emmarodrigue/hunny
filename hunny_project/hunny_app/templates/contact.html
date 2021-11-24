@@ -20,7 +20,7 @@
 </head>
 <body style="background: linear-gradient(44deg, #ff9e2d, #ffcece, #f78131);background-size: 2000% 2000%;">
     <div class="container">
-      <div class="text">Contact Us</div>
+      <h1 class="text">Contact Us</h1>
       <form action="#">
          <div class="form-row">
             <div class="input-data">
@@ -48,7 +48,7 @@
                <label for="">How can we improve?</label>
                <br />
                <div class="submit-btn">
-                <input type="submit" class="btn btn-primary px-4" value="Submit">
+                <input type="submit" class="btn btn-primary px-4" value="Submit" style="color: white; width: 50%; margin-right: 25%;">
                </div>
             </div>
          </div>
@@ -59,8 +59,10 @@
 
 
 .container{
-  max-width: 100%;
+  margin-top: 55px;
+  max-width: 60%;
   background:  rgba(241, 147, 85, 0.5);
+  height: 500px;
   width: auto;
   padding: 25px 40px 10px 40px;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
@@ -68,8 +70,6 @@
 }
 .container .text{
   text-align: center;
-  font-size: 35px;
-  font-weight: 600;
   background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -96,8 +96,8 @@ form .form-row {
   height: 100%;
   border: none;
   font-size: 17px;
-  border-bottom: 2px solid rgba(0,0,0, 0.12);
-  border-radius: 3px;
+  border: 2px solid rgba(204, 119, 62, 0.699);
+  border-radius: 12px;
   margin-left: -10px;
   color: rgba(241, 147, 85, 0.5);
 }
@@ -114,15 +114,16 @@ form .form-row {
   pointer-events: none;
   bottom: 0px;
   font-size: 20px;
+  padding-bottom: 35px;
   transition: all 0.3s ease;
   color: rgba(241, 147, 85, 0.5);
 }
 
 .input-data .underline{
   position: absolute;
-  bottom: 0;
+  border-bottom-right-radius: 0;
   height: 2px;
-  width: 100%;
+  width: 95%;
 }
 .input-data .underline:before{
   position: absolute;

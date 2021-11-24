@@ -187,6 +187,15 @@ How does one go about using it?
 Provide various use cases and code examples here.
 
 `write-your-code-here`
+- dev -
+git clone 
+pip install -r requirements
+open docker
+docker run -p 6379:6379 -d redis:5
+python manage.py createsuperuser
+python manage.py migrate
+python manage.py runserver
+
 
 
 ## Project Status

@@ -158,14 +158,7 @@ def chat_room(request, room_name):
     Users = get_user_model()
     myprofile= request.user.userprofile
     c_k = myprofile.current_check
-    c_k_user = Users.objects.filter()[(c_k):(c_k + 1)].get()
-    myprofile.who_like_me.add(c_k_user)
-    n_index = next_check_index(Users.objects.count(), c_k)
-    myprofile.current_check = n_index
-    myprofile.save()
-    match = add_match_if_bothlike(request.user,c_k_user)
-    next = Users.objects.filter()[(n_index):(n_index + 1)].get()
-    myprofile = request.user.userprofile
+    next = Users.objects.filter()[(c_k):(c_k + 1)].get()
     matches = myprofile.matches.all()
     context = {'matches': matches, 'room_name': room_name, 'next': next}
     return render(request,'chat_room.html', context)
