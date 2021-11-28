@@ -57,19 +57,6 @@
   align-items: center;
   text-align: center;
   margin:auto;
-
-  
-}
-
-.page-content .card{
-  position: relative;
-        text-align: center;
-        display: flex;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-align-items: center;
-        align-items: center;
-        padding: 10px;
 }
 
 .card{
@@ -85,36 +72,17 @@
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
     background-color: rgba(241, 147, 85, 0.5);
+    text-align: center;
+    color: white;
 }
 
 .card h4{
-  color: #fff;
-  text-align: left;
   font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-.card h4{
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.card p{
-  color: #fff;
-  text-align: left;
-  font-size: 17px;
-  font-weight: 300;
-  line-height: 20px;
   margin-bottom: 30px;
 }
 
 .page-content .user-profile{
-  width: 35%;
-  padding: 30px 25px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  text-align: center;
+  
   background-color: transparent;
 }
 
@@ -125,11 +93,11 @@
   margin-bottom: 10px;
 }
 
-.page-content .user-profile .h6{
+.page-content .user-profile h6{
   margin-bottom: 10px;
 }
 
-.page-content .user-profile .p{
+.page-content .user-profile p{
   font-size: 12px;
   text-align: center;
 }
@@ -137,10 +105,13 @@
   width: 46%;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-   display: flex;
+  display: inline-block;
   justify-content: space-between;
+  padding-top: 50px;
+  padding-left: 35px;
   
 }
+
 .col-xl-6{
   background-color: transparent;
   box-shadow: none;
@@ -154,41 +125,40 @@
 .m-l-0{
   width: auto;
 }
-.info{
-  text-align: left;
-  margin-left: 10px;
-  color: white;
 
-}
-
-.card-block .h6{
+.card-block h6{
   margin-bottom: 15px;
-  padding-bottom: 5px;
-  color: #353c4e;
+  padding: 15px;
+  color: white;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-size: 28px;
 }
-
-.col-sm-6 p{
-  padding: 10px;
+.f-w-600{
+	color: white;
+	text-transform: capitalize;
+  margin: 0px;
+}
+.f-w-400{
+  margin: 0px;
+  border: white;
+  font-weight: lighter;
+}
+.location{
+  padding: 0px 80px;
+  text-align: center;
+}
+.age{
+  padding: 0px 10px;
+  text-align: center;
 }
 .col-sm-6 h6{
-  padding: 0px;
+  color: white;
+  padding-top: 20px;
+  padding-left: -10px;
+  margin: 0px;
+  
 }
-.col-sm-8 .h6{
-    color: #353c4e;
-    margin-bottom: 5px;
-    padding: 0px;
-    background-color: rgba(241, 147, 85, 0.548);
-}
-
-.col-sm-8 .p{
-  font-size: 13px;
-  margin-bottom: 10px;
-  position: absolute;
-  color: #919aa3;
-}
-
 .edit-btn{
   background: rgba(204, 119, 62, 0.6);
   color: rgb(255, 251, 249);
@@ -203,6 +173,12 @@
 .edit-btn:hover{
   background: rgb(255, 214, 186);
   cursor: default;
+}
+@media(max-width: 800px){
+  .location{
+  padding: 0px 40px;
+  text-align: center;
+}
 }
 </style>
 </body>

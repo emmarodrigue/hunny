@@ -32,7 +32,8 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
         - Created a universal navbar that displays different routes based on if the user is logged in or not.
         - Developed and implemented the backend for the preferences page and edit profile page.
 	- ### **Links to contributions:**
-        - Work was done on emma branch then implemented into the demo branch since the file structure changed mid-project.
+		- **Sprint 1**
+        - Work was done on emma branch during the first sprint then on the develop branch for the remaining sprints.
         - [Configured hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/views.py) to edit and save user information, and to verify that the user 
           is logged in before attempting to edit a profile to ensure that only their profile is being updated.
         - [Configured hunny_app/forms.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/forms.py) to create a form where the user can enter their personal information.
@@ -44,6 +45,7 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
         - [Linked templates related to the user's profile](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/templates/) to ensure that everything flows together and there is a seemless transition when moving from the edit profile page to the view profile page.
         - [Implemented the backend functionality for hunny_app/templates/profile_edit.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/profile_edit.html) so that the user's current settings are displayed when editing and changes can be saved.
         - [Configured hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/views.py) to contain the functionality for logging out a user, displayed the preferences page, and saving user preferences.
+		- **Sprint 2**
         - [Modified hunny_app/forms.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/forms.py) to include the user's birthday and a variety of user preferences for matching.
         - [Configured hunny_app/models.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/models.py) to calculate a user's age based on their birthday, and added multiple fields for the user's preferences.
         - [Modified hunny_app/templates/base.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/base.html) to contain a dynamic universal navbar that was implemented on all pages.
@@ -51,9 +53,14 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
         - [Created hunny_app/templates/preferences_edit.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/preferences_edit.html) to allow the user to change/update their match preferences.
         - [Modified hunny_app/templates/user.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/user.html) to include the correct routes and a logout button with correct functionality.
         - [Added login_required decorators to user-only pages on hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/views.py) to ensure that some pages are only available when the user is logged in.
+		- **Sprint 3**
+		- [Modified hunny_app/models.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/models.py) to allow the user to upload up to three pictures to their account.
+		- [Configured hunny_app/templates/preferences.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/preferences.html) and [hunny_app/templates/preferences_edit.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/preferences_edit.html) to have a UI that matched the rest of the web application.
+		- [Configured hunny_project/settings.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_project/settings.py) to render the user's profile picture.
+		- [Modified hunny_app/forms.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/forms.py) and [hunny_app/models.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/models.py) to remove the children preferences for the ease of filtering in the match room.
 	- ### **Next steps:**
-        - Allow the user to upload multiple pictures.
-        - Ensure that all profile pictures render correctly.
+        - Implement a geolocation feature so that the user doesn't have to manually enter the information.
+		- Add range scrollers to some of the preferences to make them more intuitive.
 - ## **Saron:**
 	- ### **Features:** 
 		- Created a user page to navigate the user through the website and an account page.
@@ -115,6 +122,7 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
     - ### **Features:** 
 		- (Sprint 1) created project structure using Django framework, linking and editing templates, and creating a file to format other templates to promote a uniform UI 
 		- (Sprint 2) created chat and chat room interface, created a landing page, handled matches for using websockets to enable chat functionality between users
+		- (Sprint 3) implemented chat interface to display user matches, chat room ui expands for more info and displays messages intuitively with scrollable chat history, chat saves to database model, more user friendly landing page, contact and more
 	- ### **Links to contributions:**
 		- **Sprint 1**
 		- work done mostly within **kody** branch but also **develop** and **demo**
@@ -132,12 +140,20 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 		- [chat functionality](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project) based on the Django framework
 		- [chat UI](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/chat.html) 
 		- [chat room UI](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/chat_room.html) 
+		- **Sprint 3**
+		- work done mostly within **develop** and **demo**
+		- [configured channels, integrated redis](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/asgi) based on the Django framework
+		- [chat room displays user info](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project) based on the Django framework
+		- [chat room more user friendly with scroll and mobile responsive](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/chat_room.html)
+		- [better chat page UI, displays list of matches](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/chat.html) 
+		- [save chat history to model](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/chat_room.html)
+		- [reconnecting websocket](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/static/js/hunny_app/reconnecting-websocket.js) 
+		- [improved landing page](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/landing.html) 
+		- [matchroom more user friendly](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/)
+		- [overall frontend fixes](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/)
 	- ### **Next steps:**
-		- better chat room ui and save chat history to DB 
-
-
-
-
+		- need unique chat rooms for each match
+		- chat history loads backwards
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -158,7 +174,6 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 - What problem does it (intend to) solve?
 - What is the purpose of your project?
 - Why did you undertake it?
-
 
 ## Technologies Used
 - Django
@@ -181,12 +196,19 @@ List the ready features here:
 <!What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
 Proceed to describe how to install / setup one's local environment / get started with the project.>
 
-
 ## Usage
 How does one go about using it?
 Provide various use cases and code examples here.
 
 `write-your-code-here`
+- dev -
+git clone 
+pip install -r requirements
+open docker
+docker run -p 6379:6379 -d redis:5
+python manage.py createsuperuser
+python manage.py migrate
+python manage.py runserver
 
 
 ## Project Status
@@ -205,10 +227,9 @@ To do:
 
 
 ## Acknowledgements
-Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
+https://channels.readthedocs.io/en/stable/ - django channels documentation 
+https://github.com/justdjango/justchat - for channels
+https://github.com/joewalnes/reconnecting-websocket - for reconnecting websocket
 
 
 ## Contact
