@@ -6,22 +6,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hunny</title>
-
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="{% static 'hunny_app/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
-
-    <!-- Main css -->
-    <link rel="stylesheet" href="{% static 'hunny_app/css/style.css' %}">
     <style>
 
         
 
         .landing-container {
-            display: block;
+            display: flex;
+            align-items: center;
             margin-left: auto;
             margin-right: auto;
             position: relative;
@@ -92,22 +84,56 @@
             50%{background-position:30% 100%}
             100%{background-position:71% 0%}
         }
+
+        
+
+        @media only screen 
+        and (min-width : 1224px) {
+            .image{
+                display: block;
+                margin: 0 auto;
+                padding-left: 80px;
+                flex-shrink: 0;
+            }
+        }
+
+
+        @media only screen 
+        and (min-device-width : 300px){
+            .image{
+                display: block;
+                margin: 0 auto;
+                flex-shrink: 0;
+            } 
+        }
+        @media only screen 
+        and (min-device-width : 300px){
+            img{
+                width: 80%;  
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+        }
+        img{
+            width: 80%;  
+            margin-top: 200px;
+            margin-bottom: 150px;
+        }
+
         
     </style>
 </head>
 <body class="bckgradient">
     <div class="main" style="background-color:transparent">
             <div class="landing-container">
-                <div class="hvr-ripple-out">
-                    <img src="{% static 'hunny_app/images/hunny-logos_transparent.png' %}" alt="image" 
-                    style="padding-top: 0px; height: 100%; width: 100%; border-radius: 50%; display: block; margin-left: auto; margin-right: auto;">
+                <div class="image">
+                    <img src="{% static 'hunny_app/images/hunny-logos_transparent1.png' %}" alt="image">
                 </div>
             </div>
             <div class="buttons">
                 <div class="text">
-                    <a href="/signup" class="hvr-grow-shadow">Sign Up</a>
-                    <a style="color: rgba(0, 0, 0, 0);">.........</a>
-                    <a href="/login" class="hvr-grow-shadow">Login</a>
+                    <a href="/signup" class="hvr-grow-shadow" style="margin-right: 20px;">Sign Up</a>
+                    <a href="/login" class="hvr-grow-shadow" style="margin-left: 20px;">Login</a>
                 </div>
             </div>
     </div>

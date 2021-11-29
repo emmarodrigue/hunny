@@ -19,7 +19,7 @@
                                 </div>
                                 <h6 class="f-w-600" style="font-size: 20px;">{{ user.userprofile.first_name }} {{ user.userprofile.last_name }}</h6>
                                 <button class="edit-btn" onclick="location.href='/profile-edit'">
-                                    <i class="far fa-edit"></i>
+                                    <p style="margin-top: 5px; margin-bottom: 5px; color: white;">edit profile</p>
                                 </button>
                             </div>
                         </div>
@@ -29,17 +29,17 @@
                                 <div class="row">
                                     <div class="col-sm-6 location">
                                         <p class="m-b-10 f-w-600">Current City</p>
-                                        <h6 class="text-muted f-w-400">{{ user.userprofile.city }}</h6>
+                                        <h6>{{ user.userprofile.city }}</h6>
                                     </div>
                                     <div class="col-sm-6 age">
                                         <p class="m-b-10 f-w-600">Age</p>
-                                        <h6 class="text-muted f-w-400">{{ user.userprofile.age }}</h6>
+                                        <h6>{{ user.userprofile.age }}</h6>
                                     </div>
                                 </div>
                                 <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Bio</h6>
                                 <div class="row">
                                     <div class="col-sm-10 bio">
-                                        <h6 class="text-muted f-w-400">{{ user.userprofile.bio }}</h6>
+                                        <p style="margin-top: 20px; color: white; font-size: large;">{{ user.userprofile.bio }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +167,10 @@
   box-shadow: none;
   border-radius: 8px;
   font-size: 14px;
-  padding:8px 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   text-align: center;
 }
 .edit-btn:hover{
