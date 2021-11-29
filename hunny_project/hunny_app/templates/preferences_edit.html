@@ -76,14 +76,12 @@ background-size: 2000% 2000%;">
         justify-content: center;
         -webkit-align-items: center;
         align-items: center;
-        padding: 60px;
     }
     .form-content .form-items {
         border: 3px solid #fff;
-        padding: 40px;
+        padding: 40px 200px;
         display: inline-block;
-        width: 100%;
-        min-width: 540px;
+        max-width: 100%;    
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         border-radius: 10px;
@@ -158,6 +156,15 @@ background-size: 2000% 2000%;">
     .field {
         color: whitesmoke;
         padding-top: 10px;
+    }
+    @media(max-width: 600px){
+        .form-holder .form-content {
+            padding: 10px;
+            width: 100%;
+        }
+        .form-content .form-items {
+            padding: 20px;
+        }
     }
 </style>
 {% endblock content %}

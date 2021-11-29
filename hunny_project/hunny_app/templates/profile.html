@@ -9,7 +9,7 @@
 <div class="page-content page-container" id="page-content">
         <div class="row container d-flex justify-content-center">
                 <div class="card user-card-full" style="border-radius: 12px;">
-                        <div style="float: left;" class="col-sm-4 bg-c-lite-green user-profile">
+                        <div style="float: center;" class="col-sm-4 bg-c-lite-green user-profile">
                             <div class="card-block text-center text-white">
                                 <h4 class="font-weight-bold">
                                     @{{ user.userprofile.user }}
@@ -17,14 +17,14 @@
                                 <div class="media">
                                     <img src="{{ user.userprofile.image0.url }}" class="rounded-circle" width="90">
                                 </div>
-                                <h6 class="f-w-600" style="font-size: 20px;">{{ user.userprofile.first_name }} {{ user.userprofile.last_name }}</h6>
+                                <h6 class="f-w-600" style="font-size: 40px;">{{ user.userprofile.first_name }} {{ user.userprofile.last_name }}</h6>
                                 <button class="edit-btn" onclick="location.href='/profile-edit'">
-                                    <p style="margin-top: 5px; margin-bottom: 5px; color: white;">edit profile</p>
+                                    <p style="color: white; font-weight: 400;">edit profile</p>
                                 </button>
                             </div>
                         </div>
-                        <div style="float: left;" class="col-sm-8">
-                            <div class="card-block info">
+                        <div>
+                            <div class="card-block info" style="padding-right: 20px; padding-left: 20px; padding-top: 0px; padding-bottom: 30px;">
                                 <h6 class="m-b-20 p-b-5 b-b-default f-w-600">About Me</h6>
                                 <div class="row">
                                     <div class="col-sm-6 location">
@@ -39,7 +39,7 @@
                                 <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Bio</h6>
                                 <div class="row">
                                     <div class="col-sm-10 bio">
-                                        <p style="margin-top: 20px; color: white; font-size: large;">{{ user.userprofile.bio }}</p>
+                                        <p style="color: white; margin-top: 20px; font-size: large">{{ user.userprofile.bio }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -63,12 +63,10 @@
     border: 3px solid #fff;
     padding: 10px;
     display: inline-block;
-    width: auto;
-    min-width: 540px;
+    max-width: 80%;    
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-    text-align: left;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
     background-color: rgba(241, 147, 85, 0.5);
@@ -102,7 +100,6 @@
   text-align: center;
 }
 .col-sm-8{
-  width: 46%;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   display: inline-block;
@@ -160,28 +157,37 @@
   
 }
 .edit-btn{
+  padding-top: 0px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
   background: rgba(204, 119, 62, 0.6);
-  color: rgb(255, 251, 249);
+  color: rgb(255, 255, 255);
   outline: none;
   border: 0px;
   box-shadow: none;
   border-radius: 8px;
   font-size: 14px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 0px;
-  padding-bottom: 0px;
   text-align: center;
 }
 .edit-btn:hover{
   background: rgb(255, 214, 186);
   cursor: default;
 }
-@media(max-width: 800px){
-  .location{
-  padding: 0px 40px;
-  text-align: center;
-}
+@media(max-width: 700px){
+  
+  .card{
+    margin: 0px;
+    max-width: 90%;    
+    text-align: center;
+  }
+  .card .card-block{
+    padding: 0px;
+    align-items: center;
+    text-align: center;
+    font-size: 10px;
+  }
+
 }
 </style>
 </body>
