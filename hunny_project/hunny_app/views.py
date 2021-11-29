@@ -7,6 +7,9 @@ from django.contrib.auth import get_user_model
 from django.db.models import Count
 from django.contrib.auth.models import User
 import datetime
+from django.shortcuts import render
+from django.utils.safestring import mark_safe
+import json
 
 def landing(request):
      return render(request, 'landing.html')
@@ -160,8 +163,13 @@ def chat_room(request, room_name):
     c_k = myprofile.current_check
     next = Users.objects.filter()[(c_k):(c_k + 1)].get()
     matches = myprofile.matches.all()
-    context = {'matches': matches, 'room_name': room_name, 'next': next}
-    return render(request,'chat_room.html', context)
+
+    return render(request,'chat_room.html',{
+        'matches': matches, 
+        'next': next,
+        'room_name_json': mark_safe(json.dumps(room_name)),
+        'username': mark_safe(json.dumps(request.user.username)),
+    })
 
 @login_required(login_url='/landing')
 def user(request):

@@ -2,12 +2,206 @@
 {% block content %}
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
-    <!--  All snippets are MIT license http://bootdey.com/license -->
     <title>Hunny</title>
+    <script src="https://use.typekit.net/hoy3lrg.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
+<style>
+
+    body{
+        background: linear-gradient(44deg, #ff9e2d, #ffcece, #f78131);background-size: 2000% 2000%;
+        background-size: 2000% 2000%;
+        margin-top:20px;
+    }
+    
+    
+    .pics{
+        width: 77%;
+        height: 30%;
+        margin-top: 40px;
+    }
+    
+    .pic{
+        filter: blur(7px);
+        -webkit-filter: blur(7px);
+        height: 150px;
+        float: right;
+        padding: 0;
+        border-radius: 10px;
+        border: 1px solid rgb(255, 255, 255);
+        width: 150px
+    }
+    
+    .pic:hover{
+        filter: blur(0px);
+        -webkit-filter: blur(0px);
+    }
+    
+    
+    .moreinfo{
+        text-align: center;
+        font-size: large;
+    }
+    
+    #expand{
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s;
+        background: rgba(241, 147, 85, 0);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        color: #fff;
+    }
+    
+    section{
+        padding: 0 15px;
+    }
+    
+    #toggle:checked ~ #expand{
+        height: 400px;
+    }
+    
+    
+    #toggle2:checked ~ #blur{
+        color: black;
+    }
+    
+    
+    .container{
+        border-radius: 12px;
+        margin-top: 40px;
+        padding-bottom: 10px;
+        background: rgba(241, 147, 85, 0.5);
+        border: 3px solid rgb(255, 255, 255);
+    }
+    
+
+    .chat{
+        margin-bottom: 10px;
+
+        background: transparent;
+        border-radius: 1.3rem;
+    }
+    
+    .chat .chat-header {
+        border-radius: 12px;
+        background: transparent;
+    }
+    
+    
+    .chat .chat-header .reciever {
+        margin: auto;
+        height: 50;
+        color: white;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        padding-left: 50px;
+        text-align: left;
+        font-size:50px;
+        text-transform:lowercase;
+    }
+    
+    #chat-message-submit{
+        display: inline;
+        max-width:80px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 40px;
+    }
+    
+    #chat-message-input{
+        margin-top: 20px;
+        display: inline;
+        height: 40px;
+        max-width:400px;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 12px;
+    }
+    .center button {
+            z-index: -5;
+            display: inline;
+            border-radius: 12px;
+            width: 20%;
+            background: rgba(204, 119, 62, 0.6);
+            color: rgb(255, 251, 249);
+            font-size: 15px;
+            border: 1px solid rgb(255, 255, 255);
+            cursor: pointer;
+            margin-top: 10px;
+            margin-right: 10px;
+    
+        }
+    .center button:hover {
+        background: rgb(255, 214, 186);
+    }
+    .center{
+        align-items: center;
+        padding-bottom: 0px;
+        display: table-cell;
+            width: 1000px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .content .messages {
+        height: 400px;
+        background-color: white;
+        min-height: calc(100% - 93px);
+        max-height: calc(100% - 93px);
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 100%;
+    }
+    @media screen and (max-width: 735px) {
+    .content .messages {
+        max-height: calc(100% - 105px);
+    }
+    }
+    .content .messages::-webkit-scrollbar {
+        width: 8px;
+        background: transparent;
+    }
+    .content .messages::-webkit-scrollbar-thumb {
+        background-color: rgb(155, 155, 155, 0.3);
+    }
+    .content .messages ul li {
+        display: inline-block;
+        clear: both;
+        width: calc(100% - 25px);
+        font-size: 0.9em;
+    }
+    .content .messages ul li:nth-last-child(1) {
+        margin-bottom: 20px;
+    }
+    .content .messages ul li.sent p {
+        background: rgba(241, 147, 85, 0.774);
+        color: #f5f5f5;
+        word-wrap: break-word;
+        float: right;
+    }
+    .content .messages ul li.replies p {
+        background: rgba(241, 147, 85, 0.774);
+        color: #00000070;
+        font-weight: 500;
+        word-wrap: break-word;
+        float: left;
+    }
+
+    .content .messages ul li p {
+        display: inline-block;
+        padding: 10px 15px;
+        border-radius: 20px;
+        max-width: 300px;
+        line-height: 130%;
+        font-size: 18px;
+    }
+
+</style>
 <body>
 <div class="container">
         <div class="chat">
@@ -16,7 +210,7 @@
                         <h6 class="reciever" id="room">{{next.userprofile.first_name}} {{next.userprofile.last_name}}</h6>
                         <input id="toggle" type="checkbox" style="display: inline;">
                         <small style="color: white;">more info</small>
-                        <small style="color: white; margin-left: 80%; font-size: 15px;">@{{next.userprofile.user}}</small>
+                        <small style="color: white; margin-left: 80%; font-size: 15px;text-shadow: 0 0 5px rgb(255, 255, 255);">@{{next.userprofile.user}}</small>
                         <div id="expand">
                             <section>
                                 <p class="moreinfo" style="color: white;">{{next.userprofile.age}} ◈ {{next.userprofile.gender}} ◈ {{next.userprofile.city}}</p>
@@ -36,200 +230,95 @@
                 </div>
             </div>
         </div>
-
-    <textarea id="chat-log" rows="15"></textarea><br>
-
+        <div class="messages">
+            <ul id="chat-log" style="list-style-type: none;">
+                {% comment %} 
+                <li class="sent">
+                    <img src="{{ user.userprofile.image0.url }}">
+                </li>
+                <li class="replies">
+                    <img src="{{ next.userprofile.image0.url }}">
+                </li> 
+                {% endcomment %}
+            </ul>
+        </div>
     <div class="center">
         <input id="chat-message-input" type="text" placeholder="Enter Message . . .">
         <button id="chat-message-submit" type="button" value="Send">➤</button>
     </div>
 </div>
 
-<style type="text/css">
+<script src="{% static 'hunny_app/js/main.js' %}"></script>
+<script src="{% static 'hunny_app/js/reconnecting-websocket.js' %}"></script>
+<script>
+    var roomName = {{ room_name_json }};
+    var username = {{ username }};
 
-body{
-    background: linear-gradient(44deg, #ff9e2d, #ffcece, #f78131);
-    background-size: 2000% 2000%;
-    margin-top:20px;
-}
+    var chatSocket = new ReconnectingWebSocket(
+        'ws://' + window.location.host +
+        '/ws/chat/' + roomName + '/');
 
-
-.pics{
-    width: 77%;
-    height: 30%;
-    margin-top: 40px;
-}
-
-.pic{
-    filter: blur(7px);
-    -webkit-filter: blur(7px);
-    height: 150px;
-    float: right;
-    padding: 0;
-    border-radius: 10px;
-    border: 1px solid rgb(255, 255, 255);
-    width: 150px
-}
-
-.pic:hover{
-    filter: blur(0px);
-    -webkit-filter: blur(0px);
-}
-
-
-.moreinfo{
-    text-align: center;
-    font-size: large;
-}
-
-#expand{
-    height: 0;
-    overflow: hidden;
-    transition: height 0.5s;
-    background: rgba(241, 147, 85, 0);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    color: #fff;
-}
-
-section{
-    padding: 0 15px;
-}
-
-#toggle:checked ~ #expand{
-    height: 400px;
-}
-
-
-#toggle2:checked ~ #blur{
-    color: black;
-}
-
-
-.container{
-    border-radius: 12px;
-    margin-top: 40px;
-    padding-bottom: 10px;
-    background: rgba(241, 147, 85, 0.5);
-    border: 3px solid rgb(255, 255, 255);
-}
-
-textarea{
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    height: auto;
-    font-size: 20px;
-    width: 99.5%;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-shrink: calc();
-}
-
-.chat{
-    margin:auto;
-    background: transparent;
-    border-radius: 1.3rem;
-}
-
-.chat .chat-header {
-    border-radius: 12px;
-    background: transparent;
-}
-
-
-.chat .chat-header .reciever {
-    margin: auto;
-    height: 50;
-    color: white;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    padding-left: 50px;
-    text-align: left;
-    font-size:50px;
-    text-transform:lowercase;
-}
-
-#chat-message-submit{
-    display: inline;
-    max-width:80px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 40px;
-}
-
-#chat-message-input{
-    display: inline;
-    height: 40px;
-    max-width:400px;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 12px;
-}
-.center button {
-        z-index: -5;
-        display: inline;
-        border-radius: 12px;
-        width: 20%;
-        background: rgba(204, 119, 62, 0.6);
-        color: rgb(255, 251, 249);
-        font-size: 15px;
-        border: 1px solid rgb(255, 255, 255);
-        cursor: pointer;
-        margin-top: 10px;
-        margin-right: 10px;
-
+    chatSocket.onopen = function(e) {
+      fetchMessages();
     }
-.center button:hover {
-        background: rgb(255, 214, 186);
-}
-.center{
-    align-items: center;
-    padding-bottom: 0px;
-    display: table-cell;
-        width: 1000px;
-    text-align: center;
-    vertical-align: middle;
-}
+
+    chatSocket.onmessage = function(e) {
+        var data = JSON.parse(e.data);
+        if (data['command'] === 'messages') {
+          for (let i=0; i<data['messages'].length; i++) {
+            createMessage(data['messages'][i]);
+          }
+        } 
+        else if (data['command'] === 'new_message'){
+          createMessage(data['message']);
+        }
+    };
+
+    chatSocket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
+    document.querySelector('#chat-message-input').onkeyup = function(e) {
+        if (e.keyCode === 13) {  // enter, return
+            document.querySelector('#chat-message-submit').click();
+        }
+    };
+
+    document.querySelector('#chat-message-submit').onclick = function(e) {
+        var messageInputDom = document.getElementById('chat-message-input');
+        var message = messageInputDom.value;
+        chatSocket.send(JSON.stringify({
+            'command': 'new_message',
+            'message': message,
+            'from': username
+        }));
+
+        messageInputDom.value = '';
+    };
+
+    function fetchMessages() {
+      chatSocket.send(JSON.stringify({'command': 'fetch_messages' }));
+    }
+
+    function createMessage(data) {
+      var author = data['author'];
+      var msgListTag = document.createElement('li');
+      var imgTag = document.createElement('img');
+      var pTag = document.createElement('p');
+      pTag.textContent = data.content;
 
 
-</style>
-<script src = "Scripts/jquery-2.1.4.min.js"></script>
-{{ room_name|json_script:"room-name" }}
-    <script type="text/javascript">
-        const roomName = JSON.parse(document.getElementById('room-name').textContent);
-        const chatSocket = new WebSocket(
-            'ws://'
-            + window.location.host
-            + '/ws/chat/'
-            + roomName
-            + '/'
-        );
+      if (author === username) {
+        msgListTag.className = 'sent';
+      } else {
+        msgListTag.className = 'replies';
+      }
+      msgListTag.appendChild(imgTag);
+      msgListTag.appendChild(pTag);
+      document.querySelector('#chat-log').appendChild(msgListTag);
+    }
 
-        chatSocket.onmessage = function(e) {
-            const data = JSON.parse(e.data);
-            document.querySelector('#chat-log').value += (data.message + '\n');
-        };
-
-        chatSocket.onclose = function(e) {
-            console.error('Chat socket closed unexpectedly');
-        };
-
-        document.querySelector('#chat-message-input').focus();
-        document.querySelector('#chat-message-input').onkeyup = function(e) {
-            if (e.keyCode === 13) {  // enter, return
-                document.querySelector('#chat-message-submit').click();
-            }
-        };
-
-        document.querySelector('#chat-message-submit').onclick = function(e) {
-            const messageInputDom = document.querySelector('#chat-message-input');
-            const message = messageInputDom.value;
-            var user = "{{ user|safe }}";
-            chatSocket.send(JSON.stringify({
-                'message': message
-            }));
-            messageInputDom.value = '';
-        };
 </script>
 </body>
 </html>
-
 {% endblock content %}

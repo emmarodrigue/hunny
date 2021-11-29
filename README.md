@@ -122,7 +122,7 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
     - ### **Features:** 
 		- (Sprint 1) created project structure using Django framework, linking and editing templates, and creating a file to format other templates to promote a uniform UI 
 		- (Sprint 2) created chat and chat room interface, created a landing page, handled matches for using websockets to enable chat functionality between users
-		- (Sprint 3) implemented chat interface to display user matches, chat room ui expands for more info, developed a more user friendly matchroom, landing page and more
+		- (Sprint 3) implemented chat interface to display user matches, chat room ui expands for more info and displays messages intuitively with scrollable chat history, chat saves to database model, more user friendly landing page, contact and more
 	- ### **Links to contributions:**
 		- **Sprint 1**
 		- work done mostly within **kody** branch but also **develop** and **demo**
@@ -144,13 +144,16 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 		- work done mostly within **develop** and **demo**
 		- [configured channels, integrated redis](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/asgi) based on the Django framework
 		- [chat room displays user info](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project) based on the Django framework
-		- [better chat UI, displays list of matches](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/chat.html) 
-		- [improved chat room UI](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/chat_room.html) 
+		- [chat room more user friendly with scroll and mobile responsive](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/chat_room.html)
+		- [better chat page UI, displays list of matches](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/chat.html) 
+		- [save chat history to model](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/chat_room.html)
+		- [reconnecting websocket](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/static/js/hunny_app/reconnecting-websocket.js) 
 		- [improved landing page](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/landing.html) 
 		- [matchroom more user friendly](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/)
 		- [overall frontend fixes](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/)
 	- ### **Next steps:**
-		- save chat history to DB 
+		- need unique chat rooms for each match
+		- chat history loads backwards
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -224,10 +227,9 @@ To do:
 
 
 ## Acknowledgements
-Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
+https://channels.readthedocs.io/en/stable/ - django channels documentation 
+https://github.com/justdjango/justchat - for channels
+https://github.com/joewalnes/reconnecting-websocket - for reconnecting websocket
 
 
 ## Contact
