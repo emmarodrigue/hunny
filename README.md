@@ -65,18 +65,33 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 	- ### **Features:** 
 		- Created a user page to navigate the user through the website and an account page.
 		- Front-end for account settings completed and set style format for profile, preferences, and their edit pages.
+		- Created a contact page for user feedback.
+		- Created an about page for quick 1,2,3 instructions of our website.
+		- Adjusted pages for mobile friendly feature.
 	- ### **Links to contributions:**
+		- **Sprint 1**
 		- Work was done in s_a383 branch that was later implemented into the master branch.
 		- [Configured hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/views.py) included user page to be displayed.
 		- [Configured hunny_project/hunny_app/templates/user.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/templates/user.html) navigates the user to other features once logged in.
+		- **Sprint 2**
 		- Work was done in develop branch and focused on settings, profile, and preferences front end.
 		- [Modified hunny_project/hunny_app/templates/settings.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/settings.html) to create a consistent front-end that allows the user to adjust their account settings.
 		- [Modified hunny_project/hunny_app/templates/profile.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/profile.html) updated rough draft of profile from backend implementation.
 		- [Modified hunny_project/hunny_app/templates/profile_edit.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/profile_edit.html) to clean up input display for user to edit their profile.
 		- [Modified hunny_project/hunny_app/templates/preferences.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/preferences.html) front-end for consistent match with settings that displays their preferences.
 		- [Modified hunny_project/hunny_app/templates/preferences_edit.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/preferences_edit.html) connected format to others to clean up website which will allow them to input their preferences.
+		- **Sprint 3**
+		- [Modified hunny_project/hunny_app/templates/base.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/base.html) final updates for front-end to match changes especially with the navigation bar adjustments and drop down menu options.
+		- [Modified hunny_project/hunny_app/templates/preferences.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/preferences.html) reformatted to fit mobile friendly format and fit sizing of other pages.
+		- [Modified hunny_project/hunny_app/templates/preferences_edit.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/preferences_edit.html) reformatted to fit mobile friendly format and fit sizing of other pages.
+		- [Modified hunny_project/hunny_app/templates/profile.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/profile.html) reformatted away from bootstrap to fit navbar layout.
+		- [Modified hunny_project/hunny_app/templates/about.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/about.html) added an about page with interactive panels to provide instructions of our site.
+		- [Modified hunny_project/hunny_app/templates/contact.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/contact.html) added a contact page for users to send their opinions and update requests for our dating app.
+
 	- ### **Next steps:**
-		- Utilize modifications and edit navigation bar for edited pages.
+		- Connect contact page to store and reference user feedback.
+		- Update preference with more details and allow for specificity of their profile page for users to quickly find their accurate match.
+
 -  ## **Lilly:**
 	- ### **Features:**
 		- Developed Front-End for the web application
