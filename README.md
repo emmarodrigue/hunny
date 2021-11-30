@@ -228,19 +228,20 @@ python manage.py runserver
 ## Project Status
 Project is: _in progress_
 
-## What Went Well
-- We are all pretty familiar with the Django framework now, so we didn't have to spend so much time researching before approaching our issues.
+## What Went Well or Not
+- We are all pretty familiar with the Django framework now.
 - We have all of the backend implemented for our main features.
-
-## What Went Well (Individual)
+- We are getting more used to using git and didn't have to rely on others as much for help in that area.
+- We are still having some issues with styling using Bootstrap on some of our pages, so not everything is rendering the same way.
 - **Emma**
 	- **Pro:** We were able to implement all of the main features that we originally wanted to include in the project.
 	- **Con:** The file structure of our project still violates a lot of SOLID principles which led to some merge conflicts.
 
-## What We Can Do Better (Individual)
-- **Emma:** Create tests for the features that we have already implemented so that we can ensure no new developments will prevent parts of our features from working as expected. I already have a lot of experience using Selenium and Jenkins to automate test cases and think that my skills would be more useful there and contribute to the overall success of the project.
+## What We Can do to Improve
+- We need to communicate more about what we're all looking for with new features since some people had disagreements about how some features were implemented.
+- **Emma:** Create tests for the features that we have already implemented so that we can ensure no new developments will prevent parts of our features from working as expected. I already have experience using Selenium to automate test cases and think that my skills there would contribute more to the overall success of the project. I will add test cases to a test directory in our project to measure my improvement in this area.
 
-## What is Currently Impeding Us From Performing Better
+## What is Currently Impeding Us from Performing Better
 - Some of us have different ideas about what pages and features should be included in the project at this point.
 - Although we have weekly meetings, commitments outside of class are preventing some of us from devoting more time to the project.
 
