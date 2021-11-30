@@ -236,10 +236,14 @@ Project is: _in progress_
 - **Emma**
 	- **Pro:** We were able to implement all of the main features that we originally wanted to include in the project.
 	- **Con:** The file structure of our project still violates a lot of SOLID principles which led to some merge conflicts.
+- **Saron**
+	- **Pro:** We've gotten better at identifying problems and how to look for their solutions due to familiarity with methods.
+	- **Con:** The more we work the more we realize our initial approach could've been better but we didn't know anything at that time.
 
 ## What We Can do to Improve
 - We need to communicate more about what we're all looking for with new features since some people had disagreements about how some features were implemented.
 - **Emma:** Create tests for the features that we have already implemented so that we can ensure no new developments will prevent parts of our features from working as expected. I already have experience using Selenium to automate test cases and think that my skills there would contribute more to the overall success of the project. I will add test cases to a test directory in our project to measure my improvement in this area.
+- **Saron:** We can improve on clarity with our end goal in a consistent manner. There was some miscommunication on what each feature would include more than a reasonable amount. Next time we can have each person draw out their vision and explain before implementing. This will also be useful to look back on while working!
 
 ## What is Currently Impeding Us from Performing Better
 - Some of us have different ideas about what pages and features should be included in the project at this point.
