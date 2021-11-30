@@ -225,27 +225,29 @@ python manage.py createsuperuser
 python manage.py migrate
 python manage.py runserver
 
-
 ## Project Status
 Project is: _in progress_
 
-## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
+## What Went Well
+- We are all pretty familiar with the Django framework now, so we didn't have to spend so much time researching before approaching our issues.
+- We have all of the backend implemented for our main features.
 
-Room for improvement:
-- Improvement to be done 1
-- Improvement to be done 2
+## What Went Well (Individual)
+- **Emma**
+	- **Pro:** We were able to implement all of the main features that we originally wanted to include in the project.
+	- **Con:** The file structure of our project still violates a lot of SOLID principles which led to some merge conflicts.
 
-To do:
-- Feature to be added 1
-- Feature to be added 2
+## What We Can Do Better (Individual)
+- **Emma:** Create tests for the features that we have already implemented so that we can ensure no new developments will prevent parts of our features from working as expected. I already have a lot of experience using Selenium and Jenkins to automate test cases and think that my skills would be more useful there and contribute to the overall success of the project.
 
+## What is Currently Impeding Us From Performing Better
+- Some of us have different ideas about what pages and features should be included in the project at this point.
+- Although we have weekly meetings, commitments outside of class are preventing some of us from devoting more time to the project.
 
 ## Acknowledgements
 https://channels.readthedocs.io/en/stable/ - django channels documentation 
 https://github.com/justdjango/justchat - for channels
 https://github.com/joewalnes/reconnecting-websocket - for reconnecting websocket
-
 
 ## Contact
 Created by [@kodygentry](github.com/kodygentry)
