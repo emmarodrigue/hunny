@@ -236,10 +236,14 @@ Project is: _in progress_
 - **Emma**
 	- **Pro:** We were able to implement all of the main features that we originally wanted to include in the project.
 	- **Con:** The file structure of our project still violates a lot of SOLID principles which led to some merge conflicts.
+- **Isaac**
+	- **Pro:** Working mostly functional site. With more time, we could have an actual website.
+	- **Con:** There's still a lot of work to be done. Messy code, and lots of bugs. It would not really be ready to be released any time soon.
 
 ## What We Can do to Improve
 - We need to communicate more about what we're all looking for with new features since some people had disagreements about how some features were implemented.
 - **Emma:** Create tests for the features that we have already implemented so that we can ensure no new developments will prevent parts of our features from working as expected. I already have experience using Selenium to automate test cases and think that my skills there would contribute more to the overall success of the project. I will add test cases to a test directory in our project to measure my improvement in this area.
+- **Isaac:** I think what we could do to improve is refactor some of the code so it's cleaner and more readable. Fix a lot of the bugs that we had and make sure that things work as intended. There was a lot of code that we just threw together and made it work together.
 
 ## What is Currently Impeding Us from Performing Better
 - Some of us have different ideas about what pages and features should be included in the project at this point.
