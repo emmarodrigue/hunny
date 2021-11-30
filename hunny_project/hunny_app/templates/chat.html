@@ -23,28 +23,26 @@
     }
 
     form.example input[type=text] {
-        z-index: 1;
         border-radius: 12px;
         padding: 10px;
         font-size: 13px;
-        border: 1px solid grey;
+        border: 1px solid rgb(255, 255, 255);
         float: left;
         width: 80%;
         background: #f1f1f1;
     }
 
     form.example button {
-        z-index: -1;
         border-bottom-right-radius: 12px;
         border-top-right-radius: 12px;
         float: left;
         left: 0;
         width: 20%;
         padding: 10px;
-        background: rgba(204, 119, 62, 0.829);
+        background: rgba(241, 147, 85, 0.664);
         color: white;
         font-size: 17px;
-        border: 1px solid grey;
+        border: 1px solid rgb(255, 255, 255);
         border-left: none;
         cursor: pointer;
     }
@@ -62,11 +60,12 @@
     .container{
         margin-top: 40px;
         display: table;
-        background-color: rgb(255, 255, 255);
+        background-color: rgba(241, 147, 85, 0.5);
+        border: 3px solid rgb(255, 255, 255);
     }
 
     .centered{
-        padding-bottom: 40px;
+        padding-bottom: 60px;
         display: table-cell;
             width: 800px;
         text-align: center;
@@ -82,13 +81,17 @@
 
     .btn-group button {
         border-radius: 12px;
-        margin:auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left:auto;
+        margin-right:auto;
         max-width:400px;
-        height: 90px;
-        background: rgba(204, 119, 62, 0.829); /* Green background */
-        border: 3px solid rgb(255, 255, 255); /* Green border */
+        height: 70px;
+        background: rgba(241, 147, 85, 0.664);/* Green background */
+        border: 2px solid white;
         color: white; /* White text */
         padding: 0px 24px; /* Some padding */
+        padding-bottom: 10px;
         cursor: pointer; /* Pointer/hand icon */
         width: 50%; /* Set a width if needed */
         display: block; /* Make the buttons appear below each other */
@@ -113,18 +116,15 @@
     }
 
     .list{
-        z-index: 1;
         text-decoration: none;
         color: rgb(255, 255, 255);
         font-size: 10px;
-        text-align:right; 
         padding-left:6px;
         padding-top:0px;
     }
 
     #close-image img {
         vertical-align: left;
-        z-index: 0;
         height: 50px;  
         width: 50px;
     }
@@ -142,10 +142,15 @@
         font-size: 20px;
     }
 
+    .bck {
+        background: linear-gradient(44deg, #ff9e2d, #ffcece, #f78131);
+        background-size: 2000% 2000%;
+    }
+
 </style>
-<body>
+<body class="bck">
     <div class="container">
-        <div class="centered"><h1>Matches</h1><br>
+        <div class="centered"><h1 style="color: rgb(255, 255, 255); font-size: 50px;">Matches</h1><br>
 
             <!-- search bar -->
             <form class="example" action="/chat" style="margin:auto;max-width:400px">
@@ -157,14 +162,11 @@
                 <div class="match-list">
                     {% for match in matches %}
                     <button id="close-image">
-                        <!-- <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"> -->
-                        <a class="list" href="/chat/chatroom">
+                        <a class="list" href='room'>
                             <div class="user-att">
-                                <large>{{ match.userprofile.first_name }} {{ match.userprofile.last_name }}</large></a>
+                                <large>{{ match.userprofile.first_name }} {{ match.userprofile.last_name }}</large>
                             </div>
-                            <div class="user-det">
-                                <!-- <small>Last Seen: {{match.userprofile.last_login}}</small> -->
-                            </div>
+                        </a>
                     </button>
                     {% endfor %}
                 </div>

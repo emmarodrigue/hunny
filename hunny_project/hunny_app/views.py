@@ -7,6 +7,9 @@ from django.contrib.auth import get_user_model
 from django.db.models import Count
 from django.contrib.auth.models import User
 import datetime
+from django.shortcuts import render
+from django.utils.safestring import mark_safe
+import json
 
 def landing(request):
      return render(request, 'landing.html')
@@ -18,7 +21,7 @@ def matchingroom(request):
      c_k = myprofile.current_check
      next = Users.objects.filter()[(c_k):(c_k + 1)].get()
      context = {'next':next}
-     return render(request,'matchingroom.html',context)
+     return render(request,'dislikenext.html',context)
 
 def accountlogin(request):
      if request.method == 'POST':
@@ -35,42 +38,76 @@ def accountlogin(request):
 
 @login_required(login_url='/landing')
 def like_next(request):
+    return searching_process(request, 1)
+
+@login_required(login_url='/landing')
+def dislike_next(request):
+    return searching_process(request, 0)
+
+def searching_process(request, like):
      Users = get_user_model()
      myprofile= request.user.userprofile
-     c_k = myprofile.current_check
-     c_k_user = Users.objects.filter()[(c_k):(c_k + 1)].get()
-     myprofile.who_like_me.add(c_k_user)
-     n_index = next_check_index(Users.objects.count(), c_k)
-     myprofile.current_check = n_index
+     current_check = myprofile.current_check
+     next_check = next_check_index(Users, Users.objects.count(), request.user, current_check)
+     myprofile.current_check = next_check
      myprofile.save()
-     match = add_match_if_bothlike(request.user,c_k_user)
-     next = Users.objects.filter()[(n_index):(n_index + 1)].get()
-     context = {'next':next, 'match':match}
-     return render(request, 'likenext.html',context)
+     next = Users.objects.filter()[(next_check):(next_check + 1)].get()
+     if like == 1:
+        current_check_user = Users.objects.filter()[(current_check):(current_check + 1)].get()
+        myprofile.who_like_me.add(current_check_user)
+        match = add_match_if_bothlike(request.user, current_check_user)
+        context = {'next':next, 'match':match}
+        return render(request, 'likenext.html', context)
+     if like == 0:
+        context = {'next':next}
+        return render(request, 'dislikenext.html',context)
 
 def add_match_if_bothlike(user1, user2):
     if user1 in user2.userprofile.who_like_me.all():
         user1.userprofile.matches.add(user2)
         user2.userprofile.matches.add(user1)
+        user2.userprofile.who_like_me.remove(user1)
+        user1.userprofile.who_like_me.remove(user2)
         return 1
     return 0
+def gender_condition(user1,user2):
+    gender_pre1 = user1.userprofile.gender_preference
+    gender_pre2 = user2.userprofile.gender_preference
+    gender1 = user1.userprofile.gender
+    gender2 = user2.userprofile.gender
+    if (gender_pre1 == 'No Preference'):
+        gen_con1 = True
+    else:
+        gen_con1 = (gender_pre1 == gender2)
+    if (gender_pre2 == 'No Preference'):
+        gen_con2 = True
+    else:
+        gen_con2 = (gender_pre2 == gender1)
+    return ((gen_con1) and (gen_con2))
 
-@login_required(login_url='/landing')
-def dislike_next(request):
-     Users = get_user_model()
-     myprofile= request.user.userprofile
-     c_k = myprofile.current_check
-     n_index = next_check_index(Users.objects.count(), c_k)
-     myprofile.current_check = n_index
-     myprofile.save()
-     next = Users.objects.filter()[(n_index):(n_index + 1)].get()
-     context = {'next':next}
-     return render(request, 'dislikenext.html',context)
+def relationship_condtition(user1,user2):
+    rel_pre1 = user1.userprofile.relationship_preference
+    rel_pre2 = user2.userprofile.relationship_preference
+    return (rel_pre1 == rel_pre2)
 
-def next_check_index(max, current_index):
-    if current_index == (max-1):
-        return 0
-    return (current_index + 1)
+def meet_condition(user1, user2):
+    return (relationship_condtition(user1, user2) and gender_condition(user1,user2))
+
+def next_check_index(Users, max, user, current_index):
+    if current_index == (max - 1):
+        next_index = 0
+    else:
+        next_index = current_index + 1
+    while (True):
+        next_user = Users.objects.filter()[(next_index):(next_index + 1)].get()
+        if ((user != next_user) and meet_condition(user, next_user)):
+            return next_index
+        else:
+            if next_index == (max - 1):
+                next_index = 0
+            else:
+                next_index = next_index + 1
+
 
 def terms_service(request):
      context = {}
@@ -86,7 +123,10 @@ def editProfile(request):
         gender = request.POST.get('gender')
         birthday = request.POST.get('gender')
         bio = request.POST.get('bio')
-        image = request.FILES.get('image')
+        image0 = request.FILES.get('image0')
+        image1 = request.FILES.get('image1')
+        image2 = request.FILES.get('image2')
+
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.userprofile)
         p_form.first_name = first_name
         p_form.last_name = last_name
@@ -94,7 +134,9 @@ def editProfile(request):
         p_form.gender = gender
         p_form.birthday = birthday
         p_form.bio = bio
-        p_form.image = image
+        p_form.image0 = image0
+        p_form.image1 = image1
+        p_form.image2 = image2
         if p_form.is_valid():
             p_form.save()
             return redirect('hunny-profile')
@@ -109,22 +151,25 @@ def accountlogout(request):
 
 @login_required(login_url='/landing')
 def chat(request):
-    user = User.objects.get(username=request.user)
     myprofile = request.user.userprofile
     matches = myprofile.matches.all()
     context = {'matches': matches}
-    last_online = user.last_login.strftime('%a')
     return render(request, 'chat.html', context)
 
 @login_required(login_url='/landing')
 def chat_room(request, room_name):
-    current_date = datetime.datetime.now()
-    user = User.objects.get(username=request.user)
-    myprofile = request.user.userprofile
+    Users = get_user_model()
+    myprofile= request.user.userprofile
+    c_k = myprofile.current_check
+    next = Users.objects.filter()[(c_k):(c_k + 1)].get()
     matches = myprofile.matches.all()
-    last_online = user.last_login.strftime('%a')
-    context = {'matches': matches, 'room_name': room_name,'current_date': current_date, 'last_online': last_online}
-    return render(request,'chat_room.html', context)
+
+    return render(request,'chat_room.html',{
+        'matches': matches, 
+        'next': next,
+        'room_name_json': mark_safe(json.dumps(room_name)),
+        'username': mark_safe(json.dumps(request.user.username)),
+    })
 
 @login_required(login_url='/landing')
 def user(request):
@@ -163,10 +208,19 @@ def preferences(request):
 def editPreferences(request):
     p_form = ProfileUpdateForm()
     if request.method == 'POST':
+        gender = request.POST.get('gender_preference')
+        relationship = request.POST.get('relationship_preference')
+        age_range = request.POST.get('age_range')
+        distance = request.POST.get('match_radius')
+
         p_form = ProfileUpdateForm(request.POST, instance=request.user.userprofile)
+        p_form.gender_preference = gender
+        p_form.relationship_preference = relationship
+        p_form.age_range = age_range
+        p_form.match_radius = distance
         if p_form.is_valid():
             p_form.save()
-            return redirect('/preferences')
+            return redirect('hunny-preferences')
     else:
         p_form = ProfileUpdateForm(instance=request.user.userprofile)
     context = {'p_form':p_form}
