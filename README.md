@@ -10,19 +10,20 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 	
 # **Project Status:**
 - ## We have:
-	- the basic structure of our project complete using the Django framework along with most of the pages that we are planning on implementing in the future.
-	- the ability to sign up for our app and also sign in using the appropriate credentials.
-	- the base of our UI complete, but we need to diverge on an overall style and format.
-	- few functionalities in our pages, this is the main focus in our next sprint.
+	- A functional website with the following features:
+		- user authentication with signup and login/logout
+		- user model stores users personal information, pictures and preferences  
+		- ability to change password
+		- password validation
+		- edit profile
+		- match room for finding potential matches without access to their photos
+		- match room algorithm to show user potential matches that have similar preferences
+		- chat room for messaging matches and now having access to their photos
+
 - ## **Next steps:**
-	- creating a uniform and aesthetic look to our UI with styling and structure
-	- giving our pages more functionality including: 
-		- home page UI displaying other users profiles 
-		- uniform nav bar to switch between all pages
-		- like/dislike another user
-		- send and recieve messages with matches
-		- location tracking and radius
-		- animations (like/dislike, home page scrolling, loading, misc.)
+	- frontend framework
+	- convert to webapp / mobile
+	- account security: password hash, email verification, photo ID, etc.
 		
 # **Contributors:**
 - ## **Emma:**
@@ -135,6 +136,11 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
         - Whatever else needs to be done too
 - ## **Kody:**
     - ### **Features:** 
+		- Django structure
+		- Chat page for matches
+		- Chat room for messaging using Django channels, redis and reconnecting websocket
+		- overall website UI/UX
+
 		- (Sprint 1) created project structure using Django framework, linking and editing templates, and creating a file to format other templates to promote a uniform UI 
 		- (Sprint 2) created chat and chat room interface, created a landing page, handled matches for using websockets to enable chat functionality between users
 		- (Sprint 3) implemented chat interface to display user matches, chat room ui expands for more info and displays messages intuitively with scrollable chat history, chat saves to database model, more user friendly landing page, contact and more
@@ -168,7 +174,6 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 		- [overall frontend fixes](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/kody/hunny_project/hunny_app/templates/)
 	- ### **Next steps:**
 		- need unique chat rooms for each match
-		- chat history loads backwards
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -184,11 +189,7 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 
 
 ## General Information
-- Create an image/picture/icon representing your project.
-- Provide general information about your project here.
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-- Why did you undertake it?
+
 
 ## Technologies Used
 - Django
@@ -197,25 +198,19 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 - Javascript
 
 ## Features
-List the ready features here:
-- Messaging platform so that users can talk to each other and get to know each other.
-- Like and dislike buttons so that users can curate their matches.
-- Preferences and settings for the individual user to customize their experience.
-- Profile: allows user to introduce themselves before the search begins.
-- Survey: word bank of questions that'll be used to connect them with those of similar interest.
+	- user authentication with signup and login/logout
+	- user model stores users personal information, pictures and preferences  
+	- ability to change password
+	- password validation
+	- edit profile
+	- match room for finding potential matches without access to their photos
+	- match room algorithm to show user potential matches that have similar preferences
+	- chat room for messaging matches and now having access to their photos
 
 ## Screenshots
 [hunny logo](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/master/static/hunny-logo.PNG)
 
 ## Setup
-<!What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
-Proceed to describe how to install / setup one's local environment / get started with the project.>
-
-## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
-
-`write-your-code-here`
 - dev -
 git clone 
 pip install -r requirements
@@ -231,15 +226,20 @@ Project is: _in progress_
 ## What Went Well or Not
 - We are all pretty familiar with the Django framework now.
 - We have all of the backend implemented for our main features.
+- We learned many backend and frontend techniques.
 - We are getting more used to using git and didn't have to rely on others as much for help in that area.
 - We are still having some issues with styling using Bootstrap on some of our pages, so not everything is rendering the same way.
+ 
 - **Emma**
 	- **Pro:** We were able to implement all of the main features that we originally wanted to include in the project.
 	- **Con:** The file structure of our project still violates a lot of SOLID principles which led to some merge conflicts.
-
+- **Kody**
+	- **Pro:** We have a functional website at this point with many features. 
+	- **Con:** We did not use a frontend framework and we aren't very experienced with frontend techniques.
 ## What We Can do to Improve
 - We need to communicate more about what we're all looking for with new features since some people had disagreements about how some features were implemented.
 - **Emma:** Create tests for the features that we have already implemented so that we can ensure no new developments will prevent parts of our features from working as expected. I already have experience using Selenium to automate test cases and think that my skills there would contribute more to the overall success of the project. I will add test cases to a test directory in our project to measure my improvement in this area.
+- **Kody:** Fix the Messages model by storing each room in a Room model. Also I would need to create an algorithm to assign a match pair a unique ID for their room so each room is seperate. Store message objects better. The current model would be hard to handle with >1000 messages. 
 
 ## What is Currently Impeding Us from Performing Better
 - Some of us have different ideas about what pages and features should be included in the project at this point.
@@ -252,7 +252,7 @@ https://github.com/joewalnes/reconnecting-websocket - for reconnecting websocket
 
 ## Contact
 Created by [@kodygentry](github.com/kodygentry)
-- [@kodygentry](github.com/kodygentry)
-- [@kodygentry](github.com/kodygentry)
-- [@kodygentry](github.com/kodygentry)
-- [@kodygentry](github.com/kodygentry)
+- [@](github.com/)
+- [@](github.com/)
+- [@](github.com/)
+- [@](github.com/)
