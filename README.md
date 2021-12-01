@@ -246,11 +246,8 @@ Project is: _in progress_
 ## What We Can do to Improve
 - We need to communicate more about what we're all looking for with new features since some people had disagreements about how some features were implemented.
 - **Emma:** Create tests for the features that we have already implemented so that we can ensure no new developments will prevent parts of our features from working as expected. I already have experience using Selenium to automate test cases and think that my skills there would contribute more to the overall success of the project. I will add test cases to a test directory in our project to measure my improvement in this area.
-<<<<<<< HEAD
 - **Isaac:** I think what we could do to improve is refactor some of the code so it's cleaner and more readable. Fix a lot of the bugs that we had and make sure that things work as intended. There was a lot of code that we just threw together and made it work together.
-=======
 - **Saron:** We can improve on clarity with our end goal in a consistent manner. There was some miscommunication on what each feature would include more than a reasonable amount. Next time we can have each person draw out their vision and explain before implementing. This will also be useful to look back on while working!
->>>>>>> a29026a7e1c3c6eee90e17c88050f9da8cc0886b
 
 ## What is Currently Impeding Us from Performing Better
 - Some of us have different ideas about what pages and features should be included in the project at this point.
