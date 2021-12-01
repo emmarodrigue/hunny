@@ -101,6 +101,7 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 		- Enable users to like/dislike profiles
 		- Enable the matching system to instantiate matches among users and save all likes/matches information in the database
 		- Automate Userprofile-creation upon Register-time
+		- Filter function of Matching system to enable users to set their preferences when seaching other user-profiles
 	- ### **Links to contributions:**
 		- [Created Static Folder](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/master/hunny_project/hunny_app/static/messages/): Static folder to manage all static files(images, CSS, JS ...)for front-end
 		- [Configured hunny_project/hunny_app/static/messages/main.css](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/master/hunny_project/hunny_app/static/messages/main.css): CSS file to style the content of homepage/login/singup pages 
@@ -117,10 +118,10 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 		- [Configured hunny_project/hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/views.py) implemented back-end for like-button
 		- [Configured hunny_project/hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/views.py) implemented back-end for dislike-button
 		- [Configured hunny_project/hunny_app/models.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/models.py) Added attributes of Profile model to store matches,like, current profile to check out
+		- [Configured hunny_project/hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/views.py) implemented filter feature for matching system based on users preferences.
+		- [Configured hunny_project/hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/views.py) refactored like_next and dislike_next functions and added searching_process function
 	- ### **Next steps:**
-		- refactor views.py and other hmtl files
-		- use preference data to implement filter function for matching-system
-		- edit the matching-system user-interface 
+		- include more preferences in filter function for matching-system
 - ## **Isaac:**
 	- ### **Features:**
         - Configured the backend database for the project.
@@ -233,6 +234,9 @@ Project is: _in progress_
 - We have all of the backend implemented for our main features.
 - We are getting more used to using git and didn't have to rely on others as much for help in that area.
 - We are still having some issues with styling using Bootstrap on some of our pages, so not everything is rendering the same way.
+- **ThanhPham**
+	- **Pro:** We finished all implementation for all of the main features for front-end and back-end and have most of those function properly as we wanted.
+	- **Con:** We still have some issues with saving/changing data of users in the database from UI. 
 - **Emma**
 	- **Pro:** We were able to implement all of the main features that we originally wanted to include in the project.
 	- **Con:** The file structure of our project still violates a lot of SOLID principles which led to some merge conflicts.
@@ -245,12 +249,14 @@ Project is: _in progress_
 
 ## What We Can do to Improve
 - We need to communicate more about what we're all looking for with new features since some people had disagreements about how some features were implemented.
+- **ThanhPham:** We should be more dedicated to the features that we committed so make it work properly, not just half-way. Team members should consider how related of each other's features/implementation before implementing anything.
 - **Emma:** Create tests for the features that we have already implemented so that we can ensure no new developments will prevent parts of our features from working as expected. I already have experience using Selenium to automate test cases and think that my skills there would contribute more to the overall success of the project. I will add test cases to a test directory in our project to measure my improvement in this area.
 - **Isaac:** I think what we could do to improve is refactor some of the code so it's cleaner and more readable. Fix a lot of the bugs that we had and make sure that things work as intended. There was a lot of code that we just threw together and made it work together.
 - **Saron:** We can improve on clarity with our end goal in a consistent manner. There was some miscommunication on what each feature would include more than a reasonable amount. Next time we can have each person draw out their vision and explain before implementing. This will also be useful to look back on while working!
 
 ## What is Currently Impeding Us from Performing Better
 - Some of us have different ideas about what pages and features should be included in the project at this point.
+- We have a little experience of back-end implementation with Django.
 - Although we have weekly meetings, commitments outside of class are preventing some of us from devoting more time to the project.
 
 ## Acknowledgements
