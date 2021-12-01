@@ -1,11 +1,11 @@
 # Hunny
-- 	Who you’re working with (you and your team members)?
+- 	Our Team
 Saron Abebe, Kody Gentry, Isaac Jaramillo, Thanh Pham, and Emma Rodrigue.
--	What you’re creating?
+-	What?
 Hunny is a blind dating web application that allows users to find their match based on personality before looks.
--	Who you’re doing it for, your audience (may be same as the previous question)?
+-	Who?
 Hunny is for those who are looking to meet new people that want a genuine connection past appearance. 
--	Why you’re doing this, the impact or change you hope to make?
+-	Why?
 We hope to break a user's cycle of falling for the wrong type by avoiding the overwhelming expectations of appearance.
 	
 # **Project Status:**
@@ -24,6 +24,9 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 	- frontend framework
 	- convert to webapp / mobile
 	- account security: password hash, email verification, photo ID, etc.
+	- geolocation feature
+	- functional contact page for feedback
+	- more preferences 
 		
 # **Contributors:**
 - ## **Emma:**
@@ -102,7 +105,9 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 		- Enable users to like/dislike profiles
 		- Enable the matching system to instantiate matches among users and save all likes/matches information in the database
 		- Automate Userprofile-creation upon Register-time
+		- Filter function of Matching system to enable users to set their preferences when seaching other user-profiles
 	- ### **Links to contributions:**
+		- **Sprint 1**
 		- [Created Static Folder](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/master/hunny_project/hunny_app/static/messages/): Static folder to manage all static files(images, CSS, JS ...)for front-end
 		- [Configured hunny_project/hunny_app/static/messages/main.css](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/master/hunny_project/hunny_app/static/messages/main.css): CSS file to style the content of homepage/login/singup pages 
 		- [Configure hunny_project/hunny_app/templates/login.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/master/hunny_project/hunny_app/templates/login.html) html Template- User Interface for login feature
@@ -111,6 +116,7 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 		- [Configured hunny_project/hunny_app/templates/matchingroom.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/templates/matchingroom.html) html Template- User Interface for Matching feature
 		- [Configured hunny_project/hunny_app/templates/likenext.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/templates/likenext.html) html Template- User Interface,which users will be brought to after clicking like-button
 		- [Configured hunny_project/hunny_app/templates/dislikenext.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/templates/dislikenext.html)  html Template- User Interface,which users will be brought to after clicking like-button
+		- **Sprint 2**
 		- [Configured hunny_project/hunny_app/models.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/models.py) Added attributes of Profile model to store matches,like, current profile to check out
 		- [Configured hunny_project/hunny_app/urls.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/urls.py) enable urls link for like/dislike/matchingroom pages
 		- [Configured hunny_project/hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/views.py) implemented back-end for matching-room to see the current profile when users doen't make decision on likes/dislikes
@@ -118,10 +124,14 @@ We hope to break a user's cycle of falling for the wrong type by avoiding the ov
 		- [Configured hunny_project/hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/views.py) implemented back-end for like-button
 		- [Configured hunny_project/hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/views.py) implemented back-end for dislike-button
 		- [Configured hunny_project/hunny_app/models.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/demo/hunny_project/hunny_app/models.py) Added attributes of Profile model to store matches,like, current profile to check out
+		- **Sprint 3**
+		- [Configured hunny_project/hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/views.py) implemented filter feature for matching system based on users preferences.
+		- [Configured hunny_project/hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/views.py) enabled users to show only profiles matching their gender preference
+		- [Configured hunny_project/hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/views.py) enabled users to show only profiles matching their relationship preference
+		- [Configured hunny_project/hunny_app/views.py](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/views.py) refactored like_next and dislike_next functions and added searching_process function
+		- [Configured hunny_project/hunny_app/templates/likenext.html](https://bitbucket.org/cs3398-f21-vulcans/hunny/src/develop/hunny_project/hunny_app/templates/likenext.html) continued to develop UI for matching system
 	- ### **Next steps:**
-		- refactor views.py and other hmtl files
-		- use preference data to implement filter function for matching-system
-		- edit the matching-system user-interface 
+		- include more preferences in filter function for matching-system
 - ## **Isaac:**
 	- ### **Features:**
         - Configured the backend database for the project.
@@ -229,20 +239,33 @@ Project is: _in progress_
 - We learned many backend and frontend techniques.
 - We are getting more used to using git and didn't have to rely on others as much for help in that area.
 - We are still having some issues with styling using Bootstrap on some of our pages, so not everything is rendering the same way.
- 
+- **Kody**
+	- **Pro:** We have a decently functional website at this point with many features. 
+	- **Con:** We did not use a frontend framework and we aren't very experienced with frontend techniques.
+- **ThanhPham**
+	- **Pro:** We finished all implementation for all of the main features for front-end and back-end and have most of those function properly as we wanted.
+	- **Con:** We still have some issues with saving/changing data of users in the database from UI. 
 - **Emma**
 	- **Pro:** We were able to implement all of the main features that we originally wanted to include in the project.
 	- **Con:** The file structure of our project still violates a lot of SOLID principles which led to some merge conflicts.
-- **Kody**
-	- **Pro:** We have a functional website at this point with many features. 
-	- **Con:** We did not use a frontend framework and we aren't very experienced with frontend techniques.
+- **Isaac**
+	- **Pro:** Working mostly functional site. With more time, we could have an actual website.
+	- **Con:** There's still a lot of work to be done. Messy code, and lots of bugs. It would not really be ready to be released any time soon.
+- **Saron**
+	- **Pro:** We've gotten better at identifying problems and how to look for their solutions due to familiarity with methods.
+	- **Con:** The more we work the more we realize our initial approach could've been better but we didn't know anything at that time.
+
 ## What We Can do to Improve
 - We need to communicate more about what we're all looking for with new features since some people had disagreements about how some features were implemented.
+- **ThanhPham:** We should be more dedicated to the features that we committed so make it work properly, not just half-way. Team members should consider how related of each other's features/implementation before implementing anything.
 - **Emma:** Create tests for the features that we have already implemented so that we can ensure no new developments will prevent parts of our features from working as expected. I already have experience using Selenium to automate test cases and think that my skills there would contribute more to the overall success of the project. I will add test cases to a test directory in our project to measure my improvement in this area.
+- **Isaac:** I think what we could do to improve is refactor some of the code so it's cleaner and more readable. Fix a lot of the bugs that we had and make sure that things work as intended. There was a lot of code that we just threw together and made it work together.
+- **Saron:** We can improve on clarity with our end goal in a consistent manner. There was some miscommunication on what each feature would include more than a reasonable amount. Next time we can have each person draw out their vision and explain before implementing. This will also be useful to look back on while working!
 - **Kody:** Fix the Messages model by storing each room in a Room model. Also I would need to create an algorithm to assign a match pair a unique ID for their room so each room is seperate. Store message objects better. The current model would be hard to handle with >1000 messages. 
 
 ## What is Currently Impeding Us from Performing Better
 - Some of us have different ideas about what pages and features should be included in the project at this point.
+- We have a little experience of back-end implementation with Django.
 - Although we have weekly meetings, commitments outside of class are preventing some of us from devoting more time to the project.
 
 ## Acknowledgements
